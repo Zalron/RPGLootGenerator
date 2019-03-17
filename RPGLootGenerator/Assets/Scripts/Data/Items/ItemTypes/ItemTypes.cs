@@ -10,7 +10,7 @@ namespace RPGLootGenerator
             SHORTSWORD,
             ONEHANDEDMACE,
             KNIFE,
-            ONEHANDEDWARHAMMER,
+            ONEHANDEDWARHAMMERS,
             ONEHANDEDAXES,
             SHIELD,
             RAPIER,
@@ -19,33 +19,56 @@ namespace RPGLootGenerator
         public enum TwoHandedMelee
         {
             LONGSWORD,
-            MACE,
-            WARHAMMER,
+            TWOHANDEDMACE,
+            TWOHANDEDWARHAMMER,
             HALBERD,
-            AXE,
-            CLUB,
+            TWOHANDEDAXE,
+            TWOHANDEDCLUB,
             STAFF,
             SPEAR,
             CLAWS,
         }
         static OneHandedMelee oneHandedMelee;
-        public static void ItemTypeGenerator(string ItemType)
+        public static string ItemTypeGenerator()
         {
+            string ItemTypeString = null;
             int ItemTypeGenerator = Random.Range(0, 2);
             if (ItemTypeGenerator == 1)
             {
                 oneHandedMelee = (OneHandedMelee)Random.Range(0, System.Enum.GetValues(typeof(OneHandedMelee)).Length);
                 switch (oneHandedMelee)
                 {
+                    case OneHandedMelee.ONEHANDEDMACE:
+                        ItemTypeString = OneHandedMaces.GenerateOneHandedMacesNames();
+                        return ItemTypeString;
                     case OneHandedMelee.ONEHANDEDAXES:
-                        OneHandedAxes.GenerateOneHandedAxesNames(ItemType);
-                        break;
+                        ItemTypeString = OneHandedAxes.GenerateOneHandedAxesNames();
+                        return ItemTypeString;
+                    case OneHandedMelee.ONEHANDEDWARHAMMERS:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case OneHandedMelee.KNIFE:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case OneHandedMelee.ONEHANDEDCLUB:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case OneHandedMelee.RAPIER:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case OneHandedMelee.SHIELD:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case OneHandedMelee.SHORTSWORD:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
                     default:
-                        ItemType = "Not done yet";
-                        break;
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
 
                 }
             }
+            return null;
         }
     }
 }

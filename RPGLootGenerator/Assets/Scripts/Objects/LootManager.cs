@@ -7,6 +7,7 @@ namespace RPGLootGenerator
     public class LootManager : MonoBehaviour
     {
         public TextMeshProUGUI LootNames;
+        public TextMeshProUGUI LootRarity;
         public TextMeshProUGUI LootTypes;
         public TextMeshProUGUI LootRequirements;
         public TextMeshProUGUI LootStats;
@@ -21,7 +22,8 @@ namespace RPGLootGenerator
         }
         public void GenerateLoot()
         {
-            
+            LootRarity.text = ItemRarity.RarityGenerate();
+            LootTypes.text = ItemTypes.ItemTypeGenerator();
         }
     }
 }
