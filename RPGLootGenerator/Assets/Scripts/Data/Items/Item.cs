@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 namespace RPGLootGenerator
 {
     public class Item
     {
+       
         public string prefix;
         public string name;
         public string suffix;
@@ -21,20 +22,9 @@ namespace RPGLootGenerator
         //    string combineditemName = itemPrefix + " " + itemName + " " + itemSuffix;
         //}
 
-        public void ItemTypeGenerator()
+        public void ItemGenerator()
         {
-            
-            
-            switch ()
-            { 
-                case 1:
-                    type = "";
-                    break;
-                default:
-                    type = "error";
-                    break;
-            }
-            
+
         }
     }
 }

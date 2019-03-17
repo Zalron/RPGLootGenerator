@@ -1,18 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class TwoHandedAxes : MonoBehaviour
+public enum TwoHandedAxesNames
 {
-    // Start is called before the first frame update
-    void Start()
+    VikingAxe,
+    BoneHachet,
+    WoodedAxe,
+    BloodCleaver,
+}
+public static class TwoHandedAxes
+{
+    static TwoHandedAxesNames oneHandedAxesNames;
+    public static void GenerateOneHandedAxesNames(string AxeName)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        oneHandedAxesNames = (TwoHandedAxesNames)Random.Range(0, System.Enum.GetValues(typeof(TwoHandedAxesNames)).Length);
+        switch (oneHandedAxesNames)
+        {
+            case TwoHandedAxesNames.BloodCleaver:
+                AxeName = "BloodCleaver";
+                break;
+            case TwoHandedAxesNames.BoneHachet:
+                AxeName = "BoneHachet";
+                break;
+            case TwoHandedAxesNames.VikingAxe:
+                AxeName = "BoneHachet";
+                break;
+            case TwoHandedAxesNames.WoodedAxe:
+                AxeName = "BoneHachet";
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -5,11 +5,15 @@ namespace RPGLootGenerator
 {
     public class Rarity
     {
-        public string common;
-        public string uncommon;
-        public string rare;
-        public string masterwork;
-        public string legendary;
+        enum Rarities
+        {
+            COMMON,
+            UNCOMMON,
+            RARE,
+            MASTERWORK,
+            LEGENDARY,
+            UNQIUE,
+        }
         void GenerateRarity()
         {
         }
