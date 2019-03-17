@@ -29,6 +29,7 @@ namespace RPGLootGenerator
             CLAWS,
         }
         static OneHandedMelee oneHandedMelee;
+        static TwoHandedMelee twoHandedMelee;
         public static string ItemTypeGenerator()
         {
             string ItemTypeString = null;
@@ -39,33 +40,70 @@ namespace RPGLootGenerator
                 switch (oneHandedMelee)
                 {
                     case OneHandedMelee.ONEHANDEDMACE:
-                        ItemTypeString = OneHandedMaces.GenerateOneHandedMacesNames();
+                        //ItemTypeString = OneHandedMaces.GenerateOneHandedMacesNames();
+                        ItemTypeString = "One Handed Mace";
                         return ItemTypeString;
                     case OneHandedMelee.ONEHANDEDAXES:
-                        ItemTypeString = OneHandedAxes.GenerateOneHandedAxesNames();
+                        //ItemTypeString = OneHandedAxes.GenerateOneHandedAxesNames();
+                        ItemTypeString = "One Handed Axes";
                         return ItemTypeString;
                     case OneHandedMelee.ONEHANDEDWARHAMMERS:
-                        ItemTypeString = "Not done yet";
+                        ItemTypeString = "One Handed Warhammer";
                         return ItemTypeString;
                     case OneHandedMelee.KNIFE:
-                        ItemTypeString = "Not done yet";
+                        ItemTypeString = "Knife";
                         return ItemTypeString;
                     case OneHandedMelee.ONEHANDEDCLUB:
-                        ItemTypeString = "Not done yet";
+                        ItemTypeString = "One Handed Club";
                         return ItemTypeString;
                     case OneHandedMelee.RAPIER:
-                        ItemTypeString = "Not done yet";
+                        ItemTypeString = "Rapier";
                         return ItemTypeString;
                     case OneHandedMelee.SHIELD:
-                        ItemTypeString = "Not done yet";
+                        ItemTypeString = "Shield";
                         return ItemTypeString;
                     case OneHandedMelee.SHORTSWORD:
+                        ItemTypeString = "Short Swords";
+                        return ItemTypeString;
+                    default:
+                        ItemTypeString = "ERROR";
+                        return ItemTypeString;
+                }
+            }
+            if (ItemTypeGenerator == 2)
+            {
+                twoHandedMelee = (TwoHandedMelee)Random.Range(0, System.Enum.GetValues(typeof(TwoHandedMelee)).Length);
+                switch (twoHandedMelee)
+                {
+                    case TwoHandedMelee.TWOHANDEDMACE:
+                        //ItemTypeString = OneHandedMaces.GenerateOneHandedMacesNames();
+                        ItemTypeString = "One Handed Mace";
+                        return ItemTypeString;
+                    case TwoHandedMelee.TWOHANDEDAXE:
+                        //ItemTypeString = OneHandedAxes.GenerateOneHandedAxesNames();
+                        ItemTypeString = "One Handed Axes";
+                        return ItemTypeString;
+                    case TwoHandedMelee.TWOHANDEDCLUB:
+                        ItemTypeString = "Two Handed Club";
+                        return ItemTypeString;
+                    case TwoHandedMelee.TWOHANDEDWARHAMMER:
+                        ItemTypeString = "Two Handed Warhammer";
+                        return ItemTypeString;
+                    case TwoHandedMelee.ONEHANDEDCLUB:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case TwoHandedMelee.RAPIER:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case TwoHandedMelee.SHIELD:
+                        ItemTypeString = "Not done yet";
+                        return ItemTypeString;
+                    case TwoHandedMelee.SHORTSWORD:
                         ItemTypeString = "Not done yet";
                         return ItemTypeString;
                     default:
                         ItemTypeString = "Not done yet";
                         return ItemTypeString;
-
                 }
             }
             return null;

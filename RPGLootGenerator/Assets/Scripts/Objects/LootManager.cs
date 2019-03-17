@@ -24,6 +24,10 @@ namespace RPGLootGenerator
         {
             LootRarity.text = ItemRarity.RarityGenerate();
             LootTypes.text = ItemTypes.ItemTypeGenerator();
+            if (ItemTypes.ItemTypeGenerator() = )
+            {
+
+            }
         }
     }
 }
