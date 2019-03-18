@@ -16,7 +16,7 @@ namespace RPGLootGenerator
         }
         public static string RarityGenerate(/*string ItemRarity*/)
         {
-            string ItemRarityString;
+            string ItemRarityString = null;
             Rarities rarity;
             rarity = (Rarities)Random.Range(0, System.Enum.GetValues(typeof(Rarities)).Length);
             switch (rarity)

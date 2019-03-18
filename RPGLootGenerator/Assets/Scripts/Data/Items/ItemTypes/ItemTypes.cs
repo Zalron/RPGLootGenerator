@@ -33,7 +33,7 @@ namespace RPGLootGenerator
         public static string ItemTypeGenerator()
         {
             string ItemTypeString = null;
-            int ItemTypeGenerator = Random.Range(0, 2);
+            int ItemTypeGenerator = Random.Range(1, 3);
             if (ItemTypeGenerator == 1)
             {
                 oneHandedMelee = (OneHandedMelee)Random.Range(0, System.Enum.GetValues(typeof(OneHandedMelee)).Length);
@@ -76,11 +76,9 @@ namespace RPGLootGenerator
                 switch (twoHandedMelee)
                 {
                     case TwoHandedMelee.TWOHANDEDMACE:
-                        //ItemTypeString = OneHandedMaces.GenerateOneHandedMacesNames();
                         ItemTypeString = "One Handed Mace";
                         return ItemTypeString;
                     case TwoHandedMelee.TWOHANDEDAXE:
-                        //ItemTypeString = OneHandedAxes.GenerateOneHandedAxesNames();
                         ItemTypeString = "One Handed Axes";
                         return ItemTypeString;
                     case TwoHandedMelee.TWOHANDEDCLUB:
@@ -89,17 +87,20 @@ namespace RPGLootGenerator
                     case TwoHandedMelee.TWOHANDEDWARHAMMER:
                         ItemTypeString = "Two Handed Warhammer";
                         return ItemTypeString;
-                    case TwoHandedMelee.ONEHANDEDCLUB:
-                        ItemTypeString = "Not done yet";
+                    case TwoHandedMelee.STAFF:
+                        ItemTypeString = "Staff";
                         return ItemTypeString;
-                    case TwoHandedMelee.RAPIER:
-                        ItemTypeString = "Not done yet";
+                    case TwoHandedMelee.SPEAR:
+                        ItemTypeString = "Spear";
                         return ItemTypeString;
-                    case TwoHandedMelee.SHIELD:
-                        ItemTypeString = "Not done yet";
+                    case TwoHandedMelee.LONGSWORD:
+                        ItemTypeString = "Long Sword";
                         return ItemTypeString;
-                    case TwoHandedMelee.SHORTSWORD:
-                        ItemTypeString = "Not done yet";
+                    case TwoHandedMelee.HALBERD:
+                        ItemTypeString = "Halberd";
+                        return ItemTypeString;
+                    case TwoHandedMelee.CLAWS:
+                        ItemTypeString = "Claws";
                         return ItemTypeString;
                     default:
                         ItemTypeString = "Not done yet";

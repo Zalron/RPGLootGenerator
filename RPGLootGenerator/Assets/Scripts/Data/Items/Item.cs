@@ -25,6 +25,8 @@ namespace RPGLootGenerator
         public void ItemGenerator()
         {
 
+            ItemRarity.RarityGenerate();
+            ItemTypes.ItemTypeGenerator();
         }
     }
 }
