@@ -11,6 +11,7 @@ namespace RPGLootGenerator
             BlackJack,
             IronTeeth,
             EnergyCorrector,
+            BedeckedJaws,
         }
         static OneHandedMacesNames oneHandedMacesNames;
         public static string GenerateOneHandedMacesNames()
@@ -31,8 +32,11 @@ namespace RPGLootGenerator
                 case OneHandedMacesNames.IronTeeth:
                     OneHandedMacesNamesString = "Iron Teeth";
                     return OneHandedMacesNamesString;
+                case OneHandedMacesNames.BedeckedJaws:
+                    OneHandedMacesNamesString = "Bedecked Jaws";
+                    return OneHandedMacesNamesString;
                 default:
-                    break;
+                    return null;
             }
             return null;
         }

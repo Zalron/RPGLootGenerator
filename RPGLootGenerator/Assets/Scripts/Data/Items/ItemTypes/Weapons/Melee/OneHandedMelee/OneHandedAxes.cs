@@ -12,7 +12,17 @@ namespace RPGLootGenerator
             WoodedAxe,
             BloodCleaver,
         }
+        public enum OneHandedAxesPrefixs 
+        {
+            Upper,
+            Clothed,
+            Rusted,
+            Kings,
+            Jesters,
+            Marked,
+        }
         static OneHandedAxesNames oneHandedAxesNames;
+        static OneHandedAxesPrefixs oneHandedAxesPrefixs;
         public static string GenerateOneHandedAxesNames()
         {
             string OneHandedAxesNamesString = null;
@@ -36,10 +46,22 @@ namespace RPGLootGenerator
             }
             return null;
         }
-        public static void GenerateOneHandedAxesStats()
+        public static string GenerateOneHandedAxesPrefixs()
         {
-            string OneHandedAxesStats1;
-            
+            string OneHandedAxesPrefixsString = null;
+            oneHandedAxesPrefixs = (OneHandedAxesPrefixs)Random.Range(0, System.Enum.GetValues(typeof(OneHandedAxesPrefixs)).Length);
+            switch (oneHandedAxesPrefixs) 
+            {
+                case OneHandedAxesPrefixs.Clothed:
+                    OneHandedAxesPrefixsString = "Clothed";
+                    return OneHandedAxesPrefixsString;
+                case OneHandedAxesPrefixs.Jesters:
+                    OneHandedAxesPrefixsString = "Jesters";
+                    return OneHandedAxesPrefixsString;
+                default:
+                    return null; 
+            }
+
         }
     }
 }

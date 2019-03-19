@@ -42,16 +42,16 @@ public static class ItemRequirements
                 ItemRequirementsString = "Level 6";
                 return ItemRequirementsString;
             case Requirements.Lvl_7:
-                ItemRequirementsString = "Level 6";
+                ItemRequirementsString = "Level 7";
                 return ItemRequirementsString;
             case Requirements.Lvl_8:
-                ItemRequirementsString = "Level 6";
+                ItemRequirementsString = "Level 8";
                 return ItemRequirementsString;
             case Requirements.Lvl_9:
-                ItemRequirementsString = "Level 6";
+                ItemRequirementsString = "Level 9";
                 return ItemRequirementsString;
             case Requirements.Lvl_10:
-                ItemRequirementsString = "Level 6";
+                ItemRequirementsString = "Level 10";
                 return ItemRequirementsString;
                 //TODO : Add the rest of the levels later
             default:
