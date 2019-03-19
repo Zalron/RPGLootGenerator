@@ -36,5 +36,10 @@ namespace RPGLootGenerator
             }
             return null;
         }
+        public static void GenerateOneHandedAxesStats()
+        {
+            string OneHandedAxesStats1;
+            
+        }
     }
 }

@@ -33,8 +33,8 @@ namespace RPGLootGenerator
         public static string ItemTypeGenerator()
         {
             string ItemTypeString = null;
-            int ItemTypeGenerator = Random.Range(1, 3);
-            if (ItemTypeGenerator == 1)
+            int itemTypeGeneratorInt = Random.Range(1, 3);
+            if (itemTypeGeneratorInt == 1)
             {
                 oneHandedMelee = (OneHandedMelee)Random.Range(0, System.Enum.GetValues(typeof(OneHandedMelee)).Length);
                 switch (oneHandedMelee)
@@ -70,7 +70,7 @@ namespace RPGLootGenerator
                         return ItemTypeString;
                 }
             }
-            if (ItemTypeGenerator == 2)
+            if (itemTypeGeneratorInt == 2)
             {
                 twoHandedMelee = (TwoHandedMelee)Random.Range(0, System.Enum.GetValues(typeof(TwoHandedMelee)).Length);
                 switch (twoHandedMelee)

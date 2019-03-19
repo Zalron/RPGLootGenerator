@@ -7,13 +7,15 @@ namespace RPGLootGenerator
     public class Item
     {
        
-        public string prefix;
-        public string name;
-        public string suffix;
-        public string rarity;
-        public string type;
-        public string requirements;
-
+        public string itemPrefix;
+        public string itemName;
+        public string itemSuffix;
+        public string itemRarity;
+        public string itemType;
+        public string itemRequirements;
+        public string itemStats;
+        public string itemImplisits;
+        public string itemExplisits;
         //public Item(string itemName, string itemPrefix, string itemSuffix, string itemRarity, string itemType, string itemRequirements)
         //{
         //    itemName = name;
@@ -25,8 +27,18 @@ namespace RPGLootGenerator
         public void ItemGenerator()
         {
 
-            ItemRarity.RarityGenerate();
-            ItemTypes.ItemTypeGenerator();
+
+            itemType = ItemTypes.ItemTypeGenerator();
+
+            if(itemType == "One Handed Axes")
+            {
+                itemName = OneHandedAxes.GenerateOneHandedAxesNames();
+                itemRarity = ItemRarity.RarityGenerate();
+            }
+            else if (itemType == "") 
+            {
+
+            }
         }
     }
 }

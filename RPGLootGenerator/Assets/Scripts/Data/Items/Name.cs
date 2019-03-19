@@ -7,10 +7,10 @@ namespace RPGLootGenerator
     public class Name
     {
         public string LootNames;
-        //string combineditemName = itemPrefix + " " + itemName + " " + itemSuffix;
-        public void CombineName()
+        public string CombineName(string itemPrefix, string itemName, string itemSuffix)
         {
-            LootNames = 
+            string itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
+            return itemCombinedName;
         }
     }
 }
