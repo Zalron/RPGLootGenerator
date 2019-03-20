@@ -7,7 +7,7 @@ namespace RPGLootGenerator
     {
         public enum ItemType 
         {
-            //one handed
+            //one handed melee
             SHORTSWORD,
             ONEHANDEDMACE,
             KNIFE,
@@ -16,7 +16,7 @@ namespace RPGLootGenerator
             SHIELD,
             RAPIER,
             ONEHANDEDCLUB,
-            // two handed
+            //two handed melee
             LONGSWORD,
             TWOHANDEDMACE,
             TWOHANDEDWARHAMMER,
@@ -26,6 +26,26 @@ namespace RPGLootGenerator
             STAFF,
             SPEAR,
             CLAWS,
+            //one handed ranged
+            WAND,
+            THROWINGKNIFES,
+            THROWINGAXES,
+            PISTOL,
+            HANDCROSSBOW,
+            // two handed ranged
+            BOW,
+            CROSSBOW,
+            MATCHlockRifle,
+                     Carbine,
+                     Bullpup,
+                     AssaultRifle,
+                     SniperRifle,
+                     MachineGun,
+                     Shotgun,
+                     GrenadeLauncher,
+                     RocketLauncher,
+
+
         }
         static ItemType itemType;
         public static string ItemTypeGenerator()
