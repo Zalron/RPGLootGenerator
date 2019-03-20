@@ -1825,9 +1825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403adf4cf8395994c8454214e466da70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LootNames: {fileID: 0}
+  LootNames: {fileID: 331480191}
   LootRarity: {fileID: 244586304}
   LootTypes: {fileID: 1220230864}
-  LootRequirements: {fileID: 0}
-  LootStats: {fileID: 0}
-  LootMods: {fileID: 0}
+  LootRequirements: {fileID: 684756919}
+  LootStats: {fileID: 665073676}
+  LootMods: {fileID: 1809402378}

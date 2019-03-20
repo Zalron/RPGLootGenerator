@@ -11,27 +11,32 @@ namespace RPGLootGenerator
             LandHowiter,
             GoldenReaver,
             DemonsMalice,
+            SeaOmega,
         }
-        static TwoHandedAxesNames oneHandedAxesNames;
-        public static void GenerateOneHandedAxesNames(string AxeName)
+        static TwoHandedAxesNames twoHandedAxesNames;
+        public static string GenerateTwoHandedAxesNames()
         {
-            oneHandedAxesNames = (TwoHandedAxesNames)Random.Range(0, System.Enum.GetValues(typeof(TwoHandedAxesNames)).Length);
-            switch (oneHandedAxesNames)
+            string TwoHandedAxesNamesString = null;
+            twoHandedAxesNames = (TwoHandedAxesNames)Random.Range(0, System.Enum.GetValues(typeof(TwoHandedAxesNames)).Length);
+            switch (twoHandedAxesNames)
             {
                 case TwoHandedAxesNames.DemonsMalice:
-                    AxeName = "Demons Malice";
-                    break;
+                    TwoHandedAxesNamesString = "Demons Malice";
+                    return TwoHandedAxesNamesString;
                 case TwoHandedAxesNames.LandHowiter:
-                    AxeName = "LandHowiter";
-                    break;
+                    TwoHandedAxesNamesString = "LandHowiter";
+                    return TwoHandedAxesNamesString;
                 case TwoHandedAxesNames.BattleAxe:
-                    AxeName = "Battle Axe";
-                    break;
+                    TwoHandedAxesNamesString = "BattleAxe";
+                    return TwoHandedAxesNamesString;
                 case TwoHandedAxesNames.GoldenReaver:
-                    AxeName = "Golden Reaver";
-                    break;
+                    TwoHandedAxesNamesString = "Golden Reaver";
+                    return TwoHandedAxesNamesString;
+                case TwoHandedAxesNames.SeaOmega:
+                    TwoHandedAxesNamesString = "SeaOmega";
+                    return TwoHandedAxesNamesString;
                 default:
-                    break;
+                    return "ERROR";
             }
         }
     }

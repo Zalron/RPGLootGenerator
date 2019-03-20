@@ -11,7 +11,7 @@ namespace RPGLootGenerator
             ONEHANDEDMACE,
             KNIFE,
             ONEHANDEDWARHAMMERS,
-            ONEHANDEDAXES,
+            ONEHANDEDAXE,
             SHIELD,
             RAPIER,
             ONEHANDEDCLUB,
@@ -40,12 +40,10 @@ namespace RPGLootGenerator
                 switch (oneHandedMelee)
                 {
                     case OneHandedMelee.ONEHANDEDMACE:
-                        //ItemTypeString = OneHandedMaces.GenerateOneHandedMacesNames();
                         ItemTypeString = "One Handed Mace";
                         return ItemTypeString;
-                    case OneHandedMelee.ONEHANDEDAXES:
-                        //ItemTypeString = OneHandedAxes.GenerateOneHandedAxesNames();
-                        ItemTypeString = "One Handed Axes";
+                    case OneHandedMelee.ONEHANDEDAXE:
+                        ItemTypeString = "One Handed Axe";
                         return ItemTypeString;
                     case OneHandedMelee.ONEHANDEDWARHAMMERS:
                         ItemTypeString = "One Handed Warhammer";
@@ -66,8 +64,7 @@ namespace RPGLootGenerator
                         ItemTypeString = "Short Swords";
                         return ItemTypeString;
                     default:
-                        ItemTypeString = "ERROR";
-                        return ItemTypeString;
+                        return "Not Done Yet";
                 }
             }
             if (itemTypeGeneratorInt == 2)
@@ -76,10 +73,10 @@ namespace RPGLootGenerator
                 switch (twoHandedMelee)
                 {
                     case TwoHandedMelee.TWOHANDEDMACE:
-                        ItemTypeString = "One Handed Mace";
+                        ItemTypeString = "Two Handed Mace";
                         return ItemTypeString;
                     case TwoHandedMelee.TWOHANDEDAXE:
-                        ItemTypeString = "One Handed Axes";
+                        ItemTypeString = "Two Handed Axes";
                         return ItemTypeString;
                     case TwoHandedMelee.TWOHANDEDCLUB:
                         ItemTypeString = "Two Handed Club";
@@ -103,8 +100,7 @@ namespace RPGLootGenerator
                         ItemTypeString = "Claws";
                         return ItemTypeString;
                     default:
-                        ItemTypeString = "Not done yet";
-                        return ItemTypeString;
+                        return "Not Done Yet";
                 }
             }
             return null;

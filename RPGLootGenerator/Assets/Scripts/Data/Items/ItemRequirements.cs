@@ -20,7 +20,7 @@ public static class ItemRequirements
     {
         string ItemRequirementsString = null;
         Requirements requirements;
-        requirements = (Requirements)Random.Range(0, System.Enum.GetValues(typeof(Requirements)).Length);
+        requirements = (Requirements)Random.Range(1, System.Enum.GetValues(typeof(Requirements)).Length);
         switch (requirements)
         {
             case Requirements.Lvl_1:
@@ -53,7 +53,67 @@ public static class ItemRequirements
             case Requirements.Lvl_10:
                 ItemRequirementsString = "Level 10";
                 return ItemRequirementsString;
-                //TODO : Add the rest of the levels later
+            case Requirements.Lvl_11:
+                ItemRequirementsString = "Level 11";
+                return ItemRequirementsString;
+            case Requirements.Lvl_12:
+                ItemRequirementsString = "Level 12";
+                return ItemRequirementsString;
+            case Requirements.Lvl_13:
+                ItemRequirementsString = "Level 13";
+                return ItemRequirementsString;
+            case Requirements.Lvl_14:
+                ItemRequirementsString = "Level 14";
+                return ItemRequirementsString;
+            case Requirements.Lvl_15:
+                ItemRequirementsString = "Level 15";
+                return ItemRequirementsString;
+            case Requirements.Lvl_16:
+                ItemRequirementsString = "Level 16";
+                return ItemRequirementsString;
+            case Requirements.Lvl_17:
+                ItemRequirementsString = "Level 17";
+                return ItemRequirementsString;
+            case Requirements.Lvl_18:
+                ItemRequirementsString = "Level 18";
+                return ItemRequirementsString;
+            case Requirements.Lvl_19:
+                ItemRequirementsString = "Level 19";
+                return ItemRequirementsString;
+            case Requirements.Lvl_20:
+                ItemRequirementsString = "Level 20";
+                return ItemRequirementsString;
+            case Requirements.Lvl_21:
+                ItemRequirementsString = "Level 21";
+                return ItemRequirementsString;
+            case Requirements.Lvl_22:
+                ItemRequirementsString = "Level 22";
+                return ItemRequirementsString;
+            case Requirements.Lvl_23:
+                ItemRequirementsString = "Level 23";
+                return ItemRequirementsString;
+            case Requirements.Lvl_24:
+                ItemRequirementsString = "Level 24";
+                return ItemRequirementsString;
+            case Requirements.Lvl_25:
+                ItemRequirementsString = "Level 25";
+                return ItemRequirementsString;
+            case Requirements.Lvl_26:
+                ItemRequirementsString = "Level 26";
+                return ItemRequirementsString;
+            case Requirements.Lvl_27:
+                ItemRequirementsString = "Level 27";
+                return ItemRequirementsString;
+            case Requirements.Lvl_28:
+                ItemRequirementsString = "Level 28";
+                return ItemRequirementsString;
+            case Requirements.Lvl_29:
+                ItemRequirementsString = "Level 29";
+                return ItemRequirementsString;
+            case Requirements.Lvl_30:
+                ItemRequirementsString = "Level 30";
+                return ItemRequirementsString;
+            //TODO : Add the rest of the levels later
             default:
                 ItemRequirementsString = "ERROR";
                 return ItemRequirementsString;
