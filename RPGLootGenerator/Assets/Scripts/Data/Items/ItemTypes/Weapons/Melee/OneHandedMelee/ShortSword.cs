@@ -21,16 +21,16 @@ namespace RPGLootGenerator
             switch (shortSwordNames)
             {
                 case ShortSwordNames.BronzeKopis:
-                    ShortSwordNamesString = "Demons Malice";
+                    ShortSwordNamesString = "Bronze Kopis";
                     return ShortSwordNamesString;
                 case ShortSwordNames.DustKhopesh:
-                    ShortSwordNamesString = "LandHowiter";
+                    ShortSwordNamesString = "Dust Khopesh";
                     return ShortSwordNamesString;
                 case ShortSwordNames.ObsidianMaquahuitl:
-                    ShortSwordNamesString = "Battle Axe";
+                    ShortSwordNamesString = "Obsidian Maquahuitl";
                     return ShortSwordNamesString;
                 case ShortSwordNames.SteelGladius:
-                    ShortSwordNamesString = "Golden Reaver";
+                    ShortSwordNamesString = "Steel Gladius";
                     return ShortSwordNamesString;
                 default:
                     return "ERROR";

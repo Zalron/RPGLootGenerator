@@ -35,15 +35,15 @@ namespace RPGLootGenerator
             // two handed ranged
             BOW,
             CROSSBOW,
-            MATCHlockRifle,
-                     Carbine,
-                     Bullpup,
-                     AssaultRifle,
-                     SniperRifle,
-                     MachineGun,
-                     Shotgun,
-                     GrenadeLauncher,
-                     RocketLauncher,
+            MATCHLOCKRIFLE,
+            CARBINE,
+            BULLPUP,
+            ASSAULTRIFLE,
+            SNIPERRIFLE,
+            MACHINEGUN,
+            SHOTGUN,
+            GRENADELAUNCHER,
+            ROCKETLAUNCHER,
 
 
         }
