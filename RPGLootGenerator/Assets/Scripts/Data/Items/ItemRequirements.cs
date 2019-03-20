@@ -113,7 +113,216 @@ public static class ItemRequirements
             case Requirements.Lvl_30:
                 ItemRequirementsString = "Level 30";
                 return ItemRequirementsString;
-            //TODO : Add the rest of the levels later
+            case Requirements.Lvl_31:
+                ItemRequirementsString = "Level 31";
+                return ItemRequirementsString;
+            case Requirements.Lvl_32:
+                ItemRequirementsString = "Level 32";
+                return ItemRequirementsString;
+            case Requirements.Lvl_33:
+                ItemRequirementsString = "Level 33";
+                return ItemRequirementsString;
+            case Requirements.Lvl_34:
+                ItemRequirementsString = "Level 34";
+                return ItemRequirementsString;
+            case Requirements.Lvl_35:
+                ItemRequirementsString = "Level 35";
+                return ItemRequirementsString;
+            case Requirements.Lvl_36:
+                ItemRequirementsString = "Level 36";
+                return ItemRequirementsString;
+            case Requirements.Lvl_37:
+                ItemRequirementsString = "Level 37";
+                return ItemRequirementsString;
+            case Requirements.Lvl_38:
+                ItemRequirementsString = "Level 38";
+                return ItemRequirementsString;
+            case Requirements.Lvl_39:
+                ItemRequirementsString = "Level 39";
+                return ItemRequirementsString;
+            case Requirements.Lvl_40:
+                ItemRequirementsString = "Level 40";
+                return ItemRequirementsString;
+            case Requirements.Lvl_41:
+                ItemRequirementsString = "Level 41";
+                return ItemRequirementsString;
+            case Requirements.Lvl_42:
+                ItemRequirementsString = "Level 42";
+                return ItemRequirementsString;
+            case Requirements.Lvl_43:
+                ItemRequirementsString = "Level 43";
+                return ItemRequirementsString;
+            case Requirements.Lvl_44:
+                ItemRequirementsString = "Level 44";
+                return ItemRequirementsString;
+            case Requirements.Lvl_45:
+                ItemRequirementsString = "Level 45";
+                return ItemRequirementsString;
+            case Requirements.Lvl_46:
+                ItemRequirementsString = "Level 46";
+                return ItemRequirementsString;
+            case Requirements.Lvl_47:
+                ItemRequirementsString = "Level 47";
+                return ItemRequirementsString;
+            case Requirements.Lvl_48:
+                ItemRequirementsString = "Level 48";
+                return ItemRequirementsString;
+            case Requirements.Lvl_49:
+                ItemRequirementsString = "Level 49";
+                return ItemRequirementsString;
+            case Requirements.Lvl_50:
+                ItemRequirementsString = "Level 50";
+                return ItemRequirementsString;
+            case Requirements.Lvl_51:
+                ItemRequirementsString = "Level 51";
+                return ItemRequirementsString;
+            case Requirements.Lvl_52:
+                ItemRequirementsString = "Level 52";
+                return ItemRequirementsString;
+            case Requirements.Lvl_53:
+                ItemRequirementsString = "Level 53";
+                return ItemRequirementsString;
+            case Requirements.Lvl_54:
+                ItemRequirementsString = "Level 54";
+                return ItemRequirementsString;
+            case Requirements.Lvl_55:
+                ItemRequirementsString = "Level 55";
+                return ItemRequirementsString;
+            case Requirements.Lvl_56:
+                ItemRequirementsString = "Level 56";
+                return ItemRequirementsString;
+            case Requirements.Lvl_57:
+                ItemRequirementsString = "Level 57";
+                return ItemRequirementsString;
+            case Requirements.Lvl_58:
+                ItemRequirementsString = "Level 58";
+                return ItemRequirementsString;
+            case Requirements.Lvl_59:
+                ItemRequirementsString = "Level 59";
+                return ItemRequirementsString;
+            case Requirements.Lvl_60:
+                ItemRequirementsString = "Level 60";
+                return ItemRequirementsString;
+            case Requirements.Lvl_61:
+                ItemRequirementsString = "Level 61";
+                return ItemRequirementsString;
+            case Requirements.Lvl_62:
+                ItemRequirementsString = "Level 62";
+                return ItemRequirementsString;
+            case Requirements.Lvl_63:
+                ItemRequirementsString = "Level 63";
+                return ItemRequirementsString;
+            case Requirements.Lvl_64:
+                ItemRequirementsString = "Level 64";
+                return ItemRequirementsString;
+            case Requirements.Lvl_65:
+                ItemRequirementsString = "Level 65";
+                return ItemRequirementsString;
+            case Requirements.Lvl_66:
+                ItemRequirementsString = "Level 66";
+                return ItemRequirementsString;
+            case Requirements.Lvl_67:
+                ItemRequirementsString = "Level 67";
+                return ItemRequirementsString;
+            case Requirements.Lvl_68:
+                ItemRequirementsString = "Level 68";
+                return ItemRequirementsString;
+            case Requirements.Lvl_69:
+                ItemRequirementsString = "Level 69";
+                return ItemRequirementsString;
+            case Requirements.Lvl_70:
+                ItemRequirementsString = "Level 70";
+                return ItemRequirementsString;
+            case Requirements.Lvl_71:
+                ItemRequirementsString = "Level 71";
+                return ItemRequirementsString;
+            case Requirements.Lvl_72:
+                ItemRequirementsString = "Level 72";
+                return ItemRequirementsString;
+            case Requirements.Lvl_73:
+                ItemRequirementsString = "Level 73";
+                return ItemRequirementsString;
+            case Requirements.Lvl_74:
+                ItemRequirementsString = "Level 74";
+                return ItemRequirementsString;
+            case Requirements.Lvl_75:
+                ItemRequirementsString = "Level 75";
+                return ItemRequirementsString;
+            case Requirements.Lvl_76:
+                ItemRequirementsString = "Level 76";
+                return ItemRequirementsString;
+            case Requirements.Lvl_77:
+                ItemRequirementsString = "Level 77";
+                return ItemRequirementsString;
+            case Requirements.Lvl_78:
+                ItemRequirementsString = "Level 78";
+                return ItemRequirementsString;
+            case Requirements.Lvl_79:
+                ItemRequirementsString = "Level 79";
+                return ItemRequirementsString;
+            case Requirements.Lvl_80:
+                ItemRequirementsString = "Level 80";
+                return ItemRequirementsString;
+            case Requirements.Lvl_81:
+                ItemRequirementsString = "Level 81";
+                return ItemRequirementsString;
+            case Requirements.Lvl_82:
+                ItemRequirementsString = "Level 82";
+                return ItemRequirementsString;
+            case Requirements.Lvl_83:
+                ItemRequirementsString = "Level 83";
+                return ItemRequirementsString;
+            case Requirements.Lvl_84:
+                ItemRequirementsString = "Level 84";
+                return ItemRequirementsString;
+            case Requirements.Lvl_85:
+                ItemRequirementsString = "Level 85";
+                return ItemRequirementsString;
+            case Requirements.Lvl_86:
+                ItemRequirementsString = "Level 86";
+                return ItemRequirementsString;
+            case Requirements.Lvl_87:
+                ItemRequirementsString = "Level 87";
+                return ItemRequirementsString;
+            case Requirements.Lvl_88:
+                ItemRequirementsString = "Level 88";
+                return ItemRequirementsString;
+            case Requirements.Lvl_89:
+                ItemRequirementsString = "Level 89";
+                return ItemRequirementsString;
+            case Requirements.Lvl_90:
+                ItemRequirementsString = "Level 90";
+                return ItemRequirementsString;
+            case Requirements.Lvl_91:
+                ItemRequirementsString = "Level 91";
+                return ItemRequirementsString;
+            case Requirements.Lvl_92:
+                ItemRequirementsString = "Level 92";
+                return ItemRequirementsString;
+            case Requirements.Lvl_93:
+                ItemRequirementsString = "Level 93";
+                return ItemRequirementsString;
+            case Requirements.Lvl_94:
+                ItemRequirementsString = "Level 94";
+                return ItemRequirementsString;
+            case Requirements.Lvl_95:
+                ItemRequirementsString = "Level 95";
+                return ItemRequirementsString;
+            case Requirements.Lvl_96:
+                ItemRequirementsString = "Level 96";
+                return ItemRequirementsString;
+            case Requirements.Lvl_97:
+                ItemRequirementsString = "Level 97";
+                return ItemRequirementsString;
+            case Requirements.Lvl_98:
+                ItemRequirementsString = "Level 98";
+                return ItemRequirementsString;
+            case Requirements.Lvl_99:
+                ItemRequirementsString = "Level 99";
+                return ItemRequirementsString;
+            case Requirements.Lvl_100:
+                ItemRequirementsString = "Level 100";
+                return ItemRequirementsString;
             default:
                 ItemRequirementsString = "ERROR";
                 return ItemRequirementsString;
