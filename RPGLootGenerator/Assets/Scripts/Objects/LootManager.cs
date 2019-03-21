@@ -28,7 +28,7 @@ namespace RPGLootGenerator
             Item.ItemGenerator();
             LootTypes.text = Item.itemType;
             LootRarity.text = Item.itemRarity;
-            LootNames.text = Item.itemName;
+            LootNames.text = Item.itemCombinedName;
             LootRequirements.text = Item.itemRequirements;
 
         }

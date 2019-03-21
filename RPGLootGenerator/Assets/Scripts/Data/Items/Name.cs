@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 namespace RPGLootGenerator
 {
-    public class Name
+    public static class Name
     {
-        public string LootNames;
-        public string CombineNameString(string itemPrefix, string itemName, string itemSuffix)
+        public static string CombineNameString(string itemPrefix, string itemName, string itemSuffix)
         {
             string itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
             return itemCombinedName;
