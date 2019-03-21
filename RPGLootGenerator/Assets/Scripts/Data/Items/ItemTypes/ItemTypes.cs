@@ -7,7 +7,7 @@ namespace RPGLootGenerator
     {
         public enum ItemType 
         {
-            //one handed melee
+            //One handed melee
             SHORTSWORD,
             ONEHANDEDMACE,
             KNIFE,
@@ -16,8 +16,9 @@ namespace RPGLootGenerator
             SHIELD,
             RAPIER,
             ONEHANDEDCLUB,
-            //two handed melee
+            //Two handed melee
             LONGSWORD,
+            GREATSWORD,
             TWOHANDEDMACE,
             TWOHANDEDWARHAMMER,
             HALBERD,
@@ -26,13 +27,13 @@ namespace RPGLootGenerator
             STAFF,
             SPEAR,
             CLAWS,
-            //one handed ranged
+            //One handed ranged
             WAND,
             THROWINGKNIFES,
             THROWINGAXES,
             PISTOL,
             HANDCROSSBOW,
-            // two handed ranged
+            //Two handed ranged
             BOW,
             CROSSBOW,
             MATCHLOCKRIFLE,
@@ -53,6 +54,7 @@ namespace RPGLootGenerator
             string ItemTypeString = null;
             switch (itemType) 
             {
+                //One handed melee
                 case ItemType.ONEHANDEDMACE:
                     ItemTypeString = "One Handed Mace";
                     return ItemTypeString;
@@ -77,6 +79,7 @@ namespace RPGLootGenerator
                 case ItemType.SHORTSWORD:
                     ItemTypeString = "Short Swords";
                     return ItemTypeString;
+                //Two handed melee
                 case ItemType.TWOHANDEDMACE:
                     ItemTypeString = "Two Handed Mace";
                     return ItemTypeString;
@@ -98,11 +101,64 @@ namespace RPGLootGenerator
                 case ItemType.LONGSWORD:
                     ItemTypeString = "Long Sword";
                     return ItemTypeString;
+                case ItemType.GREATSWORD:
+                    ItemTypeString = "Great Sword";
+                    return ItemTypeString;
                 case ItemType.HALBERD:
                     ItemTypeString = "Halberd";
                     return ItemTypeString;
                 case ItemType.CLAWS:
                     ItemTypeString = "Claws";
+                    return ItemTypeString;
+                //One handed ranged
+                case ItemType.WAND:
+                    ItemTypeString = "Wand";
+                    return ItemTypeString;
+                case ItemType.THROWINGAXES:
+                    ItemTypeString = "Throwing Axes";
+                    return ItemTypeString;
+                case ItemType.THROWINGKNIFES:
+                    ItemTypeString = "Throwing Knifes";
+                    return ItemTypeString;
+                case ItemType.PISTOL:
+                    ItemTypeString = "Pistol";
+                    return ItemTypeString;
+                case ItemType.HANDCROSSBOW:
+                    ItemTypeString = "Hand Crossbow";
+                    return ItemTypeString;
+                //Two handed ranged
+                case ItemType.CROSSBOW:
+                    ItemTypeString = "Crossbow";
+                    return ItemTypeString;
+                case ItemType.CARBINE:
+                    ItemTypeString = "Carbine";
+                    return ItemTypeString;
+                case ItemType.BULLPUP:
+                    ItemTypeString = "Bullpup";
+                    return ItemTypeString;
+                case ItemType.BOW:
+                    ItemTypeString = "Bow";
+                    return ItemTypeString;
+                case ItemType.ASSAULTRIFLE:
+                    ItemTypeString = "Assault Rifle";
+                    return ItemTypeString;
+                case ItemType.GRENADELAUNCHER:
+                    ItemTypeString = "Grenade Launcher";
+                    return ItemTypeString;
+                case ItemType.MACHINEGUN:
+                    ItemTypeString = "Machine Gun";
+                    return ItemTypeString;
+                case ItemType.MATCHLOCKRIFLE:
+                    ItemTypeString = "Matchlock Rifle";
+                    return ItemTypeString;
+                case ItemType.ROCKETLAUNCHER:
+                    ItemTypeString = "Rocket Lanucher";
+                    return ItemTypeString;
+                case ItemType.SHOTGUN:
+                    ItemTypeString = "Shotgun";
+                    return ItemTypeString;
+                case ItemType.SNIPERRIFLE:
+                    ItemTypeString = "Sniper Rifle";
                     return ItemTypeString;
                 default:
                     return "ERROR";
