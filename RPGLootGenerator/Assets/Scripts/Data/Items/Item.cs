@@ -30,22 +30,28 @@ namespace RPGLootGenerator
             if (itemType == "One Handed Axes")
             {
                 itemName = OneHandedAxes.GenerateOneHandedAxesNames();
-                itemRarity = ItemRarity.RarityGenerate();
+                itemRarity = ItemRarity.RarityGenerator();
                 itemRequirements = ItemRequirements.RequirementsGenerator();
             }
-            else if (itemType == "One Handed Mace") 
+            else if (itemType == "One Handed Mace")
             {
                 itemName = OneHandedMaces.GenerateOneHandedMacesNames();
-                itemRarity = ItemRarity.RarityGenerate();
+                itemRarity = ItemRarity.RarityGenerator();
                 itemRequirements = ItemRequirements.RequirementsGenerator();
             }
-            else if (itemType == "Two Handed Axes") 
+            else if (itemType == "Short Sword")
+            {
+                itemName = ShortSword.GenerateShortSwordNames();
+                itemRarity = ItemRarity.RarityGenerator();
+                itemRequirements = ItemRequirements.RequirementsGenerator();
+            }
+            else if (itemType == "Two Handed Axes")
             {
                 itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
-                itemRarity = ItemRarity.RarityGenerate();
+                itemRarity = ItemRarity.RarityGenerator();
                 itemRequirements = ItemRequirements.RequirementsGenerator();
             }
-            else 
+            else
             {
                 itemType = "Not Done Yet";
                 itemName = "Not Done Yet";

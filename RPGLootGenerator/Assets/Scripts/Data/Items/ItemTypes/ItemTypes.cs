@@ -45,8 +45,6 @@ namespace RPGLootGenerator
             SHOTGUN,
             GRENADELAUNCHER,
             ROCKETLAUNCHER,
-
-
         }
         static ItemType itemType;
         public static string ItemTypeGenerator()

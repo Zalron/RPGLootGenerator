@@ -22,7 +22,7 @@ namespace RPGLootGenerator
         }
         public void GenerateLoot()
         {
-            //LootRarity.text = ItemRarity.RarityGenerate();
+            //LootRarity.text = ItemRarity.RarityGenerator();
             //LootTypes.text = ItemTypes.ItemTypeGenerator();
 
             Item.ItemGenerator();

@@ -14,7 +14,7 @@ namespace RPGLootGenerator
             LEGENDARY,
             UNQIUE,
         }
-        public static string RarityGenerate(/*string ItemRarity*/)
+        public static string RarityGenerator(/*string ItemRarity*/)
         {
             string ItemRarityString = null;
             Rarities rarity;
