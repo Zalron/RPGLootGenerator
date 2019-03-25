@@ -39,30 +39,41 @@ namespace RPGLootGenerator
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
                     itemName = OneHandedAxes.GenerateOneHandedAxesNames();
-                    itemPrefix = OneHandedAxes.GenerateOneHandedAxesPrefixs();
-                    itemSuffix = OneHandedAxes.GenerateOneHandedAxesSuffixs();
+                    itemPrefix = Affixs.GeneratePrefixs();
+                    itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                 }
             }
-            //else if (itemType == "One Handed Mace")
-            //{
-            //    itemName = OneHandedMaces.GenerateOneHandedMacesNames();
-            //    itemRarity = ItemRarity.RarityGenerator();
-            //    itemRequirements = ItemRequirements.RequirementsGenerator();
-            //}
-            //else if (itemType == "Short Sword")
-            //{
-            //    itemName = ShortSword.GenerateShortSwordNames();
-            //    itemRarity = ItemRarity.RarityGenerator();
-            //    itemRequirements = ItemRequirements.RequirementsGenerator();
-            //}
-            //else if (itemType == "Two Handed Axes")
-            //{
-            //    itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
-            //    itemRarity = ItemRarity.RarityGenerator();
-            //    itemRequirements = ItemRequirements.RequirementsGenerator();
-            //}
+            else if (itemType == "One Handed Mace")
+            {
+                if (itemRarity == "Common")
+                {
+                    itemName = OneHandedMaces.GenerateOneHandedMacesNames();
+                    itemRarity = ItemRarity.RarityGenerator();
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
+                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
+                {
+                    itemName = OneHandedAxes.GenerateOneHandedAxesNames();
+                    itemPrefix = Affixs.GeneratePrefixs();
+                    itemSuffix = Affixs.GenerateSuffixs();
+                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
+            }
+            else if (itemType == "Short Sword")
+            {
+                itemName = ShortSword.GenerateShortSwordNames();
+                itemRarity = ItemRarity.RarityGenerator();
+                itemRequirements = ItemRequirements.RequirementsGenerator();
+            }
+            else if (itemType == "Two Handed Axes")
+            {
+                itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
+                itemRarity = ItemRarity.RarityGenerator();
+                itemRequirements = ItemRequirements.RequirementsGenerator();
+            }
             else
             {
                 itemType = "Not Done Yet";
