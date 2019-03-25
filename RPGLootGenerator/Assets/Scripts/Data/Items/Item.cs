@@ -50,12 +50,12 @@ namespace RPGLootGenerator
                 if (itemRarity == "Common")
                 {
                     itemName = OneHandedMaces.GenerateOneHandedMacesNames();
-                    itemRarity = ItemRarity.RarityGenerator();
+                    itemCombinedName = itemName;
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                 }
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
-                    itemName = OneHandedAxes.GenerateOneHandedAxesNames();
+                    itemName = OneHandedMaces.GenerateOneHandedMacesNames();
                     itemPrefix = Affixs.GeneratePrefixs();
                     itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
