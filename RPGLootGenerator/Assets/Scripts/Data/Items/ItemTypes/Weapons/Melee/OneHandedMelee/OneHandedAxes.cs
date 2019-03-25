@@ -5,7 +5,6 @@ namespace RPGLootGenerator
 {
     public static class OneHandedAxes
     {
-
         public enum OneHandedAxesNames
         {
             VikingAxe,

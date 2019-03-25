@@ -26,6 +26,11 @@ namespace RPGLootGenerator
 
         public static void ItemGenerator()
         {
+            itemType = "";
+            itemName = "";
+            itemRarity = "";
+            itemRequirements = "";
+            itemCombinedName = "";
             itemType = ItemTypes.ItemTypeGenerator();
             if (itemType == "One Handed Axe")
             {
@@ -47,6 +52,7 @@ namespace RPGLootGenerator
             }
             else if (itemType == "One Handed Mace")
             {
+                itemRarity = ItemRarity.RarityGenerator();
                 if (itemRarity == "Common")
                 {
                     itemName = OneHandedMaces.GenerateOneHandedMacesNames();
@@ -64,15 +70,57 @@ namespace RPGLootGenerator
             }
             else if (itemType == "Short Sword")
             {
-                itemName = ShortSword.GenerateShortSwordNames();
                 itemRarity = ItemRarity.RarityGenerator();
-                itemRequirements = ItemRequirements.RequirementsGenerator();
+                if (itemRarity == "Common")
+                {
+                    itemName = ShortSword.GenerateShortSwordNames();
+                    itemCombinedName = itemName;
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
+                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
+                {
+                    itemName = ShortSword.GenerateShortSwordNames();
+                    itemPrefix = Affixs.GeneratePrefixs();
+                    itemSuffix = Affixs.GenerateSuffixs();
+                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
             }
             else if (itemType == "Two Handed Axes")
             {
-                itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
                 itemRarity = ItemRarity.RarityGenerator();
-                itemRequirements = ItemRequirements.RequirementsGenerator();
+                if (itemRarity == "Common")
+                {
+                    itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
+                    itemCombinedName = itemName;
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
+                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
+                {
+                    itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
+                    itemPrefix = Affixs.GeneratePrefixs();
+                    itemSuffix = Affixs.GenerateSuffixs();
+                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
+            }
+            else if (itemType == "One Handed Warhammer")
+            {
+                itemRarity = ItemRarity.RarityGenerator();
+                if (itemRarity == "Common")
+                {
+                    itemName = OneHandedWarhammers.GenerateOneHandedWarhammerNames(); ;
+                    itemCombinedName = itemName;
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
+                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
+                {
+                    itemName = OneHandedWarhammers.GenerateOneHandedWarhammerNames();
+                    itemPrefix = Affixs.GeneratePrefixs();
+                    itemSuffix = Affixs.GenerateSuffixs();
+                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemRequirements = ItemRequirements.RequirementsGenerator();
+                }
             }
             else
             {

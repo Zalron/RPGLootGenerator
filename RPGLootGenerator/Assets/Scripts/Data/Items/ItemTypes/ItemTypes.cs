@@ -129,13 +129,32 @@ namespace RPGLootGenerator
             }
             else if (itemTypeGeneratorInt == 3)
             {
-
+                oneHandedRanged = (OneHandedRanged)Random.Range(0, System.Enum.GetValues(typeof(OneHandedRanged)).Length);
+                switch (oneHandedRanged)
+                {
+                    case OneHandedRanged.HANDCROSSBOW:
+                        ItemTypeString = "Hand Crossbow";
+                        return ItemTypeString;
+                    case OneHandedRanged.PISTOL:
+                        ItemTypeString = "Pistol";
+                        return ItemTypeString;
+                    case OneHandedRanged.THROWINGAXES:
+                        ItemTypeString = "Throwing Axes";
+                        return ItemTypeString;
+                    case OneHandedRanged.THROWINGKNIFES:
+                        ItemTypeString = "Throwing Knifes";
+                        return ItemTypeString;
+                    case OneHandedRanged.WAND:
+                        ItemTypeString = "Wand";
+                        return ItemTypeString;
+                    default:
+                        return "Not Done Yet";
+                }
             }
             else
             {
                 return "ERROR";
             }
-            return "ERROR";
         }
     }
 }
