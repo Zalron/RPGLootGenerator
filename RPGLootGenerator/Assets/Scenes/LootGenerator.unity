@@ -2626,10 +2626,10 @@ MonoBehaviour:
   LootRarity: {fileID: 244586304}
   LootTypes: {fileID: 1220230864}
   LootRequirements: {fileID: 684756919}
-  LootStats1: {fileID: 0}
-  LootStats2: {fileID: 0}
-  LootStats3: {fileID: 0}
-  LootStats4: {fileID: 0}
-  LootStats5: {fileID: 0}
-  LootStats6: {fileID: 0}
+  LootStats1: {fileID: 665073676}
+  LootStats2: {fileID: 1815360509}
+  LootStats3: {fileID: 1115900555}
+  LootStats4: {fileID: 641326463}
+  LootStats5: {fileID: 990111006}
+  LootStats6: {fileID: 174765946}
   LootMods: {fileID: 1809402378}
