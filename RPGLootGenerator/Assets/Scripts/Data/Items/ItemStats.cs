@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ItemStats : MonoBehaviour
+namespace RPGLootGenerator
 {
-    // Start is called before the first frame update
-    void Start()
+    public static class ItemStats
     {
-        
-    }
+        public enum ItemStatsNames 
+        {
+            AttackSpeed,
+            CriticalChance,
+            PhysicalDamage,
+            MagicalDamage,
+        }
+        public static void ItemStatGenerator() 
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }
