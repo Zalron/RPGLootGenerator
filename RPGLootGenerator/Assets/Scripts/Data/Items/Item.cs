@@ -13,7 +13,12 @@ namespace RPGLootGenerator
         public static string itemRarity;
         public static string itemType;
         public static string itemRequirements;
-        public static string itemStats;
+        public static string itemStats1;
+        public static string itemStats2;
+        public static string itemStats3;
+        public static string itemStats4;
+        public static string itemStats5;
+        public static string itemStats6;
         public static string itemImplisits;
         public static string itemExplisits;
         //public Item(string itemName, string itemPrefix, string itemSuffix, string itemRarity, string itemType, string itemRequirements)
@@ -40,6 +45,10 @@ namespace RPGLootGenerator
                     itemName = OneHandedAxes.GenerateOneHandedAxesNames();
                     itemCombinedName = itemName;
                     itemRequirements = ItemRequirements.RequirementsGenerator();
+                    itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
+                    itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
+                    itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
+                    itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
                 }
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
@@ -48,6 +57,10 @@ namespace RPGLootGenerator
                     itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
+                    itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
+                    itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
+                    itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
+                    itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
                 }
             }
             else if (itemType == "One Handed Mace")
@@ -66,6 +79,10 @@ namespace RPGLootGenerator
                     itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
+                    itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
+                    itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
+                    itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
+                    itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
                 }
             }
             else if (itemType == "Short Sword")
@@ -84,6 +101,10 @@ namespace RPGLootGenerator
                     itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
+                    itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
+                    itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
+                    itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
+                    itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
                 }
             }
             else if (itemType == "Two Handed Axes")
@@ -102,6 +123,10 @@ namespace RPGLootGenerator
                     itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
+                    itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
+                    itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
+                    itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
+                    itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
                 }
             }
             else if (itemType == "One Handed Warhammer")
@@ -120,6 +145,10 @@ namespace RPGLootGenerator
                     itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
+                    itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
+                    itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
+                    itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
+                    itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
                 }
             }
             else
