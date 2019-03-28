@@ -2589,6 +2589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2017876159}
   - component: {fileID: 2017876160}
+  - component: {fileID: 2017876161}
   m_Layer: 0
   m_Name: LootManager
   m_TagString: Untagged
@@ -2633,3 +2634,31 @@ MonoBehaviour:
   LootStats5: {fileID: 990111006}
   LootStats6: {fileID: 174765946}
   LootMods: {fileID: 1809402378}
+  item: {fileID: 2017876161}
+--- !u!114 &2017876161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017876158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75359e92fdc1be549a1dd309a231c38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCombinedName: 
+  itemPrefix: 
+  itemName: 
+  itemSuffix: 
+  itemRarity: 
+  itemType: 
+  itemRequirements: 
+  itemStats1: 
+  itemStats2: 
+  itemStats3: 
+  itemStats4: 
+  itemStats5: 
+  itemStats6: 
+  itemImplisits: 
+  itemExplisits: 
