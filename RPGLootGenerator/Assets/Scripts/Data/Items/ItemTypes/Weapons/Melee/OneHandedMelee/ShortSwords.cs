@@ -11,7 +11,7 @@ namespace RPGLootGenerator
         SteelGladius,
         ObsidianMaquahuitl,
     }
-    public static class ShortSword
+    public static class ShortSwords
     {
         static ShortSwordNames shortSwordNames;
         public static string GenerateShortSwordNames()
