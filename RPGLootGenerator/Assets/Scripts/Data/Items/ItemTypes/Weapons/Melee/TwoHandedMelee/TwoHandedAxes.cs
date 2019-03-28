@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
+    public enum TwoHandedAxesNames
+    {
+        BattleAxe,
+        LandHowiter,
+        GoldenReaver,
+        DemonsMalice,
+        SeaOmega,
+    }
     public static class TwoHandedAxes
     {
-        public enum TwoHandedAxesNames
-        {
-            BattleAxe,
-            LandHowiter,
-            GoldenReaver,
-            DemonsMalice,
-            SeaOmega,
-        }
         static TwoHandedAxesNames twoHandedAxesNames;
         public static string GenerateTwoHandedAxesNames()
         {

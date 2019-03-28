@@ -70,44 +70,71 @@ namespace RPGLootGenerator
                     return "Error";
             }
         }
-        public static string ConvertStringOneHandedWarhammer(OneHandedWarhammers.OneHandedWarhammersNames oneHandedWarhammer)
+        public static string ConvertStringOneHandedWarhammer(OneHandedWarhammersNames oneHandedWarhammer)
         {
             string OneHandedWarhammersNamesString;
             switch (oneHandedWarhammer)
             {
-                case OneHandedWarhammers.OneHandedWarhammersNames.ClawedPick:
+                case OneHandedWarhammersNames.ClawedPick:
                     OneHandedWarhammersNamesString = "Clawed Pick";
                     return OneHandedWarhammersNamesString;
-                case OneHandedWarhammers.OneHandedWarhammersNames.DoubleHeader:
+                case OneHandedWarhammersNames.DoubleHeader:
                     OneHandedWarhammersNamesString = "Double Header";
                     return OneHandedWarhammersNamesString;
-                case OneHandedWarhammers.OneHandedWarhammersNames.SkullSinger:
+                case OneHandedWarhammersNames.SkullSinger:
                     OneHandedWarhammersNamesString = "Skull Singer";
                     return OneHandedWarhammersNamesString;
-                case OneHandedWarhammers.OneHandedWarhammersNames.StoneBreaker:
+                case OneHandedWarhammersNames.StoneBreaker:
                     OneHandedWarhammersNamesString = "Stone Breaker";
                     return OneHandedWarhammersNamesString;
                 default:
                     return "ERROR";
             }
         }
-        public static string ConvertStringShortSword(ShortSword.ShortSwordNames shortSwordNames)
+        public static string ConvertStringShortSword(ShortSwordNames shortSwordNames)
         {
             string ShortSwordNamesString;
             switch (shortSwordNames)
             {
-                case ShortSword.ShortSwordNames.BronzeKopis:
+                case ShortSwordNames.BronzeKopis:
                     ShortSwordNamesString = "Bronze Kopis";
                     return ShortSwordNamesString;
-                case ShortSword.ShortSwordNames.DustKhopesh:
+                case ShortSwordNames.DustKhopesh:
                     ShortSwordNamesString = "Dust Khopesh";
                     return ShortSwordNamesString;
-                case ShortSword.ShortSwordNames.ObsidianMaquahuitl:
+                case ShortSwordNames.ObsidianMaquahuitl:
                     ShortSwordNamesString = "Obsidian Maquahuitl";
                     return ShortSwordNamesString;
-                case ShortSword.ShortSwordNames.SteelGladius:
+                case ShortSwordNames.SteelGladius:
                     ShortSwordNamesString = "Steel Gladius";
                     return ShortSwordNamesString;
+                default:
+                    return "ERROR";
+            }
+        }
+        public static string ConvertStringOneHandedMaces(OneHandedMacesNames oneHandedMacesNames)
+        {
+            string OneHandedMacesNamesString = null;
+            switch (oneHandedMacesNames)
+            {
+                case OneHandedMacesNames.EnergyCorrector:
+                    OneHandedMacesNamesString = "Energy Corrector";
+                    return OneHandedMacesNamesString;
+                case OneHandedMacesNames.BlackJack:
+                    OneHandedMacesNamesString = "Black Jack";
+                    return OneHandedMacesNamesString;
+                case OneHandedMacesNames.MorningStar:
+                    OneHandedMacesNamesString = "Morning Star";
+                    return OneHandedMacesNamesString;
+                case OneHandedMacesNames.IronTeeth:
+                    OneHandedMacesNamesString = "Iron Teeth";
+                    return OneHandedMacesNamesString;
+                case OneHandedMacesNames.BedeckedShishpar:
+                    OneHandedMacesNamesString = "Bedecked Shishpar";
+                    return OneHandedMacesNamesString;
+                case OneHandedMacesNames.NightGada:
+                    OneHandedMacesNamesString = "Night Gada";
+                    return OneHandedMacesNamesString;
                 default:
                     return "ERROR";
             }

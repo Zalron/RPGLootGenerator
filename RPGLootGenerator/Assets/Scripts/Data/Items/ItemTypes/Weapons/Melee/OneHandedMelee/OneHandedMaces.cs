@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
+    public enum OneHandedMacesNames
+    {
+        MorningStar,
+        BlackJack,
+        IronTeeth,
+        IcePernach,
+        EnergyCorrector,
+        BedeckedShishpar,
+        NightGada,
+    }
     public static class OneHandedMaces
     {
-        public enum OneHandedMacesNames
-        {
-            MorningStar,
-            BlackJack,
-            IronTeeth,
-            IcePernach,
-            EnergyCorrector,
-            BedeckedShishpar,
-            NightGada,
-        }
         static OneHandedMacesNames oneHandedMacesNames;
         public static string GenerateOneHandedMacesNames()
         {

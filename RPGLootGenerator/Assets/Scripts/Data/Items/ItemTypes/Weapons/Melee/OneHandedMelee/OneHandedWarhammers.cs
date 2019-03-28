@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
+    public enum OneHandedWarhammersNames
+    {
+        ClawedPick,
+        SkullSinger,
+        DoubleHeader,
+        StoneBreaker,
+    }
     public static class OneHandedWarhammers
     {
-        public enum OneHandedWarhammersNames
-        {
-            ClawedPick,
-            SkullSinger,
-            DoubleHeader,
-            StoneBreaker,
-        }
         static OneHandedWarhammersNames oneHandedWarhammersNames;
         public static string GenerateOneHandedWarhammerNames()
         {

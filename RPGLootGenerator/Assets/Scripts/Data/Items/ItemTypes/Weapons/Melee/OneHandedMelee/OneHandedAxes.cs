@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
+    public enum OneHandedAxesNames
+    {
+        VikingAxe,
+        BoneHachet,
+        WoodedAxe,
+        BloodCleaver,
+    }
     public static class OneHandedAxes
     {
-        public enum OneHandedAxesNames
-        {
-            VikingAxe,
-            BoneHachet,
-            WoodedAxe,
-            BloodCleaver,
-        }
         static OneHandedAxesNames oneHandedAxesNames;
         public static string GenerateOneHandedAxesNames()
         {
