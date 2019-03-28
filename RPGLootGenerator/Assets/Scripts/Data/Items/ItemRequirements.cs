@@ -17,10 +17,10 @@ namespace RPGLootGenerator
             Lvl_90 = 90, Lvl_91 = 91, Lvl_92 = 92, Lvl_93 = 93, Lvl_94 = 94, Lvl_95 = 95, Lvl_96 = 96, Lvl_97 = 97, Lvl_98 = 98, Lvl_99 = 99,
             Lvl_100 = 100,
         }
+        static Requirements requirements;
         public static string RequirementsGenerator()
         {
             string ItemRequirementsString = null;
-            Requirements requirements;
             requirements = (Requirements)Random.Range(1, System.Enum.GetValues(typeof(Requirements)).Length);
             switch (requirements)
             {

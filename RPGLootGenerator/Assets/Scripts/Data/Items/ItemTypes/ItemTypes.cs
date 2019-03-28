@@ -46,7 +46,6 @@ namespace RPGLootGenerator
             GRENADELAUNCHER,
             ROCKETLAUNCHER,
         }
-
         static ItemType itemType;
         public static string ItemTypeGenerator()
         {
@@ -103,6 +102,26 @@ namespace RPGLootGenerator
                     return ItemTypeString;
                 case ItemType.GREATSWORD:
                     ItemTypeString = "Great Sword";
+                    return ItemTypeString;
+                //One Handed Ranged 
+                case ItemType.HANDCROSSBOW:
+                    ItemTypeString = "Hand Crossbow";
+                    return ItemTypeString;
+                case ItemType.PISTOL:
+                    ItemTypeString = "Pistol";
+                    return ItemTypeString;
+                case ItemType.THROWINGAXES:
+                    ItemTypeString = "Throwing Axes";
+                    return ItemTypeString;
+                case ItemType.THROWINGKNIFES:
+                    ItemTypeString = "Throwing Knifes";
+                    return ItemTypeString;
+                case ItemType.WAND:
+                    ItemTypeString = "Wand";
+                    return ItemTypeString;
+                //Two Handed Ranged
+                case ItemType.ASSAULTRIFLE:
+                    ItemTypeString = "";
                     return ItemTypeString;
                 default:
                     return "Error";

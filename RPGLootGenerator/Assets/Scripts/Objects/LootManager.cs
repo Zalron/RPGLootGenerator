@@ -17,6 +17,7 @@ namespace RPGLootGenerator
         public TextMeshProUGUI LootStats5;
         public TextMeshProUGUI LootStats6;
         public TextMeshProUGUI LootMods;
+        public Item item;
         void Start() // Start is called before the first frame update
         {
 
@@ -30,17 +31,17 @@ namespace RPGLootGenerator
             //LootRarity.text = ItemRarity.RarityGenerator();
             //LootTypes.text = ItemTypes.ItemTypeGenerator();
 
-            Item.ItemGenerator();
-            LootTypes.text = Item.itemType;
-            LootRarity.text = Item.itemRarity;
-            LootNames.text = Item.itemCombinedName;
-            LootRequirements.text = Item.itemRequirements;
-            LootStats1.text = Item.itemStats1;
-            LootStats2.text = Item.itemStats2;
-            LootStats3.text = Item.itemStats3;
-            LootStats4.text = Item.itemStats4;
-            LootStats5.text = Item.itemStats5;
-            LootStats6.text = Item.itemStats6;
+            item.ItemGenerator();
+            LootTypes.text = item.itemType;
+            LootRarity.text = item.itemRarity;
+            LootNames.text = item.itemCombinedName;
+            LootRequirements.text = item.itemRequirements;
+            LootStats1.text = item.itemStats1;
+            LootStats2.text = item.itemStats2;
+            LootStats3.text = item.itemStats3;
+            LootStats4.text = item.itemStats4;
+            LootStats5.text = item.itemStats5;
+            LootStats6.text = item.itemStats6;
         }
     }
 }

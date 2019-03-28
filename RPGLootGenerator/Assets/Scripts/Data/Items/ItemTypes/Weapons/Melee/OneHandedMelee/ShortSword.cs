@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
+    public enum ShortSwordNames
+    {
+        BronzeKopis,
+        TutonicSword,
+        DustKhopesh,
+        SteelGladius,
+        ObsidianMaquahuitl,
+    }
     public static class ShortSword
     {
-        public enum ShortSwordNames
-        {
-            BronzeKopis,
-            TutonicSword,
-            DustKhopesh,
-            SteelGladius,
-            ObsidianMaquahuitl,
-        }
         static ShortSwordNames shortSwordNames;
         public static string GenerateShortSwordNames()
         {

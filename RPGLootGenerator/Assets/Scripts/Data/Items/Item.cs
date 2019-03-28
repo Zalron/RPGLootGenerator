@@ -4,32 +4,32 @@ using System.Linq;
 using UnityEngine;
 namespace RPGLootGenerator
 {
-    public static class Item
+    public class Item : MonoBehaviour
     {
-        public static string itemCombinedName;
-        public static string itemPrefix;
-        public static string itemName;
-        public static string itemSuffix;
-        public static string itemRarity;
-        public static string itemType;
-        public static string itemRequirements;
-        public static string itemStats1;
-        public static string itemStats2;
-        public static string itemStats3;
-        public static string itemStats4;
-        public static string itemStats5;
-        public static string itemStats6;
-        public static string itemImplisits;
-        public static string itemExplisits;
-        //public Item(string itemName, string itemPrefix, string itemSuffix, string itemRarity, string itemType, string itemRequirements)
-        //{
-        //    itemName = name;
-        //    itemPrefix =
-        //    prefix = itemSuffix;
-        //    string combineditemName = itemPrefix + " " + itemName + " " + itemSuffix;
-        //}
+        public string itemCombinedName;
+        public string itemPrefix;
+        public string itemName;
+        public string itemSuffix;
+        public string itemRarity;
+        public string itemType;
+        public string itemRequirements;
+        public string itemStats1;
+        public string itemStats2;
+        public string itemStats3;
+        public string itemStats4;
+        public string itemStats5;
+        public string itemStats6;
+        public string itemImplisits;
+        public string itemExplisits;
+        public Item(string itemName, string itemPrefix, string itemSuffix, string itemRarity, string itemType, string itemRequirements)
+        {
+            itemName = this.itemName;
+            itemPrefix =
+            //prefix = itemSuffix;
+            itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
+        }
 
-        public static void ItemGenerator()
+        public void ItemGenerator()
         {
             itemType = "";
             itemName = "";
@@ -153,10 +153,10 @@ namespace RPGLootGenerator
             }
             else
             {
-                itemType = "Not Done Yet";
-                itemName = "Not Done Yet";
-                itemRarity = "Not Done Yet";
-                itemRequirements = "Not Done Yet";
+                itemType = "";
+                itemName = "";
+                itemRarity = "";
+                itemRequirements = "";
             }
         }
     }
