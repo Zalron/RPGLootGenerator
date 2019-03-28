@@ -55,7 +55,7 @@ namespace RPGLootGenerator
                     itemName = OneHandedAxes.GenerateOneHandedAxesNames();
                     itemPrefix = Affixs.GeneratePrefixs();
                     itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                     itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
                     itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
@@ -77,7 +77,7 @@ namespace RPGLootGenerator
                     itemName = OneHandedMaces.GenerateOneHandedMacesNames();
                     itemPrefix = Affixs.GeneratePrefixs();
                     itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                     itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
                     itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
@@ -99,7 +99,7 @@ namespace RPGLootGenerator
                     itemName = ShortSword.GenerateShortSwordNames();
                     itemPrefix = Affixs.GeneratePrefixs();
                     itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                     itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
                     itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
@@ -121,7 +121,7 @@ namespace RPGLootGenerator
                     itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
                     itemPrefix = Affixs.GeneratePrefixs();
                     itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                     itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
                     itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
@@ -143,7 +143,7 @@ namespace RPGLootGenerator
                     itemName = OneHandedWarhammers.GenerateOneHandedWarhammerNames();
                     itemPrefix = Affixs.GeneratePrefixs();
                     itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = Name.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                     itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
                     itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);

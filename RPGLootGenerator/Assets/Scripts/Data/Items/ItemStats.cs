@@ -60,25 +60,25 @@ namespace RPGLootGenerator
             string CriticalChanceString;
             if (itemRarity == "Common")
             {
-                CriticalChance = Random.Range(10, 13);
+                CriticalChance = Random.Range(1, 5);
                 CriticalChanceString = "Critical Chance " + CriticalChance + "%";
                 return CriticalChanceString;
             }
             if (itemRarity == "Uncommon")
             {
-                CriticalChance = Random.Range(8, 11);
+                CriticalChance = Random.Range(4, 8);
                 CriticalChanceString = "Critical Chance " + CriticalChance;
                 return CriticalChanceString;
             }
             if (itemRarity == "Rare")
             {
-                CriticalChance = Random.Range(6, 9);
+                CriticalChance = Random.Range(7, 12);
                 CriticalChanceString = "Critical Chance " + CriticalChance;
                 return CriticalChanceString;
             }
             if (itemRarity == "Masterwork")
             {
-                CriticalChance = Random.Range(2, 5);
+                CriticalChance = Random.Range(11, 16);
                 CriticalChanceString = "Critical Chance " + CriticalChance;
                 return CriticalChanceString;
             }
