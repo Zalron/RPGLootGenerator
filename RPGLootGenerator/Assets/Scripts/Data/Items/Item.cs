@@ -28,7 +28,6 @@ namespace RPGLootGenerator
             //prefix = itemSuffix;
             itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
         }
-
         public void ItemGenerator()
         {
             itemType = ItemTypes.ItemTypeGenerator();
@@ -79,13 +78,13 @@ namespace RPGLootGenerator
                 itemRarity = ItemRarity.RarityGenerator();
                 if (itemRarity == "Common")
                 {
-                    itemName = ShortSword.GenerateShortSwordNames();
+                    itemName = ShortSwords.GenerateShortSwordNames();
                     itemCombinedName = itemName;
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                 }
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
-                    itemName = ShortSword.GenerateShortSwordNames();
+                    itemName = ShortSwords.GenerateShortSwordNames();
                     itemPrefix = Affixs.GeneratePrefixs();
                     itemSuffix = Affixs.GenerateSuffixs();
                     itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
