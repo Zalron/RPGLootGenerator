@@ -7,9 +7,13 @@ namespace RPGLootGenerator
     public class Item : MonoBehaviour
     {
         public string itemCombinedName;
-        public string itemPrefix;
+        public string itemPrefix1;
+        public string itemPrefix2;
+        public string itemPrefix3;
         public string itemName;
-        public string itemSuffix;
+        public string itemSuffix1;
+        public string itemSuffix2;
+        public string itemSuffix3;
         public string itemRarity;
         public string itemType;
         public string itemRequirements;
@@ -24,7 +28,7 @@ namespace RPGLootGenerator
         public Item(string itemName, string itemPrefix, string itemSuffix, string itemRarity, string itemType, string itemRequirements)
         {
             itemName = this.itemName;
-            itemPrefix =
+            itemPrefix = this.itemPrefix1;
             //prefix = itemSuffix;
             itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
         }
@@ -42,9 +46,9 @@ namespace RPGLootGenerator
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
                     itemName = OneHandedAxes.GenerateOneHandedAxesNames();
-                    itemPrefix = Affixs.GeneratePrefixs();
-                    itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemPrefix1 = Affixs.GeneratePrefixs();
+                    itemSuffix1 = Affixs.GenerateSuffixs();
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
                 }
                 itemRequirements = ItemRequirements.RequirementsGenerator();
                 itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
@@ -63,9 +67,9 @@ namespace RPGLootGenerator
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
                     itemName = OneHandedMaces.GenerateOneHandedMacesNames();
-                    itemPrefix = Affixs.GeneratePrefixs();
-                    itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemPrefix1 = Affixs.GeneratePrefixs();
+                    itemSuffix1 = Affixs.GenerateSuffixs();
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
                 }
                 itemRequirements = ItemRequirements.RequirementsGenerator();
                 itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
@@ -85,9 +89,9 @@ namespace RPGLootGenerator
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
                     itemName = ShortSwords.GenerateShortSwordNames();
-                    itemPrefix = Affixs.GeneratePrefixs();
-                    itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemPrefix1 = Affixs.GeneratePrefixs();
+                    itemSuffix1 = Affixs.GenerateSuffixs();
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
                     itemRequirements = ItemRequirements.RequirementsGenerator();
                 }
                 itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
@@ -106,9 +110,9 @@ namespace RPGLootGenerator
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
                     itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
-                    itemPrefix = Affixs.GeneratePrefixs();
-                    itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemPrefix1 = Affixs.GeneratePrefixs();
+                    itemSuffix1 = Affixs.GenerateSuffixs();
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
                 }
                 itemRequirements = ItemRequirements.RequirementsGenerator();
                 itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
@@ -127,9 +131,9 @@ namespace RPGLootGenerator
                 if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
                 {
                     itemName = OneHandedWarhammers.GenerateOneHandedWarhammerNames();
-                    itemPrefix = Affixs.GeneratePrefixs();
-                    itemSuffix = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix, itemName, itemSuffix);
+                    itemPrefix1 = Affixs.GeneratePrefixs();
+                    itemSuffix1 = Affixs.GenerateSuffixs();
+                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
                 }
                 itemRequirements = ItemRequirements.RequirementsGenerator();
                 itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
