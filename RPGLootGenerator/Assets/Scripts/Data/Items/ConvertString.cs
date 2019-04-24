@@ -11,80 +11,64 @@ namespace RPGLootGenerator
             string itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
             return itemCombinedName;
         }
-        public static string ItemTypeGenerator(ItemTypes.ItemType itemType)
+        public static string ItemTypeGenerator(ItemTypeName itemTypes)
         {
             string ItemTypeString = null;
-            switch (itemType)
+            if (itemTypes == ItemTypeName.ITEM_WEAPON_ONEHANDED_AXE_BLOODCLEAVER ||
+                itemTypes == ItemTypeName.ITEM_WEAPON_ONEHANDED_AXE_VIKINGAXE ||
+                itemTypes == ItemTypeName.ITEM_WEAPON_ONEHANDED_AXE_WOODEDAXE ||
+                itemTypes == ItemTypeName.ITEM_WEAPON_ONEHANDED_AXE_BONEHACHET ||
+                itemTypes == ItemTypeName.ITEM_WEAPON_ONEHANDED_AXE_BLOODCLEAVER) 
             {
-                //One handed melee
-                case ItemTypes.ItemType.ONEHANDEDMACE:
-                    ItemTypeString = "One Handed Mace";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.ONEHANDEDAXE:
-                    ItemTypeString = "One Handed Axe";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.ONEHANDEDWARHAMMERS:
-                    ItemTypeString = "One Handed Warhammer";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.KNIFE:
-                    ItemTypeString = "Knife";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.ONEHANDEDCLUB:
-                    ItemTypeString = "One Handed Club";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.RAPIER:
-                    ItemTypeString = "Rapier";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.SHIELD:
-                    ItemTypeString = "Shield";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.SHORTSWORD:
-                    ItemTypeString = "Short Swords";
-                    return ItemTypeString;
-                //Two handed melee
-                case ItemTypes.ItemType.TWOHANDEDMACE:
-                    ItemTypeString = "Two Handed Mace";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.TWOHANDEDAXE:
-                    ItemTypeString = "Two Handed Axes";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.TWOHANDEDCLUB:
-                    ItemTypeString = "Two Handed Club";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.TWOHANDEDWARHAMMER:
-                    ItemTypeString = "Two Handed Warhammer";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.STAFF:
-                    ItemTypeString = "Staff";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.SPEAR:
-                    ItemTypeString = "Spear";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.LONGSWORD:
-                    ItemTypeString = "Long Sword";
-                    return ItemTypeString;
-                case ItemTypes.ItemType.GREATSWORD:
-                    ItemTypeString = "Great Sword";
-                    return ItemTypeString;
+                return ItemTypeString; 
+            }
+            return "ERROR";
+        }
+        public static string RarityGenerator(/*string ItemRarity*/)
+        {
+            string ItemRarityString = null;
+            Rarities rarity;
+            rarity = (Rarities)Random.Range(0, System.Enum.GetValues(typeof(Rarities)).Length);
+            switch (rarity)
+            {
+                case Rarities.COMMON:
+                    ItemRarityString = "Common";
+                    return ItemRarityString;
+                case Rarities.UNCOMMON:
+                    ItemRarityString = "Uncommon";
+                    return ItemRarityString;
+                case Rarities.RARE:
+                    ItemRarityString = "Rare";
+                    return ItemRarityString;
+                case Rarities.MASTERWORK:
+                    ItemRarityString = "Masterwork";
+                    return ItemRarityString;
+                case Rarities.LEGENDARY:
+                    ItemRarityString = "Legendary";
+                    return ItemRarityString;
+                case Rarities.UNQIUE:
+                    ItemRarityString = "Unqiue";
+                    return ItemRarityString;
                 default:
-                    return "Error";
+                    ItemRarityString = "ERROR";
+                    return ItemRarityString;
             }
         }
-        public static string ConvertStringOneHandedWarhammer(OneHandedWarhammersNames oneHandedWarhammer)
+        public static string ConvertStringOneHandedWarhammer(ItemTypeName oneHandedWarhammer)
         {
             string OneHandedWarhammersNamesString;
             switch (oneHandedWarhammer)
             {
-                case OneHandedWarhammersNames.ClawedPick:
+                case ItemTypeName.ITEM_WEAPON_ONEHANDED_WARHAMMER_CLAWEDPICK:
                     OneHandedWarhammersNamesString = "Clawed Pick";
                     return OneHandedWarhammersNamesString;
-                case OneHandedWarhammersNames.DoubleHeader:
+                case ItemTypeName.ITEM_WEAPON_ONEHANDED_WARHAMMER_DOUBLEHEADER:
                     OneHandedWarhammersNamesString = "Double Header";
                     return OneHandedWarhammersNamesString;
-                case OneHandedWarhammersNames.SkullSinger:
+                case ItemTypeName.ITEM_WEAPON_ONEHANDED_WARHAMMER_SKULLSINGER:
                     OneHandedWarhammersNamesString = "Skull Singer";
                     return OneHandedWarhammersNamesString;
-                case OneHandedWarhammersNames.StoneBreaker:
+                case ItemTypeName.ITEM_WEAPON_ONEHANDED_WARHAMMER_STONEBREAKER:
                     OneHandedWarhammersNamesString = "Stone Breaker";
                     return OneHandedWarhammersNamesString;
                 default:
@@ -138,6 +122,102 @@ namespace RPGLootGenerator
                 default:
                     return "ERROR";
             }
+        }
+        public static string AttackSpeedGenerator(string itemRarity)
+        {
+            int AttackSpeedMin;
+            string AttackSpeedString;
+            if (itemRarity == "Common")
+            {
+                AttackSpeedMin = Random.Range(10, 13);
+                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
+                return AttackSpeedString;
+            }
+            if (itemRarity == "Uncommon")
+            {
+                AttackSpeedMin = Random.Range(8, 11);
+                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
+                return AttackSpeedString;
+            }
+            if (itemRarity == "Rare")
+            {
+                AttackSpeedMin = Random.Range(6, 9);
+                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
+                return AttackSpeedString;
+            }
+            if (itemRarity == "Masterwork")
+            {
+                AttackSpeedMin = Random.Range(8, 5);
+                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
+                return AttackSpeedString;
+            }
+            if (itemRarity == "Legendary")
+            {
+                AttackSpeedMin = Random.Range(5, 3);
+                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
+                return AttackSpeedString;
+            }
+            if (itemRarity == "Unqiue")
+            {
+                AttackSpeedMin = Random.Range(3, 13);
+                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
+                return AttackSpeedString;
+            }
+            return "ERROR";
+        }
+        public static string CriticalChanceGenerator(string itemRarity)
+        {
+            int CriticalChance;
+            string CriticalChanceString;
+            if (itemRarity == "Common")
+            {
+                CriticalChance = Random.Range(1, 5);
+                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
+                return CriticalChanceString;
+            }
+            if (itemRarity == "Uncommon")
+            {
+                CriticalChance = Random.Range(4, 8);
+                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
+                return CriticalChanceString;
+            }
+            if (itemRarity == "Rare")
+            {
+                CriticalChance = Random.Range(7, 12);
+                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
+                return CriticalChanceString;
+            }
+            if (itemRarity == "Masterwork")
+            {
+                CriticalChance = Random.Range(11, 16);
+                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
+                return CriticalChanceString;
+            }
+            if (itemRarity == "Legendary")
+            {
+                CriticalChance = Random.Range(1, 3);
+                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
+                return CriticalChanceString;
+            }
+            if (itemRarity == "Unqiue")
+            {
+                CriticalChance = Random.Range(1, 13);
+                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
+                return CriticalChanceString;
+            }
+            return "ERROR";
+        }
+        public static string PhysicalDamageGenerator(int PhysicalDamageMin, int PhysicalDamageMax)
+        {
+            string PhysicalDamageString;
+            PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
+            return PhysicalDamageString;
+        }
+        public static string MagicalDamageStringConverter(int MagicalDamageMin, int MagicalDamageMax)
+        {
+            string MagicalDamageString;
+            MagicalDamageString = "Magical Damage " + MagicalDamageMin + " to " + MagicalDamageMax;
+            return MagicalDamageString;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace RPGLootGenerator
         public string itemPrefix1;
         public string itemPrefix2;
         public string itemPrefix3;
-        public string itemName;
+        public ItemTypeName itemName;
         public string itemSuffix1;
         public string itemSuffix2;
         public string itemSuffix3;
@@ -25,136 +25,44 @@ namespace RPGLootGenerator
         public string itemStats6;
         public string itemImplisits;
         public string itemExplisits;
-        public Item(string itemName, string itemPrefix, string itemSuffix, string itemRarity, string itemType, string itemRequirements)
+        public Item(ItemTypeName itemName, 
+                    string itemPrefix1, 
+                    string itemSuffix1,
+                    string itemCombinedName,
+                    string itemRarity, 
+                    string itemType, 
+                    string itemRequirements)
         {
-            itemName = this.itemName;
-            itemPrefix = this.itemPrefix1;
-            //prefix = itemSuffix;
-            itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
+            this.itemName = itemName;
+            this.itemPrefix1 = itemPrefix1;
+            this.itemSuffix1 = itemSuffix1;
+            this.itemRarity = itemRarity;
+            this.itemType = itemType;
+            this.itemRequirements = itemRequirements;
+            this.itemCombinedName = itemCombinedName;
         }
         public void ItemGenerator()
         {
-            itemType = ItemTypes.ItemTypeGenerator();
-            if (itemType == "One Handed Axe")
+            itemName = ItemName.GenerateOneHandedAxesNames();
+            string itemNameString = ConvertString.ItemTypeGenerator(itemName);
+            itemRarity = ItemRarity.RarityGenerator();
+            if (itemRarity == "Common")
             {
-                itemRarity = ItemRarity.RarityGenerator();
-                if (itemRarity == "Common")
-                {
-                    itemName = OneHandedAxes.GenerateOneHandedAxesNames();
-                    itemCombinedName = itemName;
-                }
-                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
-                {
-                    itemName = OneHandedAxes.GenerateOneHandedAxesNames();
-                    itemPrefix1 = Affixs.GeneratePrefixs();
-                    itemSuffix1 = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
-                }
-                itemRequirements = ItemRequirements.RequirementsGenerator();
-                itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
-                itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
-                itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
-                itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
+
+                itemCombinedName = itemNameString;
             }
-            else if (itemType == "One Handed Mace")
+            if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
             {
-                itemRarity = ItemRarity.RarityGenerator();
-                if (itemRarity == "Common")
-                {
-                    itemName = OneHandedMaces.GenerateOneHandedMacesNames();
-                    itemCombinedName = itemName;
-                }
-                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
-                {
-                    itemName = OneHandedMaces.GenerateOneHandedMacesNames();
-                    itemPrefix1 = Affixs.GeneratePrefixs();
-                    itemSuffix1 = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
-                }
-                itemRequirements = ItemRequirements.RequirementsGenerator();
-                itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
-                itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
-                itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
-                itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
+                itemPrefix1 = Affixs.GeneratePrefixs();
+                itemSuffix1 = Affixs.GenerateSuffixs();
+                itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemNameString, itemSuffix1);
             }
-            else if (itemType == "Short Sword")
-            {
-                itemRarity = ItemRarity.RarityGenerator();
-                if (itemRarity == "Common")
-                {
-                    itemName = ShortSwords.GenerateShortSwordNames();
-                    itemCombinedName = itemName;
-                    itemRequirements = ItemRequirements.RequirementsGenerator();
-                }
-                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
-                {
-                    itemName = ShortSwords.GenerateShortSwordNames();
-                    itemPrefix1 = Affixs.GeneratePrefixs();
-                    itemSuffix1 = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
-                    itemRequirements = ItemRequirements.RequirementsGenerator();
-                }
-                itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
-                itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
-                itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
-                itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
-            }
-            else if (itemType == "Two Handed Axes")
-            {
-                itemRarity = ItemRarity.RarityGenerator();
-                if (itemRarity == "Common")
-                {
-                    itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
-                    itemCombinedName = itemName;
-                }
-                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
-                {
-                    itemName = TwoHandedAxes.GenerateTwoHandedAxesNames();
-                    itemPrefix1 = Affixs.GeneratePrefixs();
-                    itemSuffix1 = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
-                }
-                itemRequirements = ItemRequirements.RequirementsGenerator();
-                itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
-                itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
-                itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
-                itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
-            }
-            else if (itemType == "One Handed Warhammer")
-            {
-                itemRarity = ItemRarity.RarityGenerator();
-                if (itemRarity == "Common")
-                {
-                    itemName = OneHandedWarhammers.GenerateOneHandedWarhammerNames(); ;
-                    itemCombinedName = itemName;
-                }
-                if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
-                {
-                    itemName = OneHandedWarhammers.GenerateOneHandedWarhammerNames();
-                    itemPrefix1 = Affixs.GeneratePrefixs();
-                    itemSuffix1 = Affixs.GenerateSuffixs();
-                    itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemName, itemSuffix1);
-                }
-                itemRequirements = ItemRequirements.RequirementsGenerator();
-                itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
-                itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
-                itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
-                itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
-            }
-            else
-            {
-                itemType = "";
-                itemName = "";
-                itemCombinedName = "";
-                itemRarity = "";
-                itemRequirements = "";
-                itemStats1 = "";
-                itemStats2 = "";
-                itemStats3 = "";
-                itemStats4 = "";
-                itemStats5 = "";
-                itemStats6 = "";
-            }
+            itemRequirements = ItemRequirements.RequirementsGenerator();
+            itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
+            itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
+            itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
+            itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
+
         }
     }
 }
