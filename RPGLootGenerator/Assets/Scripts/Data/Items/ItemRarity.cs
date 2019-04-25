@@ -7,12 +7,14 @@ namespace RPGLootGenerator
     {
         enum Rarities
         {
+            COUNTSTART,
             COMMON, 
             UNCOMMON,
             RARE,
             MASTERWORK,
             LEGENDARY,
             UNQIUE,
+            COUNTEND,
         }
         public static string RarityGenerator(/*string ItemRarity*/)
         {
