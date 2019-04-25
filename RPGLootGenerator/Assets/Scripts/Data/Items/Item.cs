@@ -4,18 +4,19 @@ using System.Linq;
 using UnityEngine;
 namespace RPGLootGenerator
 {
-    public class Item : MonoBehaviour
+    public class Item
     {
-        public string itemCombinedName;
-        public string itemPrefix1;
-        public string itemPrefix2;
-        public string itemPrefix3;
         public ItemTypeName itemName;
-        public string itemSuffix1;
-        public string itemSuffix2;
-        public string itemSuffix3;
-        public string itemRarity;
-        public string itemType;
+        public string itemCombinedName;
+        public string itemPrefix1String;
+        public string itemPrefix2String;
+        public string itemPrefix3String;
+        public string itemNameString;
+        public string itemSuffix1String;
+        public string itemSuffix2String;
+        public string itemSuffix3String;
+        public string itemRarityString;
+        public string itemTypeString;
         public string itemRequirements;
         public string itemStats1;
         public string itemStats2;
@@ -34,10 +35,10 @@ namespace RPGLootGenerator
                     string itemRequirements)
         {
             this.itemName = itemName;
-            this.itemPrefix1 = itemPrefix1;
-            this.itemSuffix1 = itemSuffix1;
-            this.itemRarity = itemRarity;
-            this.itemType = itemType;
+            this.itemPrefix1String = itemPrefix1;
+            this.itemSuffix1String = itemSuffix1;
+            this.itemRarityString = itemRarity;
+            this.itemTypeString = itemType;
             this.itemRequirements = itemRequirements;
             this.itemCombinedName = itemCombinedName;
         }
@@ -45,23 +46,23 @@ namespace RPGLootGenerator
         {
             itemName = ItemName.GenerateOneHandedAxesNames();
             string itemNameString = ConvertString.ItemTypeGenerator(itemName);
-            itemRarity = ItemRarity.RarityGenerator();
-            if (itemRarity == "Common")
+            itemRarityString = ItemRarity.RarityGenerator();
+            if (itemRarityString == "Common")
             {
 
                 itemCombinedName = itemNameString;
             }
-            if (itemRarity == "Uncommon" || itemRarity == "Rare" || itemRarity == "Masterwork" || itemRarity == "Legendary" || itemRarity == "Unqiue")
+            if (itemRarityString == "Uncommon" || itemRarityString == "Rare" || itemRarityString == "Masterwork" || itemRarityString == "Legendary" || itemRarityString == "Unqiue")
             {
-                itemPrefix1 = Affixs.GeneratePrefixs();
-                itemSuffix1 = Affixs.GenerateSuffixs();
-                itemCombinedName = ConvertString.CombineNameString(itemPrefix1, itemNameString, itemSuffix1);
+                itemPrefix1String = Affixs.GeneratePrefixs();
+                itemSuffix1String = Affixs.GenerateSuffixs();
+                itemCombinedName = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
             }
             itemRequirements = ItemRequirements.RequirementsGenerator();
-            itemStats1 = ItemStats.AttackSpeedGenerator(itemRarity);
-            itemStats2 = ItemStats.CriticalChanceGenerator(itemRarity);
-            itemStats3 = ItemStats.MagicalDamageGenerator(itemRarity);
-            itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarity);
+            itemStats1 = ItemStats.AttackSpeedGenerator(itemRarityString);
+            itemStats2 = ItemStats.CriticalChanceGenerator(itemRarityString);
+            itemStats3 = ItemStats.MagicalDamageGenerator(itemRarityString);
+            itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarityString);
 
         }
     }
