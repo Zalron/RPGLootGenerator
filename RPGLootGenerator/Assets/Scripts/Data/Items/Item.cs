@@ -7,11 +7,13 @@ namespace RPGLootGenerator
     public class Item
     {
         public ItemTypeName itemName;
+        public Rarity itemRarity;
+        public ItemType itemType;
+        public string itemNameString;
         public string itemCombinedName;
         public string itemPrefix1String;
         public string itemPrefix2String;
         public string itemPrefix3String;
-        public string itemNameString;
         public string itemSuffix1String;
         public string itemSuffix2String;
         public string itemSuffix3String;
@@ -44,12 +46,19 @@ namespace RPGLootGenerator
         }
         public void ItemGenerator()
         {
-            itemName = ItemName.GenerateOneHandedAxesNames();
-            string itemNameString = ConvertString.ItemTypeGenerator(itemName);
-            itemRarityString = ItemRarity.RarityGenerator();
-            if (itemRarityString == "Common")
+            itemName = ItemName.GenerateItemName();
+            if (itemName == ItemTypeName.ITEM_COUNTSTART)
             {
-
+                itemName = ItemName.GenerateItemName();
+            }
+            else
+            {
+                
+            }
+            itemType = ItemTypes.ItemTypeGenerator(itemName);
+            itemRarity = ItemRarity.RarityGenerator();
+            if (itemRarity == Rarity.COMMON)
+            {
                 itemCombinedName = itemNameString;
             }
             if (itemRarityString == "Uncommon" || itemRarityString == "Rare" || itemRarityString == "Masterwork" || itemRarityString == "Legendary" || itemRarityString == "Unqiue")
