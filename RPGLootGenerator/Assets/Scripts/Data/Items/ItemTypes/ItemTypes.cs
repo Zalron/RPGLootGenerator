@@ -97,5 +97,12 @@ namespace RPGLootGenerator
             }
             return 0;
         }
+        public static int ItemTypeAttackSpeedGenerator(int AttackSpeedInt, ItemType itemType) 
+        {
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE) 
+            {
+                AttackSpeedInt =  
+            } 
+        }
     }
 }

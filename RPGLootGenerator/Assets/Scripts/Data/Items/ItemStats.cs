@@ -37,6 +37,7 @@ namespace RPGLootGenerator
         {
             
             int AttackSpeedInt;
+            ItemRarity.ItemRarityAttackSpeedGenerator();
             if (itemRarity == Rarity.COMMON) 
             {
                 AttackSpeedInt = Random.Range(1, AttackSpeedCommonInt);
