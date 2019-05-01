@@ -35,11 +35,11 @@ namespace RPGLootGenerator
             LootTypes.text = item.itemTypeString;
             LootRarity.text = item.itemRarityString;
             LootNames.text = item.itemCombinedNameString;
-            LootRequirements.text = item.itemRequirements;
-            LootStats1.text = item.itemStats1;
-            LootStats2.text = item.itemStats2;
-            LootStats3.text = item.itemStats3;
-            LootStats4.text = item.itemStats4;
+            LootRequirements.text = item.itemRequirementsString;
+            LootStats1.text = item.itemStats1String;
+            LootStats2.text = item.itemStats2String;
+            LootStats3.text = item.itemStats3String;
+            LootStats4.text = item.itemStats4String;
             LootStats5.text = item.itemStats5;
             LootStats6.text = item.itemStats6;
         }

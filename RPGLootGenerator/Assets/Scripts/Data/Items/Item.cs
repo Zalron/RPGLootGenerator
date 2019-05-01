@@ -6,9 +6,16 @@ namespace RPGLootGenerator
 {
     public class Item
     {
+        #region Item Variables and Constructor
         public ItemTypeName itemName;
         public Rarity itemRarity;
         public ItemType itemType;
+        public ItemStatType itemStat1;
+        public ItemStatType itemStat2;
+        public ItemStatType itemStat3;
+        public ItemStatType itemStat4;
+        public ItemStatType itemStat5;
+        public ItemStatType itemStat6;
         public string itemNameString;
         public string itemCombinedNameString;
         public string itemPrefix1String;
@@ -19,13 +26,13 @@ namespace RPGLootGenerator
         public string itemSuffix3String;
         public string itemRarityString;
         public string itemTypeString;
-        public string itemRequirements;
-        public string itemStats1;
-        public string itemStats2;
-        public string itemStats3;
-        public string itemStats4;
-        public string itemStats5;
-        public string itemStats6;
+        public string itemRequirementsString;
+        public string itemStats1String;
+        public string itemStats2String;
+        public string itemStats3String;
+        public string itemStats4String;
+        public string itemStats5String;
+        public string itemStats6String;
         public string itemImplisits;
         public string itemExplisits;
         public Item(ItemTypeName itemName, 
@@ -41,9 +48,10 @@ namespace RPGLootGenerator
             this.itemSuffix1String = itemSuffix1;
             this.itemRarityString = itemRarity;
             this.itemTypeString = itemType;
-            this.itemRequirements = itemRequirements;
+            this.itemRequirementsString = itemRequirements;
             this.itemCombinedNameString = itemCombinedName;
         }
+        #endregion
         public void ItemGenerator()
         {
             itemName = ItemName.GenerateItemName();
@@ -51,27 +59,32 @@ namespace RPGLootGenerator
             {
                 itemName = ItemName.GenerateItemName();
             }
-            else
-            {
-                
-            }
             itemType = ItemTypes.ItemTypeGenerator(itemName);
+            if () 
+            {
+                 
+            }
             itemRarity = ItemRarity.RarityGenerator();
             if (itemRarity == Rarity.COMMON)
             {
                 itemCombinedNameString = itemNameString;
             }
-            if (itemRarity == Rarity.UNCOMMON || itemRarityString == "Rare" || itemRarityString == "Masterwork" || itemRarityString == "Legendary" || itemRarityString == "Unqiue")
+            if (itemRarity == Rarity.UNCOMMON || 
+                itemRarity == Rarity.RARE || 
+                itemRarity == Rarity.UNQIUE || 
+                itemRarity == Rarity.MASTERWORK || 
+                itemRarity == Rarity.EXOTIC ||
+                itemRarity == Rarity.LEGENDARY)
             {
                 itemPrefix1String = Affixs.GeneratePrefixs();
                 itemSuffix1String = Affixs.GenerateSuffixs();
                 itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
             }
-            itemRequirements = ItemRequirements.RequirementsGenerator();
-            itemStats1 = ItemStats.AttackSpeedGenerator(itemRarityString);
-            itemStats2 = ItemStats.CriticalChanceGenerator(itemRarityString);
-            itemStats3 = ItemStats.MagicalDamageGenerator(itemRarityString);
-            itemStats4 = ItemStats.PhysicalDamageGenerator(itemRarityString);
+            itemRequirementsString = ItemRequirements.RequirementsGenerator();
+            itemStat1 = ItemStats.AttackSpeedGenerator(itemRarity);
+            itemStat2 = ItemStats.CriticalChanceGenerator(itemRarity);
+            itemStat3 = ItemStats.MagicalDamageGenerator(itemRarity);
+            itemStat4 = ItemStats.PhysicalDamageGeneratorMin(itemRarity);
 
         }
     }

@@ -77,6 +77,24 @@ namespace RPGLootGenerator
                 itemType = ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER;
                 return itemType;
             }
+            if (itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_BRONZEKOPIS ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_TUTONICSWORD ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_DUSTKHOPESH ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_STEELGLADIUS ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_OBSIDIANMAQUAHUITL) 
+            {
+                itemType = ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD;
+                return itemType; 
+            }
+            if (itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_SEAOMEGA ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_BATTLEAXE ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_LANDHOWITER ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_DEMONSMALICE ||
+                itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_GOLDENREAVER)
+            {
+                itemType = ItemType.ITEM_WEAPON_MELEE_TWOHANDED_AXE;
+                return itemType;
+            }
             return 0;
         }
     }

@@ -3,51 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
+    public enum ItemStatType
+    {
+        CountStart,
+        AttackSpeed,
+        CriticalChance,
+        PhysicalDamage,
+        MagicalDamage,
+        Armour,
+        MovementSpeed,
+        RateOfFire,
+        ReloadSpeed,
+        MagazineSize,
+        CountEnd,
+    }
     public static class ItemStats
     {
-        //public enum ItemStatsNames 
-        //{
-        //    AttackSpeed,
-        //    CriticalChance,
-        //    PhysicalDamage,
-        //    MagicalDamage,
-        //}
-        public static int AttackSpeedGenerator(Rarity itemRarity) 
+        static readonly int AttackSpeedCommonInt = 4;
+        static readonly int AttackSpeedUncommonInt = 7;
+        static readonly int AttackSpeedRareInt = 10;
+        static readonly int AttackSpeedUnqiueInt = 14;
+        static readonly int AttackSpeedMasterworkInt = 19;
+        static readonly int AttackSpeedExoticInt = 25;
+        static readonly int AttackSpeedLegendaryInt = 32;
+        static readonly int CriticalChanceCommonInt = 4;
+        static readonly int CriticalChanceUncommonInt = 8;
+        static readonly int CriticalChanceRareInt = 12;
+        static readonly int CriticalChanceUniqueInt = 16;
+        static readonly int CriticalChanceMasterworkInt = 20;
+        static readonly int CriticalChanceExoticInt = 26;
+        static readonly int CriticalChanceLegendaryInt = 37;
+        public static int AttackSpeedGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements) 
         {
+            
             int AttackSpeedInt;
             if (itemRarity == Rarity.COMMON) 
             {
-                AttackSpeedInt = Random.Range(1, 4);
+                AttackSpeedInt = Random.Range(1, AttackSpeedCommonInt);
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.UNCOMMON)
             {
-                AttackSpeedInt = Random.Range(4, 7);
+                AttackSpeedInt = Random.Range(AttackSpeedCommonInt, AttackSpeedUncommonInt);
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.RARE)
             {
-                AttackSpeedInt = Random.Range(7, 10);
+                AttackSpeedInt = Random.Range(AttackSpeedUncommonInt, AttackSpeedRareInt);
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.UNQIUE)
             {
-                AttackSpeedInt = Random.Range(10, 14);
+                AttackSpeedInt = Random.Range(AttackSpeedRareInt, AttackSpeedUnqiueInt);
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.MASTERWORK)
             {
-                AttackSpeedInt = Random.Range(14, 19);
+                AttackSpeedInt = Random.Range(AttackSpeedUnqiueInt, AttackSpeedMasterworkInt);
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.EXOTIC)
             {
-                AttackSpeedInt = Random.Range(19, 25);
+                AttackSpeedInt = Random.Range(AttackSpeedMasterworkInt, AttackSpeedExoticInt);
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.LEGENDARY)
             {
-                AttackSpeedInt = Random.Range(25, 32);
+                AttackSpeedInt = Random.Range(AttackSpeedExoticInt, AttackSpeedLegendaryInt);
                 return AttackSpeedInt;
             }
             return 0;
@@ -57,89 +79,114 @@ namespace RPGLootGenerator
             int CriticalChanceInt;
             if (itemRarity == Rarity.COMMON)
             {
-                CriticalChanceInt = Random.Range(1, 4);
+                CriticalChanceInt = Random.Range(1, CriticalChanceCommonInt);
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.UNCOMMON)
             {
-                CriticalChanceInt = Random.Range(4, 8);
+                CriticalChanceInt = Random.Range(CriticalChanceCommonInt, CriticalChanceUncommonInt);
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.RARE)
             {
-                CriticalChanceInt = Random.Range(8, 12);
+                CriticalChanceInt = Random.Range(CriticalChanceUncommonInt, CriticalChanceRareInt);
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.UNQIUE)
             {
-                CriticalChanceInt = Random.Range(12, 16);
+                CriticalChanceInt = Random.Range(CriticalChanceRareInt, CriticalChanceUniqueInt);
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.MASTERWORK)
             {
-                CriticalChanceInt = Random.Range(16, 20);
+                CriticalChanceInt = Random.Range(CriticalChanceUniqueInt, CriticalChanceMasterworkInt);
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.EXOTIC)
             {
-                CriticalChanceInt = Random.Range(20, 26);
+                CriticalChanceInt = Random.Range(CriticalChanceMasterworkInt, CriticalChanceExoticInt);
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.LEGENDARY)
             {
-                CriticalChanceInt = Random.Range(26, 37);
+                CriticalChanceInt = Random.Range(CriticalChanceMasterworkInt, CriticalChanceLegendaryInt);
                 return CriticalChanceInt;
             }
             return 0;
         }
-        public static string PhysicalDamageGenerator(string itemRarity)
+        public static int PhysicalDamageGeneratorMin(Rarity itemRarity)
         {
             int PhysicalDamageMin;
-            int PhysicalDamageMax;
-            string PhysicalDamageString;
-            if (itemRarity == "Common")
+            if (itemRarity == Rarity.COMMON)
             {
                 PhysicalDamageMin = Random.Range(1, 21);
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 36);
-                PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
-                return PhysicalDamageString;
+                return PhysicalDamageMin;
             }
-            if (itemRarity == "Uncommon")
+            if (itemRarity == Rarity.UNCOMMON)
             {
                 PhysicalDamageMin = Random.Range(15, 36);
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 46);
-                PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
-                return PhysicalDamageString;
+                return PhysicalDamageMin;
             }
-            if (itemRarity == "Rare")
+            if (itemRarity == Rarity.RARE)
             {
                 PhysicalDamageMin = Random.Range(30, 51);
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 71);
-                PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
-                return PhysicalDamageString;
+
+                return PhysicalDamageMin;
             }
-            if (itemRarity == "Masterwork")
+            if (itemRarity == Rarity.UNQIUE)
             {
                 PhysicalDamageMin = Random.Range(100, 201);
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 501);
-                PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
-                return PhysicalDamageString;
+
+                return PhysicalDamageMin;
             }
-            if (itemRarity == "Legendary")
+            if (itemRarity == Rarity.MASTERWORK)
             {
                 PhysicalDamageMin = Random.Range(500, 1000);
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 5001);
-                PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
-                return PhysicalDamageString;
+
+                return PhysicalDamageMin;
             }
-            if (itemRarity == "Unqiue")
+            if (itemRarity == Rarity.EXOTIC)
             {
                 PhysicalDamageMin = Random.Range(1, 1000000);
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, PhysicalDamageMin + 1000000);
-                PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
-                return PhysicalDamageString;
+
+                return PhysicalDamageMin;
             }
-            return "ERROR";
+            return 0;
+        }
+        public static int PhysicalDamageGeneratorMax(Rarity itemRarity, int PhysicalDamageMin) 
+        {
+            int PhysicalDamageMax;
+            if (itemRarity == Rarity.COMMON)
+            {
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 36);
+                return PhysicalDamageMax;
+            }
+            if (itemRarity == Rarity.UNCOMMON)
+            {
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 46);
+                return PhysicalDamageMax;
+            }
+            if (itemRarity == Rarity.RARE)
+            {
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 71);
+                return PhysicalDamageMax;
+            }
+            if (itemRarity == Rarity.UNQIUE)
+            {
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 501);
+                return PhysicalDamageMax;
+            }
+            if (itemRarity == Rarity.MASTERWORK)
+            {
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 5001);
+                return PhysicalDamageMax;
+            }
+            if (itemRarity == Rarity.EXOTIC)
+            {
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, PhysicalDamageMin + 1000000);
+                return PhysicalDamageMax;
+            }
+            return 0;
         }
         public static string MagicalDamageGenerator(string itemRarity) 
         {
@@ -184,7 +231,7 @@ namespace RPGLootGenerator
             if (itemRarity == "Unqiue")
             {
                 MagicalDamageMin = Random.Range(1, 1000000);
-                MagicalDamageMax = Random.Range(MagicalDamageMin + 1, MagicalDamageMin + 1000000);
+                MagicalDamageMax = Random.Range(MagicalDamageMin + 1, 1000000);
                 MagicalDamageString = "Magical Damage " + MagicalDamageMin + " to " + MagicalDamageMax;
                 return MagicalDamageString;
             }
