@@ -12,47 +12,45 @@ namespace RPGLootGenerator
         //    PhysicalDamage,
         //    MagicalDamage,
         //}
-        public static string AttackSpeedGenerator(string itemRarity) 
+        public static int AttackSpeedGenerator(Rarity itemRarity) 
         {
-            int AttackSpeedMin;
-            string AttackSpeedString;
-            if (itemRarity == "Common") 
+            int AttackSpeedInt;
+            if (itemRarity == Rarity.COMMON) 
             {
-                AttackSpeedMin = Random.Range(10, 13);
-                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
-                return AttackSpeedString;
+                AttackSpeedInt = Random.Range(1, 4);
+                return AttackSpeedInt;
             }
-            if (itemRarity == "Uncommon")
+            if (itemRarity == Rarity.UNCOMMON)
             {
-                AttackSpeedMin = Random.Range(8, 11);
-                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
-                return AttackSpeedString;
+                AttackSpeedInt = Random.Range(4, 7);
+                return AttackSpeedInt;
             }
-            if (itemRarity == "Rare")
+            if (itemRarity == Rarity.RARE)
             {
-                AttackSpeedMin = Random.Range(6, 9);
-                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
-                return AttackSpeedString;
+                AttackSpeedInt = Random.Range(7, 10);
+                return AttackSpeedInt;
             }
-            if (itemRarity == "Masterwork")
+            if (itemRarity == Rarity.UNQIUE)
             {
-                AttackSpeedMin = Random.Range(8, 5);
-                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
-                return AttackSpeedString;
+                AttackSpeedInt = Random.Range(10, 14);
+                return AttackSpeedInt;
             }
-            if (itemRarity == "Legendary")
+            if (itemRarity == Rarity.MASTERWORK)
             {
-                AttackSpeedMin = Random.Range(5, 3);
-                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
-                return AttackSpeedString;
+                AttackSpeedInt = Random.Range(14, 19);
+                return AttackSpeedInt;
             }
-            if (itemRarity == "Unqiue")
+            if (itemRarity == Rarity.EXOTIC)
             {
-                AttackSpeedMin = Random.Range(3, 13);
-                AttackSpeedString = "Attack Speed " + AttackSpeedMin;
-                return AttackSpeedString;
+                AttackSpeedInt = Random.Range(19, 25);
+                return AttackSpeedInt;
             }
-            return "ERROR";
+            if (itemRarity == Rarity.LEGENDARY)
+            {
+                AttackSpeedInt = Random.Range(25, 32);
+                return AttackSpeedInt;
+            }
+            return 0;
         }
         public static string CriticalChanceGenerator(string itemRarity) 
         {

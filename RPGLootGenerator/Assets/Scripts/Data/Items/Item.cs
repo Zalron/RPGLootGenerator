@@ -10,7 +10,7 @@ namespace RPGLootGenerator
         public Rarity itemRarity;
         public ItemType itemType;
         public string itemNameString;
-        public string itemCombinedName;
+        public string itemCombinedNameString;
         public string itemPrefix1String;
         public string itemPrefix2String;
         public string itemPrefix3String;
@@ -42,7 +42,7 @@ namespace RPGLootGenerator
             this.itemRarityString = itemRarity;
             this.itemTypeString = itemType;
             this.itemRequirements = itemRequirements;
-            this.itemCombinedName = itemCombinedName;
+            this.itemCombinedNameString = itemCombinedName;
         }
         public void ItemGenerator()
         {
@@ -59,13 +59,13 @@ namespace RPGLootGenerator
             itemRarity = ItemRarity.RarityGenerator();
             if (itemRarity == Rarity.COMMON)
             {
-                itemCombinedName = itemNameString;
+                itemCombinedNameString = itemNameString;
             }
-            if (itemRarityString == "Uncommon" || itemRarityString == "Rare" || itemRarityString == "Masterwork" || itemRarityString == "Legendary" || itemRarityString == "Unqiue")
+            if (itemRarity == Rarity.UNCOMMON || itemRarityString == "Rare" || itemRarityString == "Masterwork" || itemRarityString == "Legendary" || itemRarityString == "Unqiue")
             {
                 itemPrefix1String = Affixs.GeneratePrefixs();
                 itemSuffix1String = Affixs.GenerateSuffixs();
-                itemCombinedName = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
+                itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
             }
             itemRequirements = ItemRequirements.RequirementsGenerator();
             itemStats1 = ItemStats.AttackSpeedGenerator(itemRarityString);
