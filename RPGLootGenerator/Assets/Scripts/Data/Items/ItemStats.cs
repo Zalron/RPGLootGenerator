@@ -52,47 +52,45 @@ namespace RPGLootGenerator
             }
             return 0;
         }
-        public static string CriticalChanceGenerator(string itemRarity) 
+        public static int CriticalChanceGenerator(Rarity itemRarity) 
         {
-            int CriticalChance;
-            string CriticalChanceString;
-            if (itemRarity == "Common")
+            int CriticalChanceInt;
+            if (itemRarity == Rarity.COMMON)
             {
-                CriticalChance = Random.Range(1, 5);
-                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
-                return CriticalChanceString;
+                CriticalChanceInt = Random.Range(1, 4);
+                return CriticalChanceInt;
             }
-            if (itemRarity == "Uncommon")
+            if (itemRarity == Rarity.UNCOMMON)
             {
-                CriticalChance = Random.Range(4, 8);
-                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
-                return CriticalChanceString;
+                CriticalChanceInt = Random.Range(4, 8);
+                return CriticalChanceInt;
             }
-            if (itemRarity == "Rare")
+            if (itemRarity == Rarity.RARE)
             {
-                CriticalChance = Random.Range(7, 12);
-                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
-                return CriticalChanceString;
+                CriticalChanceInt = Random.Range(8, 12);
+                return CriticalChanceInt;
             }
-            if (itemRarity == "Masterwork")
+            if (itemRarity == Rarity.UNQIUE)
             {
-                CriticalChance = Random.Range(11, 16);
-                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
-                return CriticalChanceString;
+                CriticalChanceInt = Random.Range(12, 16);
+                return CriticalChanceInt;
             }
-            if (itemRarity == "Legendary")
+            if (itemRarity == Rarity.MASTERWORK)
             {
-                CriticalChance = Random.Range(1, 3);
-                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
-                return CriticalChanceString;
+                CriticalChanceInt = Random.Range(16, 20);
+                return CriticalChanceInt;
             }
-            if (itemRarity == "Unqiue")
+            if (itemRarity == Rarity.EXOTIC)
             {
-                CriticalChance = Random.Range(1, 13);
-                CriticalChanceString = "Critical Chance " + CriticalChance + "%";
-                return CriticalChanceString;
+                CriticalChanceInt = Random.Range(20, 26);
+                return CriticalChanceInt;
             }
-            return "ERROR";
+            if (itemRarity == Rarity.LEGENDARY)
+            {
+                CriticalChanceInt = Random.Range(26, 37);
+                return CriticalChanceInt;
+            }
+            return 0;
         }
         public static string PhysicalDamageGenerator(string itemRarity)
         {
