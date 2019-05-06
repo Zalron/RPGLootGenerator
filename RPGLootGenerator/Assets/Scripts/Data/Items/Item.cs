@@ -81,7 +81,7 @@ namespace RPGLootGenerator
                 itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
             }
             itemRequirementsString = ItemRequirements.RequirementsGenerator();
-            itemStat1 = ItemStats.AttackSpeedGenerator(itemRarity);
+            itemStat1 = ItemStats.AttackSpeedGenerator(itemRarity, itemType, itemRequirements);
             itemStat2 = ItemStats.CriticalChanceGenerator(itemRarity);
             itemStat3 = ItemStats.MagicalDamageGenerator(itemRarity);
             itemStat4 = ItemStats.PhysicalDamageGeneratorMin(itemRarity);
