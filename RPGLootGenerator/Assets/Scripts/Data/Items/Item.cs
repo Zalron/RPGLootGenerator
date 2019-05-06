@@ -60,10 +60,10 @@ namespace RPGLootGenerator
                 itemName = ItemName.GenerateItemName();
             }
             itemType = ItemTypes.ItemTypeGenerator(itemName);
-            if () 
-            {
+            //if () 
+            //{
                  
-            }
+            //}
             itemRarity = ItemRarity.RarityGenerator();
             if (itemRarity == Rarity.COMMON)
             {
