@@ -23,9 +23,5 @@ namespace RPGLootGenerator
             rarity = (Rarity)Random.Range((int)Rarity.COUNTSTART + 1, (int)Rarity.COUNTEND);
             return rarity;
         }
-        public static int ItemRarityAttackSpeedGenerator() 
-        {
-             
-        }
     }
 }

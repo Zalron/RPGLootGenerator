@@ -33,11 +33,14 @@ namespace RPGLootGenerator
         static readonly int CriticalChanceMasterworkInt = 20;
         static readonly int CriticalChanceExoticInt = 26;
         static readonly int CriticalChanceLegendaryInt = 37;
-        public static int AttackSpeedGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements) 
+        public static int AttackSpeedGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements)
         {
-            
-            int AttackSpeedInt;
-            ItemRarity.ItemRarityAttackSpeedGenerator();
+            int AttackSpeedInt = 1;
+            ItemTypeAttackSpeedGenerator(AttackSpeedInt, itemType);
+            ItemTypeAttackSpeedRarityGenerator(itemRarity, AttackSpeedInt);
+        }
+        public static int ItemTypeAttackSpeedRarityGenerator(Rarity itemRarity, int AttackSpeedInt) 
+        {
             if (itemRarity == Rarity.COMMON) 
             {
                 AttackSpeedInt = Random.Range(1, AttackSpeedCommonInt);
@@ -237,6 +240,34 @@ namespace RPGLootGenerator
                 return MagicalDamageString;
             }
             return "ERROR";
+        }
+        public static int ItemTypeAttackSpeedGenerator(int AttackSpeedInt, ItemType itemType)
+        {
+            int OneHandedAxeAttackSpeed = 5;
+            int OneHandedMaceAttackSpeed = 4;
+            int OneHandedWarhammerAttackSpeed = 4;
+            int OneHandedSwordAttackSpeed = 2;
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE)
+            {
+                AttackSpeedInt =+ OneHandedAxeAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE)
+            {
+                AttackSpeedInt =+ OneHandedMaceAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER)
+            {
+                AttackSpeedInt =+ OneHandedWarhammerAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD)
+            {
+                AttackSpeedInt =+ OneHandedSwordAttackSpeed;
+                return AttackSpeedInt;
+            }
+            return AttackSpeedInt;
         }
     }
 }

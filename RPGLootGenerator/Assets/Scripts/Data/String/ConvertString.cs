@@ -62,71 +62,53 @@ namespace RPGLootGenerator
                     return ItemRarityString;
             }
         }
-        public static string ConvertStringOneHandedWarhammer(ItemTypeName oneHandedWarhammer)
+        public static string StringConvertItemName(ItemTypeName itemTypeName)
         {
-            string OneHandedWarhammersNamesString;
-            switch (oneHandedWarhammer)
-            {
-                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_CLAWEDPICK:
-                    OneHandedWarhammersNamesString = "Clawed Pick";
-                    return OneHandedWarhammersNamesString;
-                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_DOUBLEHEADER:
-                    OneHandedWarhammersNamesString = "Double Header";
-                    return OneHandedWarhammersNamesString;
-                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_SKULLSINGER:
-                    OneHandedWarhammersNamesString = "Skull Singer";
-                    return OneHandedWarhammersNamesString;
-                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_STONEBREAKER:
-                    OneHandedWarhammersNamesString = "Stone Breaker";
-                    return OneHandedWarhammersNamesString;
-                default:
-                    return "ERROR";
-            }
-        }
-        public static string ConvertStringShortSword(ItemTypeName shortSwordNames)
-        {
-            string ShortSwordNamesString;
-            switch (shortSwordNames)
-            {
-                case ShortSwordNames.BronzeKopis:
-                    ShortSwordNamesString = "Bronze Kopis";
-                    return ShortSwordNamesString;
-                case ShortSwordNames.DustKhopesh:
-                    ShortSwordNamesString = "Dust Khopesh";
-                    return ShortSwordNamesString;
-                case ShortSwordNames.ObsidianMaquahuitl:
-                    ShortSwordNamesString = "Obsidian Maquahuitl";
-                    return ShortSwordNamesString;
-                case ShortSwordNames.SteelGladius:
-                    ShortSwordNamesString = "Steel Gladius";
-                    return ShortSwordNamesString;
-                default:
-                    return "ERROR";
-            }
-        }
-        public static string ConvertStringOneHandedMaces(ItemTypeName oneHandedMacesNames)
-        {
-            string OneHandedMacesNamesString;
-            switch (oneHandedMacesNames)
+            string itemTypeNameString;
+            switch (itemTypeName)
             {
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_ENERGYCORRECTOR:
-                    OneHandedMacesNamesString = "Energy Corrector";
-                    return OneHandedMacesNamesString;
+                    itemTypeNameString = "Energy Corrector";
+                    return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_BLACKJACK:
-                    OneHandedMacesNamesString = "Black Jack";
-                    return OneHandedMacesNamesString;
+                    itemTypeNameString = "Black Jack";
+                    return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_MORNINGSTAR:
-                    OneHandedMacesNamesString = "Morning Star";
-                    return OneHandedMacesNamesString;
+                    itemTypeNameString = "Morning Star";
+                    return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_IRONTEETH:
-                    OneHandedMacesNamesString = "Iron Teeth";
-                    return OneHandedMacesNamesString;
+                    itemTypeNameString = "Iron Teeth";
+                    return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_BEDECKEDSHISHPAR:
-                    OneHandedMacesNamesString = "Bedecked Shishpar";
-                    return OneHandedMacesNamesString;
+                    itemTypeNameString = "Bedecked Shishpar";
+                    return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_NIGHTGADA:
-                    OneHandedMacesNamesString = "Night Gada";
-                    return OneHandedMacesNamesString;
+                    itemTypeNameString = "Night Gada";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_CLAWEDPICK:
+                    itemTypeNameString = "Clawed Pick";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_DOUBLEHEADER:
+                    itemTypeNameString = "Double Header";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_SKULLSINGER:
+                    itemTypeNameString = "Skull Singer";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_STONEBREAKER:
+                    itemTypeNameString = "Stone Breaker";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_WETKOPIS:
+                    itemTypeNameString = "Wet Kopis";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_DUSTKHOPESH:
+                    itemTypeNameString = "Dust Khopesh";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_OBSIDIANMAQUAHUITL:
+                    itemTypeNameString = "Obsidian Maquahuitl";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_STEELGLADIUS:
+                    itemTypeNameString = "Steel Gladius";
+                    return itemTypeNameString;
                 default:
                     return "ERROR";
             }
@@ -157,7 +139,7 @@ namespace RPGLootGenerator
         }
         public static string RequirementsStringConvertor(Requirements requirements)
         {
-            string ItemRequirementsString = null;
+            string ItemRequirementsString;
             switch (requirements)
             {
                 case Requirements.Lvl_1:

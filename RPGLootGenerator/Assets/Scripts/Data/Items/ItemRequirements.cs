@@ -3,6 +3,7 @@ namespace RPGLootGenerator
 {
     public enum Requirements
     {
+        COUNTSTART,
         Lvl_1 = 1, Lvl_2 = 2, Lvl_3 = 3, Lvl_4 = 4, Lvl_5 = 5, Lvl_6 = 6, Lvl_7 = 7, Lvl_8 = 8, Lvl_9 = 9,
         Lvl_10 = 10, Lvl_11 = 11, Lvl_12 = 12, Lvl_13 = 13, Lvl_14 = 14, Lvl_15 = 15, Lvl_16 = 16, Lvl_17 = 17, Lvl_18 = 18, Lvl_19 = 19,
         Lvl_20 = 20, Lvl_21 = 21, Lvl_22 = 22, Lvl_23 = 23, Lvl_24 = 24, Lvl_25 = 25, Lvl_26 = 26, Lvl_27 = 27, Lvl_28 = 28, Lvl_29 = 29,
@@ -14,13 +15,15 @@ namespace RPGLootGenerator
         Lvl_80 = 80, Lvl_81 = 81, Lvl_82 = 82, Lvl_83 = 83, Lvl_84 = 84, Lvl_85 = 85, Lvl_86 = 86, Lvl_87 = 87, Lvl_88 = 88, Lvl_89 = 89,
         Lvl_90 = 90, Lvl_91 = 91, Lvl_92 = 92, Lvl_93 = 93, Lvl_94 = 94, Lvl_95 = 95, Lvl_96 = 96, Lvl_97 = 97, Lvl_98 = 98, Lvl_99 = 99,
         Lvl_100 = 100,
+        COUNTEND,
     }
     public static class ItemRequirements
     {
-        static Requirements requirements;
-        public static string RequirementsGenerator()
+        public static Requirements RequirementsGenerator()
         {
-            requirements = (Requirements)Random.Range(1, System.Enum.GetValues(typeof(Requirements)).Length);
+            Requirements requirements;
+            requirements = (Requirements)Random.Range((int)Requirements.COUNTSTART + 1, (int)Requirements.COUNTEND);
+            return requirements;
         }
     }
 }
