@@ -96,33 +96,6 @@ namespace RPGLootGenerator
             }
             return 0;
         }
-        public static int ItemTypeAttackSpeedGenerator(int AttackSpeedInt, ItemType itemType) 
-        {
-            int OneHandedAxeAttackSpeed = 5;
-            int OneHandedMaceAttackSpeed = 4;
-            int OneHandedWarhammerAttackSpeed = 4;
-            int OneHandedSwordAttackSpeed = 2;
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE) 
-            {
-                AttackSpeedInt =+ OneHandedAxeAttackSpeed;
-                return AttackSpeedInt;
-            }
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE)
-            {
-                AttackSpeedInt =+ OneHandedMaceAttackSpeed;
-                return AttackSpeedInt;
-            }
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER)
-            {
-                AttackSpeedInt =+ OneHandedWarhammerAttackSpeed;
-                return AttackSpeedInt;
-            }
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD)
-            {
-                AttackSpeedInt =+ OneHandedSwordAttackSpeed;
-                return AttackSpeedInt;
-            }
-            return AttackSpeedInt;
-        }
+        
     }
 }
