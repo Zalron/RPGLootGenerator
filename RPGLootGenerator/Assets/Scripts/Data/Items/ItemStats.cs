@@ -12,13 +12,25 @@ namespace RPGLootGenerator
         MagicalDamage,
         Armour,
         MovementSpeed,
-        RateOfFire,
+        Evasion,
         ReloadSpeed,
         MagazineSize,
         CountEnd,
     }
     public static class ItemStats
     {
+
+        #region ItemStatVariables
+
+        #region ItemStatAttackSpeedVariables
+
+        // ItemType Variables
+        static readonly int OneHandedAxeAttackSpeed = 8;
+        static readonly int OneHandedMaceAttackSpeed = 7;
+        static readonly int OneHandedWarhammerAttackSpeed = 6;
+        static readonly int OneHandedSwordAttackSpeed = 10;
+
+        // ItemRarity variables
         static readonly int AttackSpeedCommonInt = 4;
         static readonly int AttackSpeedUncommonInt = 7;
         static readonly int AttackSpeedRareInt = 10;
@@ -26,169 +38,230 @@ namespace RPGLootGenerator
         static readonly int AttackSpeedMasterworkInt = 19;
         static readonly int AttackSpeedExoticInt = 25;
         static readonly int AttackSpeedLegendaryInt = 32;
-        static readonly int CriticalChanceCommonInt = 4;
-        static readonly int CriticalChanceUncommonInt = 8;
-        static readonly int CriticalChanceRareInt = 12;
-        static readonly int CriticalChanceUniqueInt = 16;
-        static readonly int CriticalChanceMasterworkInt = 20;
-        static readonly int CriticalChanceExoticInt = 26;
-        static readonly int CriticalChanceLegendaryInt = 37;
+
+        // Item variables
+        #endregion
+
+        #region ItemStatCriticalChanceVariables
+        static readonly int CriticalChanceCommonInt = 1;
+        static readonly int CriticalChanceUncommonInt = 2;
+        static readonly int CriticalChanceRareInt = 3;
+        static readonly int CriticalChanceUniqueInt = 4;
+        static readonly int CriticalChanceMasterworkInt = 5;
+        static readonly int CriticalChanceExoticInt = 6;
+        static readonly int CriticalChanceLegendaryInt = 7;
+        #endregion
+
+        #region
+        static readonly int OneHandedAxeCriticalChance = 2;
+        static readonly int OneHandedMaceCriticalChance = 3;
+        static readonly int OneHandedWarhammerCriticalChance = 4;
+        static readonly int OneHandedSwordCriticalChance = 2;
+        #endregion
+
+        #endregion
+
+        #region ItemAttackSpeedFunctions
         public static int AttackSpeedGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements)
         {
             int AttackSpeedInt = 1;
-            ItemTypeAttackSpeedGenerator(AttackSpeedInt, itemType);
-            ItemTypeAttackSpeedRarityGenerator(itemRarity, AttackSpeedInt);
+            
+            AttackSpeedItemTypeGenerator(AttackSpeedInt, itemType);
+            AttackSpeedRarityGenerator(AttackSpeedInt, itemRarity);
+            return AttackSpeedInt;
         }
-        public static int ItemTypeAttackSpeedRarityGenerator(Rarity itemRarity, int AttackSpeedInt) 
+        public static int AttackSpeedItemTypeGenerator(int AttackSpeedInt, ItemType itemType)
         {
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE)
+            {
+                AttackSpeedInt += OneHandedAxeAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE)
+            {
+                AttackSpeedInt += OneHandedMaceAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER)
+            {
+                AttackSpeedInt += OneHandedWarhammerAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD)
+            {
+                AttackSpeedInt += OneHandedSwordAttackSpeed;
+                return AttackSpeedInt;
+            }
+            return AttackSpeedInt;
+        }
+        public static int AttackSpeedRarityGenerator(int AttackSpeedInt, Rarity itemRarity) 
+        {
+           
             if (itemRarity == Rarity.COMMON) 
             {
-                AttackSpeedInt = Random.Range(1, AttackSpeedCommonInt);
+                AttackSpeedInt += AttackSpeedCommonInt;
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.UNCOMMON)
             {
-                AttackSpeedInt = Random.Range(AttackSpeedCommonInt, AttackSpeedUncommonInt);
+                AttackSpeedInt += AttackSpeedUncommonInt;
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.RARE)
             {
-                AttackSpeedInt = Random.Range(AttackSpeedUncommonInt, AttackSpeedRareInt);
+                AttackSpeedInt += AttackSpeedRareInt;
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.UNQIUE)
             {
-                AttackSpeedInt = Random.Range(AttackSpeedRareInt, AttackSpeedUnqiueInt);
+                AttackSpeedInt += AttackSpeedUnqiueInt;
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.MASTERWORK)
             {
-                AttackSpeedInt = Random.Range(AttackSpeedUnqiueInt, AttackSpeedMasterworkInt);
+                AttackSpeedInt += AttackSpeedMasterworkInt;
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.EXOTIC)
             {
-                AttackSpeedInt = Random.Range(AttackSpeedMasterworkInt, AttackSpeedExoticInt);
+                AttackSpeedInt += AttackSpeedExoticInt;
                 return AttackSpeedInt;
             }
             if (itemRarity == Rarity.LEGENDARY)
             {
-                AttackSpeedInt = Random.Range(AttackSpeedExoticInt, AttackSpeedLegendaryInt);
+                AttackSpeedInt += AttackSpeedLegendaryInt;
                 return AttackSpeedInt;
             }
             return 0;
         }
-        public static int CriticalChanceGenerator(Rarity itemRarity) 
+        public static int ItemTypeAttackSpeedRequirementGenerator(int AttackSpeedInt, Requirements itemRequirements)
         {
-            int CriticalChanceInt;
+            for (int i = 1; i < (int)itemRequirements; i++)
+            {
+                AttackSpeedInt += (int)itemRequirements;
+            }
+            return AttackSpeedInt;
+        }
+        #endregion
+        public static int CriticalChanceGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements)
+        {
+            int CriticalChanceInt = 1;
+
+            CriticalChanceItemTypeGenerator(CriticalChanceInt, itemType);
+            CriticalChanceRarityGenerator(CriticalChanceInt, itemRarity);
+            return CriticalChanceInt;
+        }
+        public static int CriticalChanceRarityGenerator(int CriticalChanceInt, Rarity itemRarity) 
+        {
             if (itemRarity == Rarity.COMMON)
             {
-                CriticalChanceInt = Random.Range(1, CriticalChanceCommonInt);
+                CriticalChanceInt += CriticalChanceCommonInt;
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.UNCOMMON)
             {
-                CriticalChanceInt = Random.Range(CriticalChanceCommonInt, CriticalChanceUncommonInt);
+                CriticalChanceInt = CriticalChanceUncommonInt;
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.RARE)
             {
-                CriticalChanceInt = Random.Range(CriticalChanceUncommonInt, CriticalChanceRareInt);
+                CriticalChanceInt = CriticalChanceRareInt;
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.UNQIUE)
             {
-                CriticalChanceInt = Random.Range(CriticalChanceRareInt, CriticalChanceUniqueInt);
+                CriticalChanceInt = CriticalChanceUniqueInt;
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.MASTERWORK)
             {
-                CriticalChanceInt = Random.Range(CriticalChanceUniqueInt, CriticalChanceMasterworkInt);
+                CriticalChanceInt = CriticalChanceMasterworkInt;
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.EXOTIC)
             {
-                CriticalChanceInt = Random.Range(CriticalChanceMasterworkInt, CriticalChanceExoticInt);
+                CriticalChanceInt = CriticalChanceExoticInt;
                 return CriticalChanceInt;
             }
             if (itemRarity == Rarity.LEGENDARY)
             {
-                CriticalChanceInt = Random.Range(CriticalChanceMasterworkInt, CriticalChanceLegendaryInt);
+                CriticalChanceInt = CriticalChanceLegendaryInt;
                 return CriticalChanceInt;
             }
             return 0;
         }
-        public static int PhysicalDamageGeneratorMin(Rarity itemRarity)
+        public static int CriticalChanceItemTypeGenerator(int criticalChanceInt, ItemType itemType)
+        {
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE)
+            {
+                AttackSpeedInt += OneHandedAxeAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE)
+            {
+                AttackSpeedInt += OneHandedMaceAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER)
+            {
+                AttackSpeedInt += OneHandedWarhammerAttackSpeed;
+                return AttackSpeedInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD)
+            {
+                AttackSpeedInt += OneHandedSwordAttackSpeed;
+                return AttackSpeedInt;
+            }
+            return AttackSpeedInt;
+        }
+    }
+        public static int PhysicalDamageGenerator(Rarity itemRarity)
         {
             int PhysicalDamageMin;
-            if (itemRarity == Rarity.COMMON)
-            {
-                PhysicalDamageMin = Random.Range(1, 21);
-                return PhysicalDamageMin;
-            }
-            if (itemRarity == Rarity.UNCOMMON)
-            {
-                PhysicalDamageMin = Random.Range(15, 36);
-                return PhysicalDamageMin;
-            }
-            if (itemRarity == Rarity.RARE)
-            {
-                PhysicalDamageMin = Random.Range(30, 51);
-
-                return PhysicalDamageMin;
-            }
-            if (itemRarity == Rarity.UNQIUE)
-            {
-                PhysicalDamageMin = Random.Range(100, 201);
-
-                return PhysicalDamageMin;
-            }
-            if (itemRarity == Rarity.MASTERWORK)
-            {
-                PhysicalDamageMin = Random.Range(500, 1000);
-
-                return PhysicalDamageMin;
-            }
-            if (itemRarity == Rarity.EXOTIC)
-            {
-                PhysicalDamageMin = Random.Range(1, 1000000);
-
-                return PhysicalDamageMin;
-            }
-            return 0;
-        }
-        public static int PhysicalDamageGeneratorMax(Rarity itemRarity, int PhysicalDamageMin) 
-        {
             int PhysicalDamageMax;
             if (itemRarity == Rarity.COMMON)
             {
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 36);
-                return PhysicalDamageMax;
+                PhysicalDamageMin = Random.Range(1, 20 + 1);
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 30 + 1);
+                return PhysicalDamageMin;
             }
             if (itemRarity == Rarity.UNCOMMON)
             {
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 46);
-                return PhysicalDamageMax;
+                
+                PhysicalDamageMin = Random.Range(15, 35 + 1);
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 45 + 1);
+                return PhysicalDamageMin;
             }
             if (itemRarity == Rarity.RARE)
             {
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 71);
-                return PhysicalDamageMax;
+                PhysicalDamageMin = Random.Range(30, 50 + 1);
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 75 + 1);
+                return PhysicalDamageMin;
             }
             if (itemRarity == Rarity.UNQIUE)
             {
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 501);
-                return PhysicalDamageMax;
+                PhysicalDamageMin = Random.Range(100, 500 + 1);
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 500 + 1);
+                return PhysicalDamageMin;
             }
             if (itemRarity == Rarity.MASTERWORK)
             {
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 5001);
-                return PhysicalDamageMax;
+                PhysicalDamageMin = Random.Range(500, 1000 + 1);
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 5000 + 1);
+
+                return PhysicalDamageMin;
             }
             if (itemRarity == Rarity.EXOTIC)
             {
-                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, PhysicalDamageMin + 1000000);
-                return PhysicalDamageMax;
+                PhysicalDamageMin = Random.Range(1000, 10000 + 1);
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 100000 + 1);
+                return PhysicalDamageMin;
+            }
+            if (itemRarity == Rarity.LEGENDARY)
+            {
+                PhysicalDamageMin = Random.Range(10000, 100000);
+                PhysicalDamageMax = Random.Range(PhysicalDamageMin + 1, 1000000 + 1);
+                return PhysicalDamageMin;
             }
             return 0;
         }
@@ -241,33 +314,6 @@ namespace RPGLootGenerator
             }
             return "ERROR";
         }
-        public static int ItemTypeAttackSpeedGenerator(int AttackSpeedInt, ItemType itemType)
-        {
-            int OneHandedAxeAttackSpeed = 5;
-            int OneHandedMaceAttackSpeed = 4;
-            int OneHandedWarhammerAttackSpeed = 4;
-            int OneHandedSwordAttackSpeed = 2;
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE)
-            {
-                AttackSpeedInt =+ OneHandedAxeAttackSpeed;
-                return AttackSpeedInt;
-            }
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE)
-            {
-                AttackSpeedInt =+ OneHandedMaceAttackSpeed;
-                return AttackSpeedInt;
-            }
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER)
-            {
-                AttackSpeedInt =+ OneHandedWarhammerAttackSpeed;
-                return AttackSpeedInt;
-            }
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD)
-            {
-                AttackSpeedInt =+ OneHandedSwordAttackSpeed;
-                return AttackSpeedInt;
-            }
-            return AttackSpeedInt;
-        }
+
     }
 }
