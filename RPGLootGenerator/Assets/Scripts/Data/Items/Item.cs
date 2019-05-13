@@ -19,10 +19,10 @@ namespace RPGLootGenerator
         public ItemStatType itemStat6;
         public int itemAttackSpeedStatValue;
         public int itemCriticalChaceStatValue;
-        public List <int> itemPhysicalDamageValue;
+        public int itemPhysicalDamageValue;
         public int itemStat4Value;
-        public List<int> itemStat5Value;
-        public List<int> itemStat6Value;
+        public int itemStat5Value;
+        public int itemStat6Value;
         public string itemNameString;
         public string itemCombinedNameString;
         public string itemPrefix1String;
@@ -40,8 +40,6 @@ namespace RPGLootGenerator
         public string itemStats4String;
         public string itemStats5String;
         public string itemStats6String;
-        public string itemImplisits;
-        public string itemExplisits;
         public Item(ItemTypeName itemName, 
                     string itemPrefix1, 
                     string itemSuffix1,
@@ -110,9 +108,9 @@ namespace RPGLootGenerator
             }
             itemRequirements = ItemRequirements.RequirementsGenerator();
             itemAttackSpeedStatValue = ItemStats.AttackSpeedGenerator(itemRarity, itemType, itemRequirements);
-            itemCriticalChaceStatValue = ItemStats.CriticalChanceRarityGenerator(itemRarity);
-            itemStat3Value = ItemStats.MagicalDamageGenerator(itemRarity);
-            itemStat4Value = ItemStats.PhysicalDamageGenerator(itemRarity);
+            itemCriticalChaceStatValue = ItemStats.CriticalChanceRarityGenerator(itemRarity, itemType, itemRequirements);
+            itemStat3Value = ItemStats.MagicalDamageGenerator(itemRarity, itemType, itemRequirements);
+            itemStat4Value = ItemStats.PhysicalDamageGenerator(itemRarity, itemType, itemRequirements);
 
         }
     }
