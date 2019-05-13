@@ -113,7 +113,7 @@ namespace RPGLootGenerator
         #region ItemStateFunctions
 
         #region ItemAttackSpeedFunctions
-        public static int AttackSpeedGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements)
+        public static int AttackSpeedGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements)
         {
             int AttackSpeedInt = 1;
             AttackSpeedItemTypeGenerator(AttackSpeedInt, itemType);
@@ -145,47 +145,47 @@ namespace RPGLootGenerator
             }
             return AttackSpeedInt;
         }
-        public static int AttackSpeedRarityGenerator(int AttackSpeedInt, Rarity itemRarity) 
+        public static int AttackSpeedRarityGenerator(int AttackSpeedInt, ItemRarity itemRarity) 
         {
            
-            if (itemRarity == Rarity.COMMON) 
+            if (itemRarity == ItemRarity.COMMON) 
             {
                 AttackSpeedInt += AttackSpeedCommonInt;
                 return AttackSpeedInt;
             }
-            if (itemRarity == Rarity.UNCOMMON)
+            if (itemRarity == ItemRarity.UNCOMMON)
             {
                 AttackSpeedInt += AttackSpeedUncommonInt;
                 return AttackSpeedInt;
             }
-            if (itemRarity == Rarity.RARE)
+            if (itemRarity == ItemRarity.RARE)
             {
                 AttackSpeedInt += AttackSpeedRareInt;
                 return AttackSpeedInt;
             }
-            if (itemRarity == Rarity.UNQIUE)
+            if (itemRarity == ItemRarity.UNQIUE)
             {
                 AttackSpeedInt += AttackSpeedUnqiueInt;
                 return AttackSpeedInt;
             }
-            if (itemRarity == Rarity.MASTERWORK)
+            if (itemRarity == ItemRarity.MASTERWORK)
             {
                 AttackSpeedInt += AttackSpeedMasterworkInt;
                 return AttackSpeedInt;
             }
-            if (itemRarity == Rarity.EXOTIC)
+            if (itemRarity == ItemRarity.EXOTIC)
             {
                 AttackSpeedInt += AttackSpeedExoticInt;
                 return AttackSpeedInt;
             }
-            if (itemRarity == Rarity.LEGENDARY)
+            if (itemRarity == ItemRarity.LEGENDARY)
             {
                 AttackSpeedInt += AttackSpeedLegendaryInt;
                 return AttackSpeedInt;
             }
             return 0;
         }
-        public static int ItemTypeAttackSpeedRequirementGenerator(int AttackSpeedInt, Requirements itemRequirements)
+        public static int ItemTypeAttackSpeedRequirementGenerator(int AttackSpeedInt, ItemRequirement itemRequirements)
         {
             for (int i = 1; i < (int)itemRequirements; i++)
             {
@@ -196,46 +196,46 @@ namespace RPGLootGenerator
         #endregion
 
         #region ItemCriticalChanceFunctions 
-        public static int CriticalChanceGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements)
+        public static int CriticalChanceGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements)
         {
             int CriticalChanceInt = 1;
             CriticalChanceItemTypeGenerator(CriticalChanceInt, itemType);
             CriticalChanceRarityGenerator(CriticalChanceInt, itemRarity);
             return CriticalChanceInt;
         }
-        public static int CriticalChanceRarityGenerator(int CriticalChanceInt, Rarity itemRarity) 
+        public static int CriticalChanceRarityGenerator(int CriticalChanceInt, ItemRarity itemRarity) 
         {
-            if (itemRarity == Rarity.COMMON)
+            if (itemRarity == ItemRarity.COMMON)
             {
                 CriticalChanceInt += CriticalChanceCommonInt;
                 return CriticalChanceInt;
             }
-            if (itemRarity == Rarity.UNCOMMON)
+            if (itemRarity == ItemRarity.UNCOMMON)
             {
                 CriticalChanceInt = CriticalChanceUncommonInt;
                 return CriticalChanceInt;
             }
-            if (itemRarity == Rarity.RARE)
+            if (itemRarity == ItemRarity.RARE)
             {
                 CriticalChanceInt = CriticalChanceRareInt;
                 return CriticalChanceInt;
             }
-            if (itemRarity == Rarity.UNQIUE)
+            if (itemRarity == ItemRarity.UNQIUE)
             {
                 CriticalChanceInt = CriticalChanceUniqueInt;
                 return CriticalChanceInt;
             }
-            if (itemRarity == Rarity.MASTERWORK)
+            if (itemRarity == ItemRarity.MASTERWORK)
             {
                 CriticalChanceInt = CriticalChanceMasterworkInt;
                 return CriticalChanceInt;
             }
-            if (itemRarity == Rarity.EXOTIC)
+            if (itemRarity == ItemRarity.EXOTIC)
             {
                 CriticalChanceInt = CriticalChanceExoticInt;
                 return CriticalChanceInt;
             }
-            if (itemRarity == Rarity.LEGENDARY)
+            if (itemRarity == ItemRarity.LEGENDARY)
             {
                 CriticalChanceInt = CriticalChanceLegendaryInt;
                 return CriticalChanceInt;
@@ -270,7 +270,7 @@ namespace RPGLootGenerator
 
         #region ItemPhysicalDamageFunctions
 
-        public static int PhysicalDamageGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements)
+        public static int PhysicalDamageGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements)
         {
             int PhysicalDamageInt = 1;
             PhysicalDamageInt += AttackSpeedItemTypeGenerator(PhysicalDamageInt, itemType);
@@ -278,39 +278,39 @@ namespace RPGLootGenerator
             PhysicalDamageInt += PhysicalDamageRequirementGenerator(PhysicalDamageInt, itemRequirements);
             return PhysicalDamageInt;
         }
-        public static int PhysicalDamageRarityGenerator(int physicalDamageInt, Rarity itemRarity)
+        public static int PhysicalDamageRarityGenerator(int physicalDamageInt, ItemRarity itemRarity)
         {
-            if (itemRarity == Rarity.COMMON)
+            if (itemRarity == ItemRarity.COMMON)
             {
                 physicalDamageInt += PhysicalDamageCommonInt;
                 return physicalDamageInt;
             }
-            if (itemRarity == Rarity.UNCOMMON)
+            if (itemRarity == ItemRarity.UNCOMMON)
             {
                 physicalDamageInt += PhysicalDamageUncommonInt;
                 return physicalDamageInt;
             }
-            if (itemRarity == Rarity.RARE)
+            if (itemRarity == ItemRarity.RARE)
             {
                 physicalDamageInt += PhysicalDamageRareInt;
                 return physicalDamageInt;
             }
-            if (itemRarity == Rarity.UNQIUE)
+            if (itemRarity == ItemRarity.UNQIUE)
             {
                 physicalDamageInt += PhysicalDamageUnqiueInt;
                 return physicalDamageInt;
             }
-            if (itemRarity == Rarity.MASTERWORK)
+            if (itemRarity == ItemRarity.MASTERWORK)
             {
                 physicalDamageInt += PhysicalDamageMasterworkInt;
                 return physicalDamageInt;
             }
-            if (itemRarity == Rarity.EXOTIC)
+            if (itemRarity == ItemRarity.EXOTIC)
             {
                 physicalDamageInt += PhysicalDamageExoticInt;
                 return physicalDamageInt;
             }
-            if (itemRarity == Rarity.LEGENDARY)
+            if (itemRarity == ItemRarity.LEGENDARY)
             {
                 physicalDamageInt += PhysicalDamageLegendaryInt;
                 return physicalDamageInt;
@@ -341,7 +341,7 @@ namespace RPGLootGenerator
             }
             return 0;
         }
-        public static int PhysicalDamageRequirementGenerator(int physicalDamageInt, Requirements itemRequirements)
+        public static int PhysicalDamageRequirementGenerator(int physicalDamageInt, ItemRequirement itemRequirements)
         {
             for (int i = 1; i < (int)itemRequirements; i++)
             {
@@ -353,7 +353,7 @@ namespace RPGLootGenerator
 
         #region ItemMagicDamageFunctions
 
-        public static int MagicalDamageGenerator(Rarity itemRarity, ItemType itemType, Requirements itemRequirements) 
+        public static int MagicalDamageGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements) 
         {
             int MagicalDamageInt = 0;
             return MagicalDamageInt;

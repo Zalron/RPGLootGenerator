@@ -3,79 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
+    public enum ItemPrefixs
+    {
+        COUNTSTART,
+        Upper,
+        Clothed,
+        Rusted,
+        Kings,
+        Jesters,
+        Marked,
+        COUNTEND
+    }
+    public enum ItemSuffixs
+    {
+        COUNTSTART,
+        OfRetarding,
+        OfFrost,
+        OfAccelerating,
+        OfDestruction,
+        OfCursing,
+        COUNTEND
+    }
     public class Affixs
     {
-        public enum Prefixs
+        
+        static ItemPrefixs prefixs;
+        static ItemSuffixs suffixs;
+        public static ItemPrefixs GeneratePrefixs()
         {
-            Upper,
-            Clothed,
-            Rusted,
-            Kings,
-            Jesters,
-            Marked,
+            prefixs = (ItemPrefixs)Random.Range((int)ItemPrefixs.COUNTSTART, (int)ItemPrefixs.COUNTEND);
+            return prefixs;
         }
-        public enum Suffixs
+        public static ItemSuffixs GenerateSuffixs()
         {
-            OfRetarding,
-            OfFrost,
-            OfAccelerating,
-            OfDestruction,
-            OfCursing,
+            suffixs = (ItemSuffixs)Random.Range(0, System.Enum.GetValues(typeof(ItemSuffixs)).Length);
+            return suffixs;
         }
-        static Prefixs prefixs;
-        static Suffixs suffixs;
-        public static string GeneratePrefixs()
-        {
-            string PrefixsString = null;
-            prefixs = (Prefixs)Random.Range(0, System.Enum.GetValues(typeof(Prefixs)).Length);
-            switch (prefixs)
-            {
-                case Prefixs.Clothed:
-                    PrefixsString = "Clothed";
-                    return PrefixsString;
-                case Prefixs.Jesters:
-                    PrefixsString = "Jesters";
-                    return PrefixsString;
-                case Prefixs.Kings:
-                    PrefixsString = "Kings";
-                    return PrefixsString;
-                case Prefixs.Marked:
-                    PrefixsString = "Marked";
-                    return PrefixsString;
-                case Prefixs.Rusted:
-                    PrefixsString = "Rusted";
-                    return PrefixsString;
-                case Prefixs.Upper:
-                    PrefixsString = "Upper";
-                    return PrefixsString;
-                default:
-                    return "ERROR";
-            }
-        }
-        public static string GenerateSuffixs()
-        {
-            string SuffixsString = null;
-            suffixs = (Suffixs)Random.Range(0, System.Enum.GetValues(typeof(Suffixs)).Length);
-            switch (suffixs)
-            {
-                case Suffixs.OfAccelerating:
-                    SuffixsString = "Of Accelerating";
-                    return SuffixsString;
-                case Suffixs.OfCursing:
-                    SuffixsString = "Of Cursing";
-                    return SuffixsString;
-                case Suffixs.OfDestruction:
-                    SuffixsString = "Of Destruction";
-                    return SuffixsString;
-                case Suffixs.OfFrost:
-                    SuffixsString = "Of Frost";
-                    return SuffixsString;
-                case Suffixs.OfRetarding:
-                    SuffixsString = "Of Retarding";
-                    return SuffixsString;
-                default:
-                    return "ERROR";
-            }
-        }
+       
     }
 }

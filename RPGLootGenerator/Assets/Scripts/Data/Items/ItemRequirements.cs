@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace RPGLootGenerator
 {
-    public enum Requirements
+    public enum ItemRequirement
     {
         COUNTSTART,
         Lvl_1 = 1, Lvl_2 = 2, Lvl_3 = 3, Lvl_4 = 4, Lvl_5 = 5, Lvl_6 = 6, Lvl_7 = 7, Lvl_8 = 8, Lvl_9 = 9,
@@ -19,10 +19,10 @@ namespace RPGLootGenerator
     }
     public static class ItemRequirements
     {
-        public static Requirements RequirementsGenerator()
+        public static ItemRequirement RequirementsGenerator()
         {
-            Requirements requirements;
-            requirements = (Requirements)Random.Range((int)Requirements.COUNTSTART + 1, (int)Requirements.COUNTEND);
+            ItemRequirement requirements;
+            requirements = (ItemRequirement)Random.Range((int)ItemRequirement.COUNTSTART + 1, (int)ItemRequirement.COUNTEND);
             return requirements;
         }
     }

@@ -6,34 +6,37 @@ namespace RPGLootGenerator
 {
     public class Item
     {
+
         #region Item Variables and Constructor
         public ItemTypeName itemName;
-        public Rarity itemRarity;
+        public ItemRarity itemRarity;
         public ItemType itemType;
-        public Requirements itemRequirements;
+        public ItemRequirement itemRequirements;
         public ItemStatType itemStat1;
         public ItemStatType itemStat2;
         public ItemStatType itemStat3;
         public ItemStatType itemStat4;
         public ItemStatType itemStat5;
         public ItemStatType itemStat6;
-        public int itemAttackSpeedStatValue;
-        public int itemCriticalChaceStatValue;
-        public int itemPhysicalDamageValue;
-        public int itemStat4Value;
-        public int itemStat5Value;
-        public int itemStat6Value;
+
+        public int itemStatInt1;
+        public int itemStatInt2;
+        public int itemStatInt3;
+        public int itemStatInt4;
+        public int itemStatInt5;
+        public int itemStatInt6;
+        //item strings
         public string itemNameString;
         public string itemCombinedNameString;
+        public string itemRarityString;
+        public string itemTypeString;
+        public string itemRequirementsString;
         public string itemPrefix1String;
         public string itemPrefix2String;
         public string itemPrefix3String;
         public string itemSuffix1String;
         public string itemSuffix2String;
         public string itemSuffix3String;
-        public string itemRarityString;
-        public string itemTypeString;
-        public string itemRequirementsString;
         public string itemStats1String;
         public string itemStats2String;
         public string itemStats3String;
@@ -41,22 +44,23 @@ namespace RPGLootGenerator
         public string itemStats5String;
         public string itemStats6String;
         public Item(ItemTypeName itemName, 
-                    string itemPrefix1, 
-                    string itemSuffix1,
-                    string itemCombinedName,
-                    string itemRarity, 
-                    string itemType, 
-                    string itemRequirements)
+                    ItemRarity itemRarity, 
+                    ItemType itemType, 
+                    ItemRequirement itemRequirements,
+                    ItemStatType itemStat1,
+                    ItemStatType itemStat2,
+                    ItemStatType itemStat3,
+                    ItemStatType itemStat4,
+                    ItemStatType itemStat5,
+                    ItemStatType itemStat6)
         {
             this.itemName = itemName;
-            this.itemPrefix1String = itemPrefix1;
-            this.itemSuffix1String = itemSuffix1;
-            this.itemRarityString = itemRarity;
-            this.itemTypeString = itemType;
-            this.itemRequirementsString = itemRequirements;
-            this.itemCombinedNameString = itemCombinedName;
+            this.itemRarity = itemRarity;
+            this.itemType = itemType;
+            this.itemRequirements = itemRequirements;
         }
         #endregion
+
         public void ItemGenerator()
         {
             itemName = ItemName.GenerateItemName();
@@ -64,54 +68,91 @@ namespace RPGLootGenerator
             {
                 itemName = ItemName.GenerateItemName();
             }
-            itemType = ItemTypes.ItemTypeGenerator(itemName);
-            //if () 
-            //{
-
-            //}
-            itemRarity = ItemRarity.RarityGenerator();
+            itemRarity = ItemRarities.RarityGenerator();
             switch (itemRarity)
             {
-                case Rarity.COUNTSTART:
+                case ItemRarity.COUNTSTART:
                     break;
-                case Rarity.COMMON:
+                case ItemRarity.COMMON:
                     itemCombinedNameString = itemNameString;
                     break;
-                case Rarity.UNCOMMON:
-                    itemPrefix1String = Affixs.GeneratePrefixs();
-                    itemSuffix1String = Affixs.GenerateSuffixs();
+                case ItemRarity.UNCOMMON:
+                    itemPrefix1String = Affixs.ConvertStringPrefixs();
+                    itemSuffix1String = "";
                     itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
                     break;
-                case Rarity.RARE:
-                    itemPrefix1String = Affixs.GeneratePrefixs();
-                    itemPrefix2String = Affixs.GeneratePrefixs();
-                    itemSuffix1String = Affixs.GenerateSuffixs();
+                case ItemRarity.RARE:
+                    itemPrefix1String = Affixs.ConvertStringPrefixs();
+                    itemSuffix1String = Affixs.ConvertStringSuffixs();
                     itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
                     break;
-                case Rarity.UNQIUE:
-                    itemPrefix1String = Affixs.GeneratePrefixs();
-                    itemPrefix2String = Affixs.GeneratePrefixs();
-                    itemSuffix1String = Affixs.GenerateSuffixs();
-                    itemSuffix2String = Affixs.GenerateSuffixs();
+                case ItemRarity.UNQIUE:
+                    itemPrefix1String = Affixs.ConvertStringPrefixs();
+                    itemPrefix2String = Affixs.ConvertStringPrefixs();
+                    itemSuffix1String = Affixs.ConvertStringSuffixs();
                     itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
                     break;
-                case Rarity.MASTERWORK:
+                case ItemRarity.MASTERWORK:
+                    itemPrefix1String = Affixs.ConvertStringPrefixs();
+                    itemPrefix2String = Affixs.ConvertStringPrefixs();
+                    itemSuffix1String = Affixs.ConvertStringSuffixs();
+                    itemSuffix2String = Affixs.ConvertStringSuffixs();
+                    itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
                     break;
-                case Rarity.EXOTIC:
+                case ItemRarity.EXOTIC:
+                    itemPrefix1String = Affixs.ConvertStringPrefixs();
+                    itemPrefix2String = Affixs.ConvertStringPrefixs();
+                    itemPrefix3String = Affixs.ConvertStringPrefixs();
+                    itemSuffix1String = Affixs.ConvertStringSuffixs();
+                    itemSuffix2String = Affixs.ConvertStringSuffixs();
+                    itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
                     break;
-                case Rarity.LEGENDARY:
+                case ItemRarity.LEGENDARY:
+                    itemPrefix1String = Affixs.ConvertStringPrefixs();
+                    itemPrefix2String = Affixs.ConvertStringPrefixs();
+                    itemPrefix3String = Affixs.ConvertStringPrefixs();
+                    itemSuffix1String = Affixs.ConvertStringSuffixs();
+                    itemSuffix2String = Affixs.ConvertStringSuffixs();
+                    itemSuffix3String = Affixs.ConvertStringSuffixs();
+                    itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
                     break;
-                case Rarity.COUNTEND:
+                case ItemRarity.COUNTEND:
                     break;
                 default:
                     break;
             }
+            itemType = ItemTypes.ItemTypeGenerator(itemName);
             itemRequirements = ItemRequirements.RequirementsGenerator();
-            itemAttackSpeedStatValue = ItemStats.AttackSpeedGenerator(itemRarity, itemType, itemRequirements);
-            itemCriticalChaceStatValue = ItemStats.CriticalChanceRarityGenerator(itemRarity, itemType, itemRequirements);
-            itemStat3Value = ItemStats.MagicalDamageGenerator(itemRarity, itemType, itemRequirements);
-            itemStat4Value = ItemStats.PhysicalDamageGenerator(itemRarity, itemType, itemRequirements);
-
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_KNIFE ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SHIELD ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_RAPIER ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_CLUB ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_SWORD ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_WARHAMMER ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_HALBERD ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_AXE ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_CLUB ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_STAFF ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_SPEAR ||
+                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_CLAWS)
+            {
+                itemStat1 = ItemStatType.AttackSpeed;
+                itemStat2 = ItemStatType.CriticalChance;
+                itemStat3 = ItemStatType.PhysicalDamage;
+                itemStat4 = ItemStatType.MagicalDamage;
+                itemStat5 = 0;
+                itemStat6 = 0;
+                itemStatInt1 = ItemStats.AttackSpeedGenerator(itemRarity, itemType, itemRequirements);
+                itemStatInt2 = ItemStats.CriticalChanceGenerator(itemRarity, itemType, itemRequirements);
+                itemStatInt3 = ItemStats.MagicalDamageGenerator(itemRarity, itemType, itemRequirements);
+                itemStatInt4 = ItemStats.PhysicalDamageGenerator(itemRarity, itemType, itemRequirements);
+                itemStatInt5 = 0;
+                itemStatInt6 = 0;
+            }
         }
     }
 }

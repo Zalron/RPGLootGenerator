@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
-    public enum Rarity
+    public enum ItemRarity
     {
         COUNTSTART,
         COMMON,
@@ -15,12 +15,12 @@ namespace RPGLootGenerator
         LEGENDARY,
         COUNTEND,
     }
-    public static class ItemRarity
+    public static class ItemRarities
     {
-        public static Rarity RarityGenerator()
+        public static ItemRarity RarityGenerator()
         {
-            Rarity rarity;
-            rarity = (Rarity)Random.Range((int)Rarity.COUNTSTART + 1, (int)Rarity.COUNTEND);
+            ItemRarity rarity;
+            rarity = (ItemRarity)Random.Range((int)ItemRarity.COUNTSTART + 1, (int)ItemRarity.COUNTEND);
             return rarity;
         }
     }
