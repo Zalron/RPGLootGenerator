@@ -474,7 +474,7 @@ namespace RPGLootGenerator
                     return "ERROR";
             }
         }
-        public static string ConvertStringSuffixs()
+        public static string ConvertStringSuffixs(ItemSuffixs suffixs)
         {
             string SuffixsString;
             switch (suffixs)

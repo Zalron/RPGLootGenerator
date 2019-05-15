@@ -116,9 +116,9 @@ namespace RPGLootGenerator
         public static int AttackSpeedGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements)
         {
             int AttackSpeedInt = 1;
-            AttackSpeedItemTypeGenerator(AttackSpeedInt, itemType);
-            AttackSpeedRarityGenerator(AttackSpeedInt, itemRarity);
-            ItemTypeAttackSpeedRequirementGenerator(AttackSpeedInt, itemRequirements);
+            AttackSpeedInt += AttackSpeedItemTypeGenerator(AttackSpeedInt, itemType);
+            AttackSpeedInt += AttackSpeedRarityGenerator(AttackSpeedInt, itemRarity);
+            AttackSpeedInt += AttackSpeedRequirementGenerator(AttackSpeedInt, itemRequirements);
             return AttackSpeedInt;
         }
         public static int AttackSpeedItemTypeGenerator(int AttackSpeedInt, ItemType itemType)
@@ -185,7 +185,7 @@ namespace RPGLootGenerator
             }
             return 0;
         }
-        public static int ItemTypeAttackSpeedRequirementGenerator(int AttackSpeedInt, ItemRequirement itemRequirements)
+        public static int AttackSpeedRequirementGenerator(int AttackSpeedInt, ItemRequirement itemRequirements)
         {
             for (int i = 1; i < (int)itemRequirements; i++)
             {
@@ -199,8 +199,9 @@ namespace RPGLootGenerator
         public static int CriticalChanceGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements)
         {
             int CriticalChanceInt = 1;
-            CriticalChanceItemTypeGenerator(CriticalChanceInt, itemType);
-            CriticalChanceRarityGenerator(CriticalChanceInt, itemRarity);
+            CriticalChanceInt += CriticalChanceItemTypeGenerator(CriticalChanceInt, itemType);
+            CriticalChanceInt += CriticalChanceRarityGenerator(CriticalChanceInt, itemRarity);
+            CriticalChanceInt += CriticalChanceRequirementGenerator(CriticalChanceInt, itemRequirements);
             return CriticalChanceInt;
         }
         public static int CriticalChanceRarityGenerator(int CriticalChanceInt, ItemRarity itemRarity) 
@@ -246,25 +247,33 @@ namespace RPGLootGenerator
         {
             if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE)
             {
-                criticalChanceInt += AttackSpeedOneHandedAxeInt;
+                criticalChanceInt += CriticalChanceOneHandedAxeInt;
                 return criticalChanceInt;
             }
             if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE)
             {
-                criticalChanceInt += AttackSpeedOneHandedMaceInt;
+                criticalChanceInt += CriticalChanceOneHandedMaceInt;
                 return criticalChanceInt;
             }
             if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER)
             {
-                criticalChanceInt += AttackSpeedOneHandedWarhammerInt;
+                criticalChanceInt += CriticalChanceOneHandedWarhammerInt;
                 return criticalChanceInt;
             }
             if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD)
             {
-                criticalChanceInt += AttackSpeedOneHandedSwordInt;
+                criticalChanceInt += CriticalChanceOneHandedSwordInt;
                 return criticalChanceInt;
             }
             return 0;
+        }
+        public static int CriticalChanceRequirementGenerator(int CriticalChanceInt, ItemRequirement itemRequirements)
+        {
+            for (int i = 1; i < (int)itemRequirements; i++)
+            {
+                CriticalChanceInt += (int)itemRequirements;
+            }
+            return CriticalChanceInt;
         }
         #endregion
 
@@ -273,7 +282,7 @@ namespace RPGLootGenerator
         public static int PhysicalDamageGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements)
         {
             int PhysicalDamageInt = 1;
-            PhysicalDamageInt += AttackSpeedItemTypeGenerator(PhysicalDamageInt, itemType);
+            PhysicalDamageInt += PhysicalDamageItemTypeGenerator(PhysicalDamageInt, itemType);
             PhysicalDamageInt += PhysicalDamageRarityGenerator(PhysicalDamageInt, itemRarity);
             PhysicalDamageInt += PhysicalDamageRequirementGenerator(PhysicalDamageInt, itemRequirements);
             return PhysicalDamageInt;
@@ -356,9 +365,82 @@ namespace RPGLootGenerator
         public static int MagicalDamageGenerator(ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements) 
         {
             int MagicalDamageInt = 0;
+            MagicalDamageInt += MagicalDamageRarityGenerator(MagicalDamageInt, itemRarity);
+            MagicalDamageInt += MagicalDamageItemTypeGenerator(MagicalDamageInt, itemType);
+            MagicalDamageInt += MagicalDamageRequirementGenerator(MagicalDamageInt, itemRequirements);
             return MagicalDamageInt;
         }
-
+        public static int MagicalDamageRarityGenerator(int magicalDamageInt, ItemRarity itemRarity)
+        {
+            if (itemRarity == ItemRarity.COMMON)
+            {
+                magicalDamageInt += MagicalDamageCommonInt;
+                return magicalDamageInt;
+            }
+            if (itemRarity == ItemRarity.UNCOMMON)
+            {
+                magicalDamageInt += MagicalDamageUncommonInt;
+                return magicalDamageInt;
+            }
+            if (itemRarity == ItemRarity.RARE)
+            {
+                magicalDamageInt += MagicalDamageRareInt;
+                return magicalDamageInt;
+            }
+            if (itemRarity == ItemRarity.UNQIUE)
+            {
+                magicalDamageInt += MagicalDamageUnqiueInt;
+                return magicalDamageInt;
+            }
+            if (itemRarity == ItemRarity.MASTERWORK)
+            {
+                magicalDamageInt += MagicalDamageMasterworkInt;
+                return magicalDamageInt;
+            }
+            if (itemRarity == ItemRarity.EXOTIC)
+            {
+                magicalDamageInt += MagicalDamageExoticInt;
+                return magicalDamageInt;
+            }
+            if (itemRarity == ItemRarity.LEGENDARY)
+            {
+                magicalDamageInt += MagicalDamageLegendaryInt;
+                return magicalDamageInt;
+            }
+            return 0;
+        }
+        public static int MagicalDamageItemTypeGenerator(int magicalDamageInt, ItemType itemType)
+        {
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE)
+            {
+                magicalDamageInt += MagicalDamageOneHandedAxeInt;
+                return magicalDamageInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE)
+            {
+                magicalDamageInt += MagicalDamageOneHandedMaceInt;
+                return magicalDamageInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER)
+            {
+                magicalDamageInt += MagicalDamageOneHandedWarhammerInt;
+                return magicalDamageInt;
+            }
+            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD)
+            {
+                magicalDamageInt += MagicalDamageOneHandedSwordInt;
+                return magicalDamageInt;
+            }
+            return 0;
+        }
+        public static int MagicalDamageRequirementGenerator(int magicalDamageInt, ItemRequirement itemRequirements)
+        {
+            for (int i = 1; i < (int)itemRequirements; i++)
+            {
+                magicalDamageInt += (int)itemRequirements;
+            }
+            return magicalDamageInt;
+        }
         #endregion
 
         #endregion

@@ -24,9 +24,8 @@ namespace RPGLootGenerator
         OfCursing,
         COUNTEND
     }
-    public class Affixs
+    public class ItemAffixs
     {
-        
         static ItemPrefixs prefixs;
         static ItemSuffixs suffixs;
         public static ItemPrefixs GeneratePrefixs()
