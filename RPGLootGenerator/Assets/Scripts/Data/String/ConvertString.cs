@@ -125,16 +125,16 @@ namespace RPGLootGenerator
             CriticalChanceString = "Critical Chance " + CriticalChanceInt + "%";
             return CriticalChanceString;
         }
-        public static string PhysicalDamageGenerator(int PhysicalDamageMin, int PhysicalDamageMax)
+        public static string PhysicalDamageGenerator(int PhysicalDamageInt)
         {
             string PhysicalDamageString;
-            PhysicalDamageString = "Physical Damage " + PhysicalDamageMin + " to " + PhysicalDamageMax;
+            PhysicalDamageString = "Physical Damage " + PhysicalDamageInt;
             return PhysicalDamageString;
         }
-        public static string MagicalDamageStringConverter(int MagicalDamageMin, int MagicalDamageMax)
+        public static string MagicalDamageStringConverter(int MagicalDamageInt)
         {
             string MagicalDamageString;
-            MagicalDamageString = "Magical Damage " + MagicalDamageMin + " to " + MagicalDamageMax;
+            MagicalDamageString = "Magical Damage " + MagicalDamageInt;
             return MagicalDamageString;
         }
         public static string RequirementsStringConvertor(ItemRequirement requirements)
