@@ -45,7 +45,6 @@ namespace RPGLootGenerator
     }
     public static class ItemTypes
     {
-        //static ItemType itemType;
         public static ItemType ItemTypeGenerator(ItemTypeName itemTypeName)
         {
             ItemType itemType;
@@ -76,7 +75,7 @@ namespace RPGLootGenerator
                 itemType = ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER;
                 return itemType;
             }
-            if (itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_BRONZEKOPIS ||
+            if (itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_BRONZEFALX ||
                 itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_TUTONICSWORD ||
                 itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_DUSTKHOPESH ||
                 itemTypeName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_STEELGLADIUS ||
@@ -96,6 +95,5 @@ namespace RPGLootGenerator
             }
             return 0;
         }
-        
     }
 }

@@ -31,6 +31,9 @@ namespace RPGLootGenerator
                 case ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD:
                     ItemTypeString = "One Handed Sword";
                     return ItemTypeString;
+                case ItemType.ITEM_WEAPON_MELEE_TWOHANDED_AXE:
+                    ItemTypeString = "One Handed Sword";
+                    return ItemTypeString;
             }
             return "ERROR";
         }
@@ -51,6 +54,9 @@ namespace RPGLootGenerator
                 case ItemRarity.MASTERWORK:
                     ItemRarityString = "Masterwork";
                     return ItemRarityString;
+                case ItemRarity.EXOTIC:
+                    ItemRarityString = "Exotic";
+                    return ItemRarityString;
                 case ItemRarity.LEGENDARY:
                     ItemRarityString = "Legendary";
                     return ItemRarityString;
@@ -67,8 +73,23 @@ namespace RPGLootGenerator
             string itemTypeNameString;
             switch (itemTypeName)
             {
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_VIKINGAXE:
+                    itemTypeNameString = "Viking Axe";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_BONEHACHET:
+                    itemTypeNameString = "Bone Hachet";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_WOODEDAXE:
+                    itemTypeNameString = "Wooded Axe";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_BLOODCLEAVER:
+                    itemTypeNameString = "Blood Cleaver";
+                    return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_ENERGYCORRECTOR:
                     itemTypeNameString = "Energy Corrector";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_RINGEDPERNACH:
+                    itemTypeNameString = "Rinded Pernach";
                     return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_BLACKJACK:
                     itemTypeNameString = "Black Jack";
@@ -100,14 +121,35 @@ namespace RPGLootGenerator
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_WETKOPIS:
                     itemTypeNameString = "Wet Kopis";
                     return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_BRONZEFALX:
+                    itemTypeNameString = "Bronze Falx";
+                    return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_DUSTKHOPESH:
                     itemTypeNameString = "Dust Khopesh";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_TUTONICSWORD:
+                    itemTypeNameString = "Tutonic Sword";
                     return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_OBSIDIANMAQUAHUITL:
                     itemTypeNameString = "Obsidian Maquahuitl";
                     return itemTypeNameString;
                 case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_STEELGLADIUS:
                     itemTypeNameString = "Steel Gladius";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_BATTLEAXE:
+                    itemTypeNameString = "Battle Axe";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_LANDHOWITER:
+                    itemTypeNameString = "Land Howiter";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_GOLDENREAVER:
+                    itemTypeNameString = "Golden Reaver";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_DEMONSMALICE:
+                    itemTypeNameString = "Demons Malice";
+                    return itemTypeNameString;
+                case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_SEAOMEGA:
+                    itemTypeNameString = "Sea Omega";
                     return itemTypeNameString;
                 default:
                     return "ERROR";

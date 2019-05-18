@@ -28,7 +28,7 @@ namespace RPGLootGenerator
         ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_STONEBREAKER,
         ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_COUNTEND,
         ITEM_WEAPON_MELEE_ONEHANDED_SWORD_COUNTSTART,
-        ITEM_WEAPON_MELEE_ONEHANDED_SWORD_BRONZEKOPIS,
+        ITEM_WEAPON_MELEE_ONEHANDED_SWORD_BRONZEFALX,
         ITEM_WEAPON_MELEE_ONEHANDED_SWORD_TUTONICSWORD,
         ITEM_WEAPON_MELEE_ONEHANDED_SWORD_DUSTKHOPESH,
         ITEM_WEAPON_MELEE_ONEHANDED_SWORD_WETKOPIS,
@@ -39,6 +39,9 @@ namespace RPGLootGenerator
         ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_HEXSCUTUM,
         ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_ODENROUNDSHEILD,
         ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_BUCKERLER,
+        ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_NAKHTUAASHEILD,
+        ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_PAINTEDKITESHEILD,
+        ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_HEATERSHEILD,
         ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_COUNTEND,
         ITEM_WEAPON_MELEE_TWOHANDED_AXE_COUNTSTART,
         ITEM_WEAPON_MELEE_TWOHANDED_AXE_BATTLEAXE,
@@ -51,20 +54,30 @@ namespace RPGLootGenerator
     }
     public static class ItemName
     {
-        public static ItemTypeName GenerateItemName() 
+        public static ItemTypeName GenerateItemName()
         {
             ItemTypeName ItemName;
-            ItemName = (ItemTypeName)Random.Range((int)ItemTypeName.ITEM_COUNTSTART + 1, (int)ItemTypeName.ITEM_COUNTEND);
-            if (ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_COUNTEND || ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_COUNTEND ||
-                ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_COUNTEND || ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_COUNTEND ||
-                ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_COUNTEND || ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_COUNTEND ||
-                ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_COUNTEND || ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_COUNTEND ||
-                ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_COUNTEND || ItemName == ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SHIELD_COUNTEND ||
-                ItemName == ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_COUNTEND || ItemName == ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_COUNTEND)
+            int itemNameNum = Random.Range(1, 5 + 1);
+            switch (itemNameNum)
             {
-                return ItemTypeName.ITEM_COUNTSTART;
+                case 1:
+                    ItemName = GenerateOneHandedAxesNames();
+                    return ItemName;
+                case 2:
+                    ItemName = GenerateOneHandedMacesNames();
+                    return ItemName;
+                case 3:
+                    ItemName = GenerateOneHandedWarHammerNames();
+                    return ItemName;
+                case 4:
+                    ItemName = GenerateOneHandedSwordsNames();
+                    return ItemName;
+                case 5:
+                    ItemName = GenerateTwoHandedAxeNames();
+                    return ItemName;
+                default:
+                    return 0;
             }
-            return ItemName;
         }
         public static ItemTypeName GenerateOneHandedAxesNames()
         {
@@ -78,17 +91,23 @@ namespace RPGLootGenerator
             oneHandedMacesNames = (ItemTypeName)Random.Range((int)ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_COUNTSTART + 1, (int)ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_COUNTEND);
             return oneHandedMacesNames;
         }
-        public static ItemTypeName GenerateOneHandedWarHammerNames() 
+        public static ItemTypeName GenerateOneHandedWarHammerNames()
         {
             ItemTypeName oneHandedWarHammerNames;
             oneHandedWarHammerNames = (ItemTypeName)Random.Range((int)ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_COUNTSTART + 1, (int)ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_COUNTEND);
             return oneHandedWarHammerNames;
         }
-        public static ItemTypeName GenerateOneHandedSwordsNames() 
+        public static ItemTypeName GenerateOneHandedSwordsNames()
         {
             ItemTypeName oneHandedSwordNames;
             oneHandedSwordNames = (ItemTypeName)Random.Range((int)ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_COUNTSTART + 1, (int)ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_COUNTEND);
             return oneHandedSwordNames;
+        }
+        public static ItemTypeName GenerateTwoHandedAxeNames()
+        {
+            ItemTypeName twoHandedAxeNames;
+            twoHandedAxeNames = (ItemTypeName)Random.Range((int)ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_COUNTSTART + 1, (int)ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_COUNTEND);
+            return twoHandedAxeNames;
         }
     }
 }

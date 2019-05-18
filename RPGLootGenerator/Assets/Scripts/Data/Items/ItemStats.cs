@@ -187,10 +187,7 @@ namespace RPGLootGenerator
         }
         public static int AttackSpeedRequirementGenerator(int AttackSpeedInt, ItemRequirement itemRequirements)
         {
-            for (int i = 1; i < (int)itemRequirements; i++)
-            {
-                AttackSpeedInt += (int)itemRequirements;
-            }
+            AttackSpeedInt += (int)itemRequirements;
             return AttackSpeedInt;
         }
         #endregion
@@ -269,10 +266,7 @@ namespace RPGLootGenerator
         }
         public static int CriticalChanceRequirementGenerator(int CriticalChanceInt, ItemRequirement itemRequirements)
         {
-            for (int i = 1; i < (int)itemRequirements; i++)
-            {
-                CriticalChanceInt += (int)itemRequirements;
-            }
+            CriticalChanceInt += (int)itemRequirements;
             return CriticalChanceInt;
         }
         #endregion
@@ -352,10 +346,7 @@ namespace RPGLootGenerator
         }
         public static int PhysicalDamageRequirementGenerator(int physicalDamageInt, ItemRequirement itemRequirements)
         {
-            for (int i = 1; i < (int)itemRequirements; i++)
-            {
-                physicalDamageInt += (int)itemRequirements;
-            }
+            physicalDamageInt += (int)itemRequirements;
             return physicalDamageInt;
         }
         #endregion
@@ -435,10 +426,7 @@ namespace RPGLootGenerator
         }
         public static int MagicalDamageRequirementGenerator(int magicalDamageInt, ItemRequirement itemRequirements)
         {
-            for (int i = 1; i < (int)itemRequirements; i++)
-            {
-                magicalDamageInt += (int)itemRequirements;
-            }
+            magicalDamageInt += (int)itemRequirements;
             return magicalDamageInt;
         }
         #endregion

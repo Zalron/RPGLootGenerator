@@ -63,11 +63,11 @@ namespace RPGLootGenerator
             this.itemType = itemType;
             this.itemRequirements = itemRequirements;
             this.itemStat1 = itemStat1;
-            this.itemStat1 = itemStat2;
-            this.itemStat1 = itemStat3;
-            this.itemStat1 = itemStat4;
-            this.itemStat1 = itemStat5;
-            this.itemStat1 = itemStat6;
+            this.itemStat2 = itemStat2;
+            this.itemStat3 = itemStat3;
+            this.itemStat4 = itemStat4;
+            this.itemStat5 = itemStat5;
+            this.itemStat6 = itemStat6;
             this.itemStatInt1 = itemStatInt1;
             this.itemStatInt2 = itemStatInt2;
             this.itemStatInt3 = itemStatInt3;
@@ -91,23 +91,20 @@ namespace RPGLootGenerator
             this.itemSuffix1String = itemSuffix1String;
             this.itemSuffix2String = itemSuffix2String;
             this.itemSuffix3String = itemSuffix3String;
-            this.itemNameString = itemNameString;
-            this.itemNameString = itemNameString;
-            this.itemNameString = itemNameString;
-            this.itemNameString = itemNameString;
-            this.itemNameString = itemNameString;
-            this.itemNameString = itemNameString;
+            this.itemStats1String = itemStats1String;
+            this.itemStats2String = itemStats2String;
+            this.itemStats3String = itemStats3String;
+            this.itemStats4String = itemStats4String;
+            this.itemStats5String = itemStats5String;
+            this.itemStats6String = itemStats6String;
             ItemGenerator();
         }
         #endregion
 
         public void ItemGenerator()
         {
+
             itemName = ItemName.GenerateItemName();
-            if (itemName == ItemTypeName.ITEM_COUNTSTART)
-            {
-                itemName = ItemName.GenerateItemName();
-            }
             itemType = ItemTypes.ItemTypeGenerator(itemName);
             itemRarity = ItemRarities.RarityGenerator();
             switch (itemRarity)
@@ -120,26 +117,44 @@ namespace RPGLootGenerator
                 case ItemRarity.UNCOMMON:
                     itemPrefixs1 = ItemAffixs.GeneratePrefixs();
                     itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
-                    itemSuffix1String = "";
                     break;
                 case ItemRarity.RARE:
                     itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs1 = ItemAffixs.GenerateSuffixs();
                     itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
                     itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
                     break;
                 case ItemRarity.UNQIUE:
+                    itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+                    itemPrefixs2 = ItemAffixs.GeneratePrefixs();
                     itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
                     itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
                     break;
                 case ItemRarity.MASTERWORK:
+                    itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+                    itemPrefixs2 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs2 = ItemAffixs.GenerateSuffixs();
                     itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
                     itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
                     break;
                 case ItemRarity.EXOTIC:
+                    itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+                    itemPrefixs2 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs2 = ItemAffixs.GenerateSuffixs();
+                    itemPrefixs3 = ItemAffixs.GeneratePrefixs();
                     itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
                     itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
                     break;
                 case ItemRarity.LEGENDARY:
+                    itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+                    itemPrefixs2 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs2 = ItemAffixs.GenerateSuffixs();
+                    itemPrefixs3 = ItemAffixs.GeneratePrefixs();
+                    itemSuffixs3 = ItemAffixs.GenerateSuffixs();
                     itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
                     itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
                     break;
@@ -148,7 +163,6 @@ namespace RPGLootGenerator
                 default:
                     break;
             }
-            itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
             itemRequirements = ItemRequirements.RequirementsGenerator();
             if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD ||
                 itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE ||
@@ -186,10 +200,11 @@ namespace RPGLootGenerator
                 itemStats5String = "";
                 itemStats6String = "";
             }
+            itemNameString = ConvertString.StringConvertItemName(itemName);
+            itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
             itemRarityString = ConvertString.RarityGeneratorString(itemRarity);
             itemTypeString = ConvertString.ItemTypeString(itemType);
             itemRequirementsString = ConvertString.RequirementsStringConvertor(itemRequirements);
-            
         }
     }
 }

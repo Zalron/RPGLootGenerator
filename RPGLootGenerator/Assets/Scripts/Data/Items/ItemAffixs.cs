@@ -26,18 +26,17 @@ namespace RPGLootGenerator
     }
     public class ItemAffixs
     {
-        static ItemPrefixs prefixs;
-        static ItemSuffixs suffixs;
         public static ItemPrefixs GeneratePrefixs()
         {
-            prefixs = (ItemPrefixs)Random.Range((int)ItemPrefixs.COUNTSTART, (int)ItemPrefixs.COUNTEND);
+            ItemPrefixs prefixs;
+            prefixs = (ItemPrefixs)Random.Range((int)ItemPrefixs.COUNTSTART + 1, (int)ItemPrefixs.COUNTEND);
             return prefixs;
         }
         public static ItemSuffixs GenerateSuffixs()
         {
-            suffixs = (ItemSuffixs)Random.Range(0, System.Enum.GetValues(typeof(ItemSuffixs)).Length);
+            ItemSuffixs suffixs;
+            suffixs = (ItemSuffixs)Random.Range((int)ItemSuffixs.COUNTSTART + 1, (int)ItemSuffixs.COUNTEND);
             return suffixs;
         }
-       
     }
 }
