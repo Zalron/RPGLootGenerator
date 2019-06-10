@@ -16,7 +16,12 @@ namespace RPGLootGenerator
         public TextMeshProUGUI LootStats4;
         public TextMeshProUGUI LootStats5;
         public TextMeshProUGUI LootStats6;
-        public TextMeshProUGUI LootMods;
+        public TextMeshProUGUI LootMods1;
+        public TextMeshProUGUI LootMods2;
+        public TextMeshProUGUI LootMods3;
+        public TextMeshProUGUI LootMods4;
+        public TextMeshProUGUI LootMods5;
+        public TextMeshProUGUI LootMods6;
 
         public List<Item> items = new List<Item>();
         void Start() // Start is called before the first frame update

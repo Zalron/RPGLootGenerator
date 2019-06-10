@@ -53,10 +53,12 @@ namespace RPGLootGenerator
         public Item(ItemTypeName itemName, ItemRarity itemRarity, ItemType itemType, ItemRequirement itemRequirements,
                     ItemStatType itemStat1, ItemStatType itemStat2, ItemStatType itemStat3, ItemStatType itemStat4, ItemStatType itemStat5, ItemStatType itemStat6,
                     int itemStatInt1, int itemStatInt2, int itemStatInt3, int itemStatInt4, int itemStatInt5, int itemStatInt6,
+                    int itemModInt1, int itemModInt2, int itemModInt3, int itemModInt4, int itemModInt5, int itemModInt6,
                     ItemPrefixs itemPrefixs1, ItemPrefixs itemPrefixs2, ItemPrefixs itemPrefixs3, ItemSuffixs itemSuffixs1, ItemSuffixs itemSuffixs2, ItemSuffixs itemSuffixs3,
                     string itemNameString, string itemCombinedNameString, string itemRarityString, string itemTypeString, string itemRequirementsString,
                     string itemPrefix1String, string itemPrefix2String, string itemPrefix3String, string itemSuffix1String, string itemSuffix2String, string itemSuffix3String,
-                    string itemStats1String, string itemStats2String, string itemStats3String, string itemStats4String, string itemStats5String, string itemStats6String)
+                    string itemStats1String, string itemStats2String, string itemStats3String, string itemStats4String, string itemStats5String, string itemStats6String,
+                    string itemMod1String, string itemMod2String, string itemMod3String, string itemMod4String, string itemMod5String, string itemMod6String)
         {
             this.itemName = itemName;
             this.itemRarity = itemRarity;

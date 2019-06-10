@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LootGenerator.unity
+    guid: 7aa0a13fcf146934d9a11bedf4222203
   m_configObjects: {}

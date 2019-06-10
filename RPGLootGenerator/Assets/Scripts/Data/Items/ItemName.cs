@@ -52,8 +52,10 @@ namespace RPGLootGenerator
         ITEM_WEAPON_MELEE_TWOHANDED_AXE_COUNTEND,
         ITEM_COUNTEND
     }
-    public static class ItemName
+    [CreateAssetMenu(fileName = "Individual Item", menuName = "Item", order = 1)]
+    public class ItemName : ScriptableObject
     {
+        public string ItemNameString;
         public static ItemTypeName GenerateItemName()
         {
             ItemTypeName ItemName;
