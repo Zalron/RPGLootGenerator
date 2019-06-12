@@ -3,40 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
 {
-    public enum ItemPrefixs
+    public enum ItemAffix
     {
-        COUNTSTART,
-        Upper,
-        Clothed,
-        Rusted,
-        Kings,
-        Jesters,
-        Marked,
-        COUNTEND
+        Preffix,
+        Suffix
     }
-    public enum ItemSuffixs
+    [CreateAssetMenu(fileName = "Item Stats", menuName = "Item", order = 2)]
+    public class ItemAffixs : ScriptableObject
     {
-        COUNTSTART,
-        OfRetarding,
-        OfFrost,
-        OfAccelerating,
-        OfDestruction,
-        OfCursing,
-        COUNTEND
-    }
-    public class ItemAffixs
-    {
-        public static ItemPrefixs GeneratePrefixs()
-        {
-            ItemPrefixs prefixs;
-            prefixs = (ItemPrefixs)Random.Range((int)ItemPrefixs.COUNTSTART + 1, (int)ItemPrefixs.COUNTEND);
-            return prefixs;
-        }
-        public static ItemSuffixs GenerateSuffixs()
-        {
-            ItemSuffixs suffixs;
-            suffixs = (ItemSuffixs)Random.Range((int)ItemSuffixs.COUNTSTART + 1, (int)ItemSuffixs.COUNTEND);
-            return suffixs;
-        }
+        public ItemAffix itemAffixType;
+        public ItemStats itemStatModifing;
+        public string itemAffixString;
+        public int itemAffixIntModifier;
+        public bool isSpecialModifier;
     }
 }

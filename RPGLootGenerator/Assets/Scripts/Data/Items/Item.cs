@@ -166,22 +166,7 @@ namespace RPGLootGenerator
                     break;
             }
             itemRequirements = ItemRequirements.RequirementsGenerator();
-            if (itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_KNIFE ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SHIELD ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_RAPIER ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_ONEHANDED_CLUB ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_SWORD ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_WARHAMMER ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_HALBERD ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_AXE ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_CLUB ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_STAFF ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_SPEAR ||
-                itemType == ItemType.ITEM_WEAPON_MELEE_TWOHANDED_CLAWS)
+            if ()
             {
                 itemStat1 = ItemStatType.AttackSpeed;
                 itemStat2 = ItemStatType.CriticalChance;
