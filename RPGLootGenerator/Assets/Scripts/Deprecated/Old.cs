@@ -715,4 +715,94 @@ public class Old
     //    ITEM_WEAPON_MELEE_TWOHANDED_AXE_COUNTEND,
     //    ITEM_COUNTEND
     //}
+    //public void ItemGenerator()
+    //{
+    //    itemName = ItemName.GenerateItemName();
+    //    itemType = ItemTypes.ItemTypeGenerator(itemName);
+    //    itemRarity = ItemRarities.RarityGenerator();
+    //    switch (itemRarity)
+    //    {
+    //        case ItemRarity.COUNTSTART:
+    //            break;
+    //        case ItemRarity.COMMON:
+    //            itemCombinedNameString = itemNameString;
+    //            break;
+    //        case ItemRarity.UNCOMMON:
+    //            itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+    //            itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
+    //            break;
+    //        case ItemRarity.RARE:
+    //            itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
+    //            itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
+    //            break;
+    //        case ItemRarity.UNQIUE:
+    //            itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefixs2 = ItemAffixs.GeneratePrefixs();
+    //            itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
+    //            itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
+    //            break;
+    //        case ItemRarity.MASTERWORK:
+    //            itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefixs2 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs2 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
+    //            itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
+    //            break;
+    //        case ItemRarity.EXOTIC:
+    //            itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefixs2 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs2 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefixs3 = ItemAffixs.GeneratePrefixs();
+    //            itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
+    //            itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
+    //            break;
+    //        case ItemRarity.LEGENDARY:
+    //            itemPrefixs1 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs1 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefixs2 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs2 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefixs3 = ItemAffixs.GeneratePrefixs();
+    //            itemSuffixs3 = ItemAffixs.GenerateSuffixs();
+    //            itemPrefix1String = ConvertString.ConvertStringPrefixs(itemPrefixs1);
+    //            itemSuffix1String = ConvertString.ConvertStringSuffixs(itemSuffixs1);
+    //            break;
+    //        case ItemRarity.COUNTEND:
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //    itemRequirements = ItemRequirements.RequirementsGenerator();
+    //    if ()
+    //    {
+    //        itemStat1 = ItemStatType.AttackSpeed;
+    //        itemStat2 = ItemStatType.CriticalChance;
+    //        itemStat3 = ItemStatType.PhysicalDamage;
+    //        itemStat4 = ItemStatType.MagicalDamage;
+    //        itemStat5 = 0;
+    //        itemStat6 = 0;
+    //        itemStatInt1 = ItemStats.AttackSpeedGenerator(itemRarity, itemType, itemRequirements);
+    //        itemStatInt2 = ItemStats.CriticalChanceGenerator(itemRarity, itemType, itemRequirements);
+    //        itemStatInt3 = ItemStats.MagicalDamageGenerator(itemRarity, itemType, itemRequirements);
+    //        itemStatInt4 = ItemStats.PhysicalDamageGenerator(itemRarity, itemType, itemRequirements);
+    //        itemStatInt5 = 0;
+    //        itemStatInt6 = 0;
+    //        itemStats1String = ConvertString.AttackSpeedGenerator(itemStatInt1);
+    //        itemStats2String = ConvertString.CriticalChanceGenerator(itemStatInt2);
+    //        itemStats3String = ConvertString.PhysicalDamageGenerator(itemStatInt3);
+    //        itemStats4String = ConvertString.AttackSpeedGenerator(itemStatInt4);
+    //        itemStats5String = "";
+    //        itemStats6String = "";
+    //    }
+    //    itemNameString = ConvertString.StringConvertItemName(itemName);
+    //    itemCombinedNameString = ConvertString.CombineNameString(itemPrefix1String, itemNameString, itemSuffix1String);
+    //    itemRarityString = ConvertString.RarityGeneratorString(itemRarity);
+    //    itemTypeString = ConvertString.ItemTypeString(itemType);
+    //    itemRequirementsString = ConvertString.RequirementsStringConvertor(itemRequirements);
+    //}
 }
+

@@ -9,18 +9,19 @@ namespace RPGLootGenerator
         COMMON,
         UNCOMMON,
         RARE,
-        UNQIUE,
         MASTERWORK,
         EXOTIC,
         LEGENDARY,
+        ANCIENT,
+        UNQIUE,
         COUNTEND,
     }
-    public static class ItemRarities
+    public class ItemRarities
     {
         public static ItemRarity RarityGenerator()
         {
             ItemRarity rarity;
-            rarity = (ItemRarity)Random.Range((int)ItemRarity.COUNTSTART + 1, (int)ItemRarity.COUNTEND);
+            rarity = (ItemRarity)Random.Range((int)ItemRarity.COUNTSTART + 1, 7);
             return rarity;
         }
     }

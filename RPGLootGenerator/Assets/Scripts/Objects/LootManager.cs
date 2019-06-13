@@ -34,7 +34,7 @@ namespace RPGLootGenerator
         }
         public void GenerateRawLoot()
         {
-            Item i = new Item(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            Item i = new Item();
             items.Add(i);
             LootNames.text = i.itemCombinedNameString;
             LootRarity.text = i.itemRarityString;

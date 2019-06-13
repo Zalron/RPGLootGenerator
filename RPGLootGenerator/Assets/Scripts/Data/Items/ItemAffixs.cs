@@ -12,7 +12,7 @@ namespace RPGLootGenerator
     public class ItemAffixs : ScriptableObject
     {
         public ItemAffix itemAffixType;
-        public ItemStats itemStatModifing;
+        public ItemMod itemMod;
         public string itemAffixString;
         public int itemAffixIntModifier;
         public bool isSpecialModifier;
