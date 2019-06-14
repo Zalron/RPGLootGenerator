@@ -8,7 +8,7 @@ namespace RPGLootGenerator
     {
         #region Item Variables
         public ItemName itemName;
-        public ItemRarity itemRarity;
+        public ItemRarities itemRarity;
         public ItemRequirement itemRequirements;
         public ItemStats itemStat1;
         public ItemStats itemStat2;
@@ -39,7 +39,7 @@ namespace RPGLootGenerator
         #endregion
 
         #region Item Constructor
-        public Item(ItemName itemName, ItemRarity itemRarity, ItemRequirement itemRequirements, ItemTypes itemType,
+        public Item(ItemName itemName, ItemRarities itemRarity, ItemRequirement itemRequirements, ItemTypes itemType,
                     ItemStats itemStat1, ItemStats itemStat2, ItemStats itemStat3, ItemStats itemStat4, ItemStats itemStat5, ItemStats itemStat6,
                     ItemMod itemMod1, ItemMod itemMod2, ItemMod itemMod3, ItemMod itemMod4, ItemMod itemMod5, ItemMod itemMod6,
                     ItemAffixs itemPrefixs1, ItemAffixs itemPrefixs2, ItemAffixs itemPrefixs3, ItemAffixs itemSuffixs1, ItemAffixs itemSuffixs2, ItemAffixs itemSuffixs3)
@@ -68,7 +68,24 @@ namespace RPGLootGenerator
         public void ItemGenerator()
         {
 
-           
+            
         }
+        //public static string CombineNameString(string itemPrefix, string itemName, string itemSuffix)
+        //{
+        //    string itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
+        //    return itemCombinedName;
+        //}
+        //public static string AttackSpeedGenerator(int AttackSpeedInt)
+        //{
+        //    string AttackSpeedString;
+        //    AttackSpeedString = "Attack Speed " + AttackSpeedInt;
+        //    return AttackSpeedString;
+        //}
+        //public static ItemRarities RarityGenerator()
+        //{
+        //    ItemRarity rarity;
+        //    rarity = (ItemRarity)Random.Range((int)ItemRarity.COUNTSTART + 1, 7);
+        //    return rarity;
+        //}
     }
 }

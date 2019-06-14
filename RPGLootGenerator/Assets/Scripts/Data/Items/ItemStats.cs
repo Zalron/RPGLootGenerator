@@ -27,12 +27,12 @@ namespace RPGLootGenerator
     }
     public static class ItemStatGenerator
     {
-        public static int ItemStatGenerators(ItemRarity itemRarity, ItemName itemName, ItemRequirement itemRequirements, )
+        public static int ItemStatGenerators(ItemRarities itemRarities, ItemName itemName, ItemRequirement itemRequirements)
         {
             int ItemStatInt = 0;
             ItemStatInt += itemName.itemNameIntModifier;
-            ItemStatInt += (int)itemRarity;
-            ItemStatInt += 
+            ItemStatInt += itemRarities.rarityIntModifier;
+            //ItemStatInt += 
             return ItemStatInt;
         }
     }

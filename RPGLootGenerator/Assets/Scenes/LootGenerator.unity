@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2017876160}
+      - m_Target: {fileID: 0}
         m_MethodName: GenerateRawLoot
         m_Mode: 1
         m_Arguments:
@@ -2564,7 +2564,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2017876159}
-  - component: {fileID: 2017876160}
   m_Layer: 0
   m_Name: LootManager
   m_TagString: Untagged
@@ -2586,26 +2585,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2017876160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017876158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 403adf4cf8395994c8454214e466da70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LootNames: {fileID: 331480191}
-  LootRarity: {fileID: 244586304}
-  LootTypes: {fileID: 1220230864}
-  LootRequirements: {fileID: 684756919}
-  LootStats1: {fileID: 665073676}
-  LootStats2: {fileID: 1815360509}
-  LootStats3: {fileID: 1115900555}
-  LootStats4: {fileID: 641326463}
-  LootStats5: {fileID: 990111006}
-  LootStats6: {fileID: 174765946}
-  LootMods: {fileID: 1809402378}

@@ -155,6 +155,230 @@ public class Old
     //        return "ERROR";
     //    }
     //}
+    //public static string ItemTypeString(ItemType itemTypes)
+    //{
+    //    string ItemTypeString;
+    //    switch(itemTypes)
+    //    {
+    //        case ItemType.ITEM_WEAPON_MELEE_ONEHANDED_AXE:
+    //            ItemTypeString = "One Handed Axe";
+    //            return ItemTypeString;
+    //        case ItemType.ITEM_WEAPON_MELEE_ONEHANDED_MACE:
+    //            ItemTypeString = "One Handed Mace";
+    //            return ItemTypeString;
+    //        case ItemType.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER:
+    //            ItemTypeString = "One Handed Warhammer";
+    //            return ItemTypeString;
+    //        case ItemType.ITEM_WEAPON_MELEE_ONEHANDED_KNIFE:
+    //            ItemTypeString = "One Handed Knife";
+    //            return ItemTypeString;
+    //        case ItemType.ITEM_WEAPON_MELEE_ONEHANDED_SWORD:
+    //            ItemTypeString = "One Handed Sword";
+    //            return ItemTypeString;
+    //        case ItemType.ITEM_WEAPON_MELEE_TWOHANDED_AXE:
+    //            ItemTypeString = "One Handed Sword";
+    //            return ItemTypeString;
+    //    }
+    //    return "ERROR";
+    //}
+    //public static string RarityGeneratorString(ItemRarity rarity)
+    //{
+    //    string ItemRarityString;
+    //    switch (rarity)
+    //    {
+    //        case ItemRarity.COMMON:
+    //            ItemRarityString = "Common";
+    //            return ItemRarityString;
+    //        case ItemRarity.UNCOMMON:
+    //            ItemRarityString = "Uncommon";
+    //            return ItemRarityString;
+    //        case ItemRarity.RARE:
+    //            ItemRarityString = "Rare";
+    //            return ItemRarityString;
+    //        case ItemRarity.MASTERWORK:
+    //            ItemRarityString = "Masterwork";
+    //            return ItemRarityString;
+    //        case ItemRarity.EXOTIC:
+    //            ItemRarityString = "Exotic";
+    //            return ItemRarityString;
+    //        case ItemRarity.LEGENDARY:
+    //            ItemRarityString = "Legendary";
+    //            return ItemRarityString;
+    //        case ItemRarity.UNQIUE:
+    //            ItemRarityString = "Unqiue";
+    //            return ItemRarityString;
+    //        default:
+    //            ItemRarityString = "ERROR";
+    //            return ItemRarityString;
+    //    }
+    //}
+    //public static string StringConvertItemName(ItemTypeName itemTypeName)
+    //{
+    //    string itemTypeNameString;
+    //    switch (itemTypeName)
+    //    {
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_VIKINGAXE:
+    //            itemTypeNameString = "Viking Axe";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_BONEHACHET:
+    //            itemTypeNameString = "Bone Hachet";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_WOODEDAXE:
+    //            itemTypeNameString = "Wooded Axe";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_AXE_BLOODCLEAVER:
+    //            itemTypeNameString = "Blood Cleaver";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_ENERGYCORRECTOR:
+    //            itemTypeNameString = "Energy Corrector";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_RINGEDPERNACH:
+    //            itemTypeNameString = "Rinded Pernach";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_BLACKJACK:
+    //            itemTypeNameString = "Black Jack";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_MORNINGSTAR:
+    //            itemTypeNameString = "Morning Star";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_IRONTEETH:
+    //            itemTypeNameString = "Iron Teeth";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_BEDECKEDSHISHPAR:
+    //            itemTypeNameString = "Bedecked Shishpar";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_MACE_NIGHTGADA:
+    //            itemTypeNameString = "Night Gada";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_CLAWEDPICK:
+    //            itemTypeNameString = "Clawed Pick";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_DOUBLEHEADER:
+    //            itemTypeNameString = "Double Header";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_SKULLSINGER:
+    //            itemTypeNameString = "Skull Singer";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_WARHAMMER_STONEBREAKER:
+    //            itemTypeNameString = "Stone Breaker";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_WETKOPIS:
+    //            itemTypeNameString = "Wet Kopis";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_BRONZEFALX:
+    //            itemTypeNameString = "Bronze Falx";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_DUSTKHOPESH:
+    //            itemTypeNameString = "Dust Khopesh";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_TUTONICSWORD:
+    //            itemTypeNameString = "Tutonic Sword";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_OBSIDIANMAQUAHUITL:
+    //            itemTypeNameString = "Obsidian Maquahuitl";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_ONEHANDED_SWORD_STEELGLADIUS:
+    //            itemTypeNameString = "Steel Gladius";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_BATTLEAXE:
+    //            itemTypeNameString = "Battle Axe";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_LANDHOWITER:
+    //            itemTypeNameString = "Land Howiter";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_GOLDENREAVER:
+    //            itemTypeNameString = "Golden Reaver";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_DEMONSMALICE:
+    //            itemTypeNameString = "Demons Malice";
+    //            return itemTypeNameString;
+    //        case ItemTypeName.ITEM_WEAPON_MELEE_TWOHANDED_AXE_SEAOMEGA:
+    //            itemTypeNameString = "Sea Omega";
+    //            return itemTypeNameString;
+    //        default:
+    //            return "ERROR";
+    //    }
+    //}
+    //public static string ConvertStringPrefixs(ItemPrefixs prefixs)
+    //{
+    //    string PrefixsString;
+    //    switch (prefixs)
+    //    {
+    //        case ItemPrefixs.Clothed:
+    //            PrefixsString = "Clothed";
+    //            return PrefixsString;
+    //        case ItemPrefixs.Jesters:
+    //            PrefixsString = "Jesters";
+    //            return PrefixsString;
+    //        case ItemPrefixs.Kings:
+    //            PrefixsString = "Kings";
+    //            return PrefixsString;
+    //        case ItemPrefixs.Marked:
+    //            PrefixsString = "Marked";
+    //            return PrefixsString;
+    //        case ItemPrefixs.Rusted:
+    //            PrefixsString = "Rusted";
+    //            return PrefixsString;
+    //        case ItemPrefixs.Upper:
+    //            PrefixsString = "Upper";
+    //            return PrefixsString;
+    //        default:
+    //            return "ERROR";
+    //    }
+    //}
+    //public static string ConvertStringSuffixs(ItemSuffixs suffixs)
+    //{
+    //    string SuffixsString;
+    //    switch (suffixs)
+    //    {
+    //        case ItemSuffixs.OfAccelerating:
+    //            SuffixsString = "Of Accelerating";
+    //            return SuffixsString;
+    //        case ItemSuffixs.OfCursing:
+    //            SuffixsString = "Of Cursing";
+    //            return SuffixsString;
+    //        case ItemSuffixs.OfDestruction:
+    //            SuffixsString = "Of Destruction";
+    //            return SuffixsString;
+    //        case ItemSuffixs.OfFrost:
+    //            SuffixsString = "Of Frost";
+    //            return SuffixsString;
+    //        case ItemSuffixs.OfRetarding:
+    //            SuffixsString = "Of Retarding";
+    //            return SuffixsString;
+    //        default:
+    //            return "ERROR";
+    //    }
+    //}
+    //public static string CombineNameString(string itemPrefix, string itemName, string itemSuffix)
+    //{
+    //    string itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
+    //    return itemCombinedName;
+    //}
+    //public static string AttackSpeedGenerator(int AttackSpeedInt)
+    //{
+    //    string AttackSpeedString;
+    //    AttackSpeedString = "Attack Speed " + AttackSpeedInt;
+    //    return AttackSpeedString;
+    //}
+    //public static string CriticalChanceGenerator(int CriticalChanceInt)
+    //{
+    //    string CriticalChanceString;
+    //    CriticalChanceString = "Critical Chance " + CriticalChanceInt + "%";
+    //    return CriticalChanceString;
+    //}
+    //public static string PhysicalDamageGenerator(int PhysicalDamageInt)
+    //{
+    //    string PhysicalDamageString;
+    //    PhysicalDamageString = "Physical Damage " + PhysicalDamageInt;
+    //    return PhysicalDamageString;
+    //}
+    //public static string MagicalDamageStringConverter(int MagicalDamageInt)
+    //{
+    //    string MagicalDamageString;
+    //    MagicalDamageString = "Magical Damage " + MagicalDamageInt;
+    //    return MagicalDamageString;
+    //}
     //public int AttackSpeedOneHandedAxeInt = 3;
     //public int AttackSpeedOneHandedMaceInt = 3;
     //public int AttackSpeedOneHandedWarhammerInt = 4;
@@ -803,6 +1027,19 @@ public class Old
     //    itemRarityString = ConvertString.RarityGeneratorString(itemRarity);
     //    itemTypeString = ConvertString.ItemTypeString(itemType);
     //    itemRequirementsString = ConvertString.RequirementsStringConvertor(itemRequirements);
+    //}
+    //public enum ItemRarity
+    //{
+    //    COUNTSTART,
+    //    COMMON,
+    //    UNCOMMON,
+    //    RARE,
+    //    MASTERWORK,
+    //    EXOTIC,
+    //    LEGENDARY,
+    //    ANCIENT,
+    //    UNQIUE,
+    //    COUNTEND,
     //}
 }
 
