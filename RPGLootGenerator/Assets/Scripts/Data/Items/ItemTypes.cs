@@ -15,7 +15,7 @@ namespace RPGLootGenerator
         Equipment,
         Spells,
     }
-    [CreateAssetMenu(fileName = "Item Stats", menuName = "Item", order = 2)]
+    [CreateAssetMenu(fileName = "Item", menuName = "Item Types", order = 1)]
     public class ItemTypes : ScriptableObject
     {
         public string ItemTypeName;

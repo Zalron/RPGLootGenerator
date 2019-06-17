@@ -8,7 +8,7 @@ namespace RPGLootGenerator
         Preffix,
         Suffix
     }
-    [CreateAssetMenu(fileName = "Item Stats", menuName = "Item", order = 2)]
+    [CreateAssetMenu(fileName = "Item", menuName = "Item Affixs", order = 1)]
     public class ItemAffixs : ScriptableObject
     {
         public ItemAffix itemAffixType;

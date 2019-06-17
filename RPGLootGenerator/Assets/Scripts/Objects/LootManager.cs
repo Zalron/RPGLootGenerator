@@ -24,6 +24,7 @@ namespace RPGLootGenerator
         public TextMeshProUGUI LootMods6;
 
         public ItemMod[] itemModDropTable;
+        public ItemRequirements itemRequirements;
         public ItemRarities[] itemRarityDropTable;
         public ItemName[] itemNameDropTable;
         public ItemAffixs[] itemAffixsDropTable;
@@ -40,6 +41,7 @@ namespace RPGLootGenerator
         }
         public void GenerateRawLoot()
         {
+
             //Item i = new Item();
             //items.Add(i);
             //LootNames.text = i.itemCombinedNameString;

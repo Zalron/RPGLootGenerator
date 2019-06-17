@@ -9,7 +9,7 @@ namespace RPGLootGenerator
         #region Item Variables
         public ItemName itemName;
         public ItemRarities itemRarity;
-        public ItemRequirement itemRequirements;
+        public ItemRequirements itemRequirements;
         public ItemStats itemStat1;
         public ItemStats itemStat2;
         public ItemStats itemStat3;
@@ -22,6 +22,12 @@ namespace RPGLootGenerator
         public ItemAffixs itemSuffixs1;
         public ItemAffixs itemSuffixs2;
         public ItemAffixs itemSuffixs3;
+        public ItemMod itemMod1;
+        public ItemMod itemMod2;
+        public ItemMod itemMod3;
+        public ItemMod itemMod4;
+        public ItemMod itemMod5;
+        public ItemMod itemMod6;
         public int itemStatInt1;
         public int itemStatInt2;
         public int itemStatInt3;
@@ -39,7 +45,7 @@ namespace RPGLootGenerator
         #endregion
 
         #region Item Constructor
-        public Item(ItemName itemName, ItemRarities itemRarity, ItemRequirement itemRequirements, ItemTypes itemType,
+        public Item(ItemName itemName, ItemRarities itemRarity, ItemRequirements itemRequirements, ItemTypes itemType,
                     ItemStats itemStat1, ItemStats itemStat2, ItemStats itemStat3, ItemStats itemStat4, ItemStats itemStat5, ItemStats itemStat6,
                     ItemMod itemMod1, ItemMod itemMod2, ItemMod itemMod3, ItemMod itemMod4, ItemMod itemMod5, ItemMod itemMod6,
                     ItemAffixs itemPrefixs1, ItemAffixs itemPrefixs2, ItemAffixs itemPrefixs3, ItemAffixs itemSuffixs1, ItemAffixs itemSuffixs2, ItemAffixs itemSuffixs3)
@@ -54,6 +60,12 @@ namespace RPGLootGenerator
             this.itemStat4 = itemStat4;
             this.itemStat5 = itemStat5;
             this.itemStat6 = itemStat6;
+            this.itemMod1 = itemMod1;
+            this.itemMod2 = itemMod2;
+            this.itemMod3 = itemMod3;
+            this.itemMod4 = itemMod4;
+            this.itemMod5 = itemMod5;
+            this.itemMod6 = itemMod6;
             this.itemPrefixs1 = itemPrefixs1;
             this.itemPrefixs2 = itemPrefixs2;
             this.itemPrefixs3 = itemPrefixs3;
