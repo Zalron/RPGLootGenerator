@@ -4,7 +4,7 @@ using UnityEngine;
 namespace RPGLootGenerator
 {
    
-    [CreateAssetMenu(fileName = "Item", menuName = "Item Name", order = 1)]
+    [CreateAssetMenu(fileName = "Item", menuName = "Item/Item Name", order = 1)]
     public class ItemName : ScriptableObject
     {
         public string ItemNameString;

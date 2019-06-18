@@ -1367,6 +1367,38 @@ public class Old
     //            return ItemRequirementsString;
     //    }
     //}
+    //#region Item Constructor
+    //public Item(ItemName itemName, ItemRarities itemRarity, ItemRequirements itemRequirements, ItemTypes itemType,
+    //            ItemStats itemStat1, ItemStats itemStat2, ItemStats itemStat3, ItemStats itemStat4, ItemStats itemStat5, ItemStats itemStat6,
+    //            ItemMod itemMod1, ItemMod itemMod2, ItemMod itemMod3, ItemMod itemMod4, ItemMod itemMod5, ItemMod itemMod6,
+    //            ItemAffixs itemPrefixs1, ItemAffixs itemPrefixs2, ItemAffixs itemPrefixs3, ItemAffixs itemSuffixs1, ItemAffixs itemSuffixs2, ItemAffixs itemSuffixs3)
+    //{
+    //    this.itemName = itemName;
+    //    this.itemRarity = itemRarity;
+    //    itemName.itemType = itemType;
+    //    this.itemRequirements = itemRequirements;
+    //    this.itemStat1 = itemStat1;
+    //    this.itemStat2 = itemStat2;
+    //    this.itemStat3 = itemStat3;
+    //    this.itemStat4 = itemStat4;
+    //    this.itemStat5 = itemStat5;
+    //    this.itemStat6 = itemStat6;
+    //    this.itemMod1 = itemMod1;
+    //    this.itemMod2 = itemMod2;
+    //    this.itemMod3 = itemMod3;
+    //    this.itemMod4 = itemMod4;
+    //    this.itemMod5 = itemMod5;
+    //    this.itemMod6 = itemMod6;
+    //    this.itemPrefixs1 = itemPrefixs1;
+    //    this.itemPrefixs2 = itemPrefixs2;
+    //    this.itemPrefixs3 = itemPrefixs3;
+    //    this.itemSuffixs1 = itemSuffixs1;
+    //    this.itemSuffixs2 = itemSuffixs2;
+    //    this.itemSuffixs3 = itemSuffixs3;
+    //    this.itemCombinedNameString = itemCombinedNameString;
+    //    ItemGenerator();
+    //}
+    //#endregion
     //public enum ItemStatType
     //{
     //    CountStart,

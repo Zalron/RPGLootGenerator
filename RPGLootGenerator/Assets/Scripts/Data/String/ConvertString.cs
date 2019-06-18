@@ -6,5 +6,10 @@ namespace RPGLootGenerator
 {
     public static class ConvertString
     {
+        public static string ItemStatGenerator(int ItenStatInt, string ItenStatString)
+        {
+            string ItenStatStringComplete = ItenStatString + ": " + ItenStatInt;
+            return ItenStatStringComplete;
+        }
     }
 }

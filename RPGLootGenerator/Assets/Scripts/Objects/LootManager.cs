@@ -42,18 +42,25 @@ namespace RPGLootGenerator
         public void GenerateRawLoot()
         {
 
-            //Item i = new Item();
-            //items.Add(i);
-            //LootNames.text = i.itemCombinedNameString;
-            //LootRarity.text = i.itemRarityString;
-            //LootTypes.text = i.itemTypeString;
-            //LootRequirements.text = i.itemRequirementsString;
-            //LootStats1.text = i.itemStats1String;
-            //LootStats2.text = i.itemStats2String;
-            //LootStats3.text = i.itemStats3String;
-            //LootStats4.text = i.itemStats4String;
-            //LootStats5.text = i.itemStats5String;
-            //LootStats6.text = i.itemStats6String;
+            Item i = new Item();
+            items.Add(i);
+            LootNames.text = i.itemCombinedNameString;
+            LootRarity.text = i.itemRarity.rarityName;
+            LootTypes.text = i.itemName.itemType.ItemTypeName;
+            LootRequirements.text = i.itemRequirements.name;
+            LootStats1.text = i.itemStat1.itemStatOnItemString;
+            LootStats2.text = i.itemStat2.itemStatOnItemString;
+            LootStats3.text = i.itemStat3.itemStatOnItemString;
+            LootStats4.text = i.itemStat4.itemStatOnItemString;
+            LootStats5.text = i.itemStat5.itemStatOnItemString;
+            LootStats6.text = i.itemStat6.itemStatOnItemString;
+            LootMods1.text = i.itemMod1.itemModDescriptionString;
+            LootMods2.text = i.itemMod2.itemModDescriptionString;
+            LootMods3.text = i.itemMod3.itemModDescriptionString;
+            LootMods4.text = i.itemMod4.itemModDescriptionString;
+            LootMods5.text = i.itemMod5.itemModDescriptionString;
+            LootMods6.text = i.itemMod6.itemModDescriptionString;
+
         }
     }
 }

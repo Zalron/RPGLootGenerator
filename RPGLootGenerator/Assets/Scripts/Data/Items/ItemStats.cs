@@ -4,7 +4,7 @@ using UnityEngine;
 namespace RPGLootGenerator
 {
 
-    [CreateAssetMenu(fileName = "Item", menuName = "Item Stats", order = 1)]
+    [CreateAssetMenu(fileName = "Item", menuName = "Item/Item Stats", order = 1)]
     public class ItemStats : ScriptableObject
     {
         public string itemStatString;
@@ -12,12 +12,13 @@ namespace RPGLootGenerator
     }
     public static class ItemStatGenerator
     {
-        public static int ItemStatGenerators(ItemRarities itemRarities, ItemName itemName)
+        public static int ItemStatGenerators(ItemRarities itemRarities, ItemName itemName, ItemMod itemMod, ItemRequirements itemRequirement, int itemLevel)
         {
             int ItemStatInt = 0;
             ItemStatInt += itemName.itemNameIntModifier;
             ItemStatInt += itemRarities.rarityIntModifier;
-            //ItemStatInt += 
+            ItemStatInt += itemRequirement.ItemLevels[itemLevel];
+            ItemStatInt += itemMod.itemModIntModifier;
             return ItemStatInt;
         }
     }

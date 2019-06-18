@@ -2,7 +2,7 @@
 using System.Collections;
 namespace RPGLootGenerator
 {
-    [CreateAssetMenu(fileName = "Item", menuName = "Item Mod", order = 1)]
+    [CreateAssetMenu(fileName = "Item", menuName = "Item/Item Mod", order = 1)]
     public class ItemMod : ScriptableObject
     {
         public string itemModString;
