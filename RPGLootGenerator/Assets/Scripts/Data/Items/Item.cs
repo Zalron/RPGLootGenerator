@@ -30,27 +30,14 @@ namespace RPGLootGenerator
         public ItemMod itemMod4;
         public ItemMod itemMod5;
         public ItemMod itemMod6;
-        public int itemLevel;
-        public int itemStatInt1;
-        public int itemStatInt2;
-        public int itemStatInt3;
-        public int itemStatInt4;
-        public int itemStatInt5;
-        public int itemStatInt6;
-        public int itemModInt1;
-        public int itemModInt2;
-        public int itemModInt3;
-        public int itemModInt4;
-        public int itemModInt5;
-        public int itemModInt6;
-        //item strings
         #endregion
-
-
-
-        public void ItemGenerator()
+        public Item ItemGenerator(ItemName[] itemNameDropTable, ItemAffixs[] itemAffixsDropTable, ItemStats[] itemStatDropTable, ItemRarities[] itemRarityDropTable, ItemRequirements[] itemRequirements, ItemMod[] itemModDropTable)
         {
-
+            Item i = null;
+            int itemNameDropTableNumber = Random.Range(0,itemNameDropTable.Length);
+            itemName = itemNameDropTable[itemNameDropTableNumber];
+            i.itemCombinedNameString = CombineNameString(itemPrefixs1.itemAffixString, itemName.ItemNameString, itemSuffixs1.itemAffixString);
+            return i;
             
         }
         public static string CombineNameString(string itemPrefix, string itemName, string itemSuffix)

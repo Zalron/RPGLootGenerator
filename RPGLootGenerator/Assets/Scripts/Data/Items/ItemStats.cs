@@ -8,16 +8,14 @@ namespace RPGLootGenerator
     public class ItemStats : ScriptableObject
     {
         public string itemStatString;
+        public string itemStatInt;
         public string itemStatOnItemString;
-    }
-    public static class ItemStatGenerator
-    {
-        public static int ItemStatGenerators(ItemRarities itemRarities, ItemName itemName, ItemMod itemMod, ItemRequirements itemRequirement, int itemLevel)
+        public static int ItemStatGenerators(ItemRarities itemRarities, ItemName itemName, ItemMod itemMod, ItemRequirements itemRequirement)
         {
             int ItemStatInt = 0;
             ItemStatInt += itemName.itemNameIntModifier;
             ItemStatInt += itemRarities.rarityIntModifier;
-            ItemStatInt += itemRequirement.ItemLevels[itemLevel];
+            ItemStatInt += itemRequirement.ItemLevelModifier;
             ItemStatInt += itemMod.itemModIntModifier;
             return ItemStatInt;
         }
