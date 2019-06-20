@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
@@ -9,5 +9,6 @@ namespace RPGLootGenerator
     {
         public string rarityName;
         public int rarityIntModifier;
+        public int rarityIntAffixsAllowed;
     }
 }

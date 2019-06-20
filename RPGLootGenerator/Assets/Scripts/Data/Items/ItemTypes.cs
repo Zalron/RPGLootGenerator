@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace RPGLootGenerator
@@ -11,7 +11,8 @@ namespace RPGLootGenerator
         Weapon_Ranged_TwoHanded,
         Armour_PowerArmour,
         Armour_NonPowerArmour,
-        Currency,
+        Currency_Stackable,
+        Currency_NonStackable,
         Equipment,
         Spells,
     }

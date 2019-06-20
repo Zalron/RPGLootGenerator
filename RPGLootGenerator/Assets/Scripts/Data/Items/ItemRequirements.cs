@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 namespace RPGLootGenerator
 {
     [CreateAssetMenu(fileName = "Item", menuName = "Item/Item Requirements", order = 1)]

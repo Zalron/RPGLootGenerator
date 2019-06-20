@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -36,6 +36,14 @@ namespace RPGLootGenerator
             Item i = null;
             int itemNameDropTableNumber = Random.Range(0,itemNameDropTable.Length);
             itemName = itemNameDropTable[itemNameDropTableNumber];
+            int itemRarityDropTableNumber = Random.Range(0,itemRarityDropTable.Length);
+            itemRarity = itemRarityDropTable[itemRarityDropTableNumber];
+            if(itemRarity.rarityIntAffixsAllowed == 0)
+            {
+                
+            }
+            int itemRequirementsDropTableNumber = Random.Range(0,itemRequirementsDropTable.Length);
+            itemRequirements = itemRequirementsDropTable[itemRequirementsDropTableNumber];
             i.itemCombinedNameString = CombineNameString(itemPrefixs1.itemAffixString, itemName.ItemNameString, itemSuffixs1.itemAffixString);
             return i;
             
