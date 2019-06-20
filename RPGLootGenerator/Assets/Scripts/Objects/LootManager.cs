@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -48,7 +48,7 @@ namespace RPGLootGenerator
             LootNames.text = i.itemCombinedNameString;
             LootRarity.text = i.itemRarity.rarityName;
             LootTypes.text = i.itemName.itemType.ItemTypeName;
-            LootRequirements.text = i.itemRequirements.name;
+            LootRequirements.text = i.itemRequirements.ItemLevelString;
             LootStats1.text = i.itemStat1.itemStatOnItemString;
             LootStats2.text = i.itemStat2.itemStatOnItemString;
             LootStats3.text = i.itemStat3.itemStatOnItemString;

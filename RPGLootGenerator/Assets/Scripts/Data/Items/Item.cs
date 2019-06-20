@@ -35,16 +35,21 @@ namespace RPGLootGenerator
         {
             Item i = null;
             int itemNameDropTableNumber = Random.Range(0,itemNameDropTable.Length);
-            itemName = itemNameDropTable[itemNameDropTableNumber];
+            i.itemName = itemNameDropTable[itemNameDropTableNumber];
             int itemRarityDropTableNumber = Random.Range(0,itemRarityDropTable.Length);
-            itemRarity = itemRarityDropTable[itemRarityDropTableNumber];
-            if(itemRarity.rarityIntAffixsAllowed == 0)
+            i.itemRarity = itemRarityDropTable[itemRarityDropTableNumber];
+            if(i.itemRarity.rarityIntAffixsAllowed == 0)
             {
-                
+                i.itemPrefixs1 = null;
+                i.itemPrefixs2 = null;
+                i.itemPrefixs3 = null;
+                i.itemSuffixs1 = null;
+                i.itemSuffixs2 = null;
+                i.itemSuffixs3 = null;
+                i.itemCombinedNameString = CombineNameString(itemPrefixs1.itemAffixString, itemName.ItemNameString, itemSuffixs1.itemAffixString);
             }
             int itemRequirementsDropTableNumber = Random.Range(0,itemRequirementsDropTable.Length);
-            itemRequirements = itemRequirementsDropTable[itemRequirementsDropTableNumber];
-            i.itemCombinedNameString = CombineNameString(itemPrefixs1.itemAffixString, itemName.ItemNameString, itemSuffixs1.itemAffixString);
+            i.itemRequirements = itemRequirementsDropTable[itemRequirementsDropTableNumber];
             return i;
             
         }
