@@ -9,6 +9,7 @@ namespace RPGLootGenerator
     {
         #region Item Variables
         public ItemName itemName;
+        public ItemTypes itemType;
         public string itemCombinedNameString;
         public ItemRarities itemRarity;
         public ItemRequirements itemRequirements;
@@ -31,33 +32,35 @@ namespace RPGLootGenerator
         public ItemMod itemMod5;
         public ItemMod itemMod6;
         #endregion
-        public Item ItemGenerator(ItemName[] itemNameDropTable, ItemAffixs[] itemAffixsDropTable, ItemStats[] itemStatDropTable, ItemRarities[] itemRarityDropTable, ItemRequirements[] itemRequirements, ItemMod[] itemModDropTable)
+        public Item ItemGenerator(ItemName[] itemNameDropTable, ItemAffixs[] itemPrefixDropTable, ItemAffixs[] itemSuffixDropTable, ItemStats[] itemStatDropTable, ItemRarities[] itemRarityDropTable, ItemRequirements[] itemRequirementsDropTable, ItemMod[] itemModDropTable)
         {
             Item i = null;
             int itemNameDropTableNumber = Random.Range(0,itemNameDropTable.Length);
             i.itemName = itemNameDropTable[itemNameDropTableNumber];
+            i.itemType = i.itemName.itemType;
             int itemRarityDropTableNumber = Random.Range(0,itemRarityDropTable.Length);
             i.itemRarity = itemRarityDropTable[itemRarityDropTableNumber];
-            if(i.itemRarity.rarityIntAffixsAllowed == 0)
-            {
-                i.itemPrefixs1 = null;
-                i.itemPrefixs2 = null;
-                i.itemPrefixs3 = null;
-                i.itemSuffixs1 = null;
-                i.itemSuffixs2 = null;
-                i.itemSuffixs3 = null;
-                i.itemCombinedNameString = CombineNameString(itemPrefixs1.itemAffixString, itemName.ItemNameString, itemSuffixs1.itemAffixString);
-            }
+            i = itemRarity.RarityAffixGenerator(i, itemPrefixDropTable, itemSuffixDropTable);
             int itemRequirementsDropTableNumber = Random.Range(0,itemRequirementsDropTable.Length);
             i.itemRequirements = itemRequirementsDropTable[itemRequirementsDropTableNumber];
+            i.itemMod1 = i.itemPrefixs1.itemMod;
+            i.itemMod2 = i.itemSuffixs1.itemMod;
+            i.itemMod3 = i.itemPrefixs2.itemMod;
+            i.itemMod4 = i.itemSuffixs2.itemMod;
+            i.itemMod5 = i.itemPrefixs3.itemMod;
+            i.itemMod6 = i.itemSuffixs3.itemMod;
+            i.itemStat1 = itemStatDropTable[0];
+            i.itemStat2 = itemStatDropTable[1];
+            i.itemStat3 = itemStatDropTable[2];
+            i.itemStat4 = itemStatDropTable[3];
+            itemStat1.itemStatInt = ItemStats.ItemStatGenerators(i.itemName,i.itemType,i.itemRarity,i.itemRequirements,i.itemMod1);
+            itemStat2.itemStatInt = ItemStats.ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, i.itemMod2);
+            itemStat3.itemStatInt = ItemStats.ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, i.itemMod3);
+            itemStat4.itemStatInt = ItemStats.ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, i.itemMod4);
             return i;
             
         }
-        public static string CombineNameString(string itemPrefix, string itemName, string itemSuffix)
-        {
-            string itemCombinedName = itemPrefix + " " + itemName + " " + itemSuffix;
-            return itemCombinedName;
-        }
+       
         
     }
 }

@@ -20,7 +20,7 @@ namespace RPGLootGenerator
     public class ItemTypes : ScriptableObject
     {
         public string ItemTypeName;
-        public int ItemTypeIntModifier;
+        public int itemTypeIntModifier;
         public ItemSubType itemSubType;
     }
 }

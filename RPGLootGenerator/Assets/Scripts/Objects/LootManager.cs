@@ -24,10 +24,11 @@ namespace RPGLootGenerator
         public TextMeshProUGUI LootMods6;
 
         public ItemMod[] itemModDropTable;
-        public ItemRequirements[] itemRequirements;
+        public ItemRequirements[] itemRequirementsDropTable;
         public ItemRarities[] itemRarityDropTable;
         public ItemName[] itemNameDropTable;
-        public ItemAffixs[] itemAffixsDropTable;
+        public ItemAffixs[] itemPrefixDropTable;
+        public ItemAffixs[] itemSuffixDropTable;
         public ItemStats[] itemStatDropTable;
 
         public List<Item> items = new List<Item>();
@@ -43,11 +44,11 @@ namespace RPGLootGenerator
         {
 
             Item i = new Item();
-            i = i.ItemGenerator(itemNameDropTable, itemAffixsDropTable, itemStatDropTable, itemRarityDropTable, itemRequirements, itemModDropTable);
+            i = i.ItemGenerator(itemNameDropTable, itemPrefixDropTable, itemSuffixDropTable, itemStatDropTable, itemRarityDropTable, itemRequirementsDropTable, itemModDropTable);
             items.Add(i);
             LootNames.text = i.itemCombinedNameString;
             LootRarity.text = i.itemRarity.rarityName;
-            LootTypes.text = i.itemName.itemType.ItemTypeName;
+            LootTypes.text = i.itemType.ItemTypeName;
             LootRequirements.text = i.itemRequirements.ItemLevelString;
             LootStats1.text = i.itemStat1.itemStatOnItemString;
             LootStats2.text = i.itemStat2.itemStatOnItemString;

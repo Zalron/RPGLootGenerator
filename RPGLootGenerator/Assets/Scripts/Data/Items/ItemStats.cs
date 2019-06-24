@@ -11,10 +11,11 @@ namespace RPGLootGenerator
         public int itemStatInt;
         public string itemStatOnItemString;
         public bool isPercentage;
-        public static int ItemStatGenerators(ItemRarities itemRarities, ItemName itemName, ItemMod itemMod, ItemRequirements itemRequirement)
+        public static int ItemStatGenerators(ItemName itemName, ItemTypes itemType, ItemRarities itemRarities, ItemRequirements itemRequirement, ItemMod itemMod)
         {
             int ItemStatInt = 0;
             ItemStatInt += itemName.itemNameIntModifier;
+            ItemStatInt += itemType.itemTypeIntModifier;
             ItemStatInt += itemRarities.rarityIntModifier;
             ItemStatInt += itemRequirement.ItemLevelModifier;
             ItemStatInt += itemMod.itemModIntModifier;

@@ -3238,7 +3238,7 @@ MonoBehaviour:
   LootMods5: {fileID: 641574422}
   LootMods6: {fileID: 1943002958}
   itemModDropTable: []
-  itemRequirements: {fileID: 11400000, guid: 9f3f8595f5f5895468a941ed474d686a, type: 2}
+  itemRequirementsDropTable: []
   itemRarityDropTable:
   - {fileID: 0}
   - {fileID: 0}
@@ -3250,8 +3250,16 @@ MonoBehaviour:
   itemNameDropTable:
   - {fileID: 0}
   - {fileID: 0}
-  itemAffixsDropTable: []
+  itemPrefixDropTable:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemSuffixDropTable:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   itemStatDropTable:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
