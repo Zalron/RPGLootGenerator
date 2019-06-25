@@ -43,7 +43,7 @@ namespace RPGLootGenerator
         public void GenerateRawLoot()
         {
 
-            Item i = new Item();
+            Item i = ScriptableObject.CreateInstance<Item>();
             i = i.ItemGenerator(itemNameDropTable, itemPrefixDropTable, itemSuffixDropTable, itemStatDropTable, itemRarityDropTable, itemRequirementsDropTable, itemModDropTable);
             items.Add(i);
             LootNames.text = i.itemCombinedNameString;

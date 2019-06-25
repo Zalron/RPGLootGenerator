@@ -14,7 +14,6 @@ namespace RPGLootGenerator
         public ItemAffix itemAffixType;
         public ItemMod itemMod;
         public string itemAffixString;
-        public int itemAffixIntModifier;
         public bool isSpecialModifier;
     }
 }

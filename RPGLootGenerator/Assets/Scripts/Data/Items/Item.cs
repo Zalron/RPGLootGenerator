@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 namespace RPGLootGenerator
 {
-    [CreateAssetMenu(fileName = "Item", menuName = "Item/Item Stats", order = 1)]
+    [CreateAssetMenu(fileName = "Item", menuName = "Item/Item", order = 1)]
     public class Item : ScriptableObject
     {
         #region Item Variables
@@ -35,6 +35,10 @@ namespace RPGLootGenerator
         public Item ItemGenerator(ItemName[] itemNameDropTable, ItemAffixs[] itemPrefixDropTable, ItemAffixs[] itemSuffixDropTable, ItemStats[] itemStatDropTable, ItemRarities[] itemRarityDropTable, ItemRequirements[] itemRequirementsDropTable, ItemMod[] itemModDropTable)
         {
             Item i = null;
+            if (itemNameDropTable == null || itemPrefixDropTable == null || itemSuffixDropTable == null || itemStatDropTable == null || itemRarityDropTable == null || itemRequirementsDropTable == null || itemModDropTable == null)
+            {
+                Debug.Log("A table doesn't have anything in it");
+            }
             int itemNameDropTableNumber = Random.Range(0,itemNameDropTable.Length);
             i.itemName = itemNameDropTable[itemNameDropTableNumber];
             i.itemType = i.itemName.itemType;
@@ -53,10 +57,10 @@ namespace RPGLootGenerator
             i.itemStat2 = itemStatDropTable[1];
             i.itemStat3 = itemStatDropTable[2];
             i.itemStat4 = itemStatDropTable[3];
-            itemStat1.itemStatInt = ItemStats.ItemStatGenerators(i.itemName,i.itemType,i.itemRarity,i.itemRequirements,i.itemMod1);
-            itemStat2.itemStatInt = ItemStats.ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, i.itemMod2);
-            itemStat3.itemStatInt = ItemStats.ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, i.itemMod3);
-            itemStat4.itemStatInt = ItemStats.ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, i.itemMod4);
+            i = itemStat1.ItemModStatGenerator(i, i.itemStat1, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i = itemStat2.ItemModStatGenerator(i, i.itemStat2, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i = itemStat3.ItemModStatGenerator(i, i.itemStat3, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i = itemStat4.ItemModStatGenerator(i, i.itemStat4, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
             return i;
             
         }

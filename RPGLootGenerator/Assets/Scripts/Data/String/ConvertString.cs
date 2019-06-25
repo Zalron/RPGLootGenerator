@@ -8,7 +8,7 @@ namespace RPGLootGenerator
     {
         public static string ItemStatStringGenerator(int ItenStatInt, string ItenStatString)
         {
-            string ItenStatStringComplete = ItenStatString + ": " + ItenStatInt;
+            string ItenStatStringComplete = ItenStatInt + " " +  ItenStatString;
             return ItenStatStringComplete;
         }
         public static string ItemModStringGenerator(int ItemModInt, string ItemModString)

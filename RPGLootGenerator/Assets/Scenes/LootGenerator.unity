@@ -202,8 +202,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 403adf4cf8395994c8454214e466da70, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 2017876160}
+        m_MethodName: GenerateRawLoot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3240,16 +3240,17 @@ MonoBehaviour:
   itemModDropTable: []
   itemRequirementsDropTable: []
   itemRarityDropTable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ec539d6a613f36642bada7951dbbd186, type: 2}
+  - {fileID: 11400000, guid: 39982fa4945de164d90c3e2d48f497d8, type: 2}
+  - {fileID: 11400000, guid: 880b113b3fbb834499e6a4505204a2e7, type: 2}
+  - {fileID: 11400000, guid: 94c54a574c0943f4392cf0eb315e7fab, type: 2}
+  - {fileID: 11400000, guid: addc985b9a0d0894f8f2bc51b3b880cd, type: 2}
+  - {fileID: 11400000, guid: c49f2e2d74a78da4eac0a42c7f11c108, type: 2}
+  - {fileID: 11400000, guid: b745c09ad9d506e4880a03def99ed18d, type: 2}
   itemNameDropTable:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0506fcd91331c754ebd35701ff9fb767, type: 2}
+  - {fileID: 11400000, guid: 17b233b99800cae4d9cd1306cb08c0d9, type: 2}
+  - {fileID: 11400000, guid: 83c536f6b24059049abc80cbb98d5fb5, type: 2}
   itemPrefixDropTable:
   - {fileID: 0}
   - {fileID: 0}

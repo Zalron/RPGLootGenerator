@@ -8,7 +8,6 @@ namespace RPGLootGenerator
         public string itemModString;
         public string itemModDescriptionString;
         public int itemModIntModifier;
-        public ItemAffix itemAffixType;
         public ItemStats itemStatModifiying;
     }
 }
