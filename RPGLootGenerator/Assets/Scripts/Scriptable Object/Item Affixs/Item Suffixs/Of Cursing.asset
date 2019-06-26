@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Of Cursing
   m_EditorClassIdentifier: 
   itemAffixType: 1
-  itemMod: {fileID: 0}
-  itemAffixString: 
+  itemMod: {fileID: 11400000, guid: 3139fa9ab9e99f24787f39eda8a32ffb, type: 2}
+  itemAffixString: Of Cursing
   isSpecialModifier: 0

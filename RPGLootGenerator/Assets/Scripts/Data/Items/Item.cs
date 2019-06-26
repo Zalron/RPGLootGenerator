@@ -32,35 +32,39 @@ namespace RPGLootGenerator
         public ItemMod itemMod5;
         public ItemMod itemMod6;
         #endregion
-        public Item ItemGenerator(ItemName[] itemNameDropTable, ItemAffixs[] itemPrefixDropTable, ItemAffixs[] itemSuffixDropTable, ItemStats[] itemStatDropTable, ItemRarities[] itemRarityDropTable, ItemRequirements[] itemRequirementsDropTable, ItemMod[] itemModDropTable)
+        public Item ItemGenerator(Item i, ItemName[] itemNameDropTable, ItemAffixs[] itemPrefixDropTable, ItemAffixs[] itemSuffixDropTable, ItemStats[] itemStatDropTable, ItemRarities[] itemRarityDropTable, ItemRequirements[] itemRequirementsDropTable)
         {
-            Item i = null;
-            if (itemNameDropTable == null || itemPrefixDropTable == null || itemSuffixDropTable == null || itemStatDropTable == null || itemRarityDropTable == null || itemRequirementsDropTable == null || itemModDropTable == null)
+            if (itemNameDropTable == null || itemPrefixDropTable == null || itemSuffixDropTable == null || itemStatDropTable == null || itemRarityDropTable == null || itemRequirementsDropTable == null)
             {
                 Debug.Log("A table doesn't have anything in it");
             }
             int itemNameDropTableNumber = Random.Range(0,itemNameDropTable.Length);
             i.itemName = itemNameDropTable[itemNameDropTableNumber];
             i.itemType = i.itemName.itemType;
+            int itemRequirementsDropTableNumber = Random.Range(0, itemRequirementsDropTable.Length);
+            i.itemRequirements = itemRequirementsDropTable[itemRequirementsDropTableNumber];
             int itemRarityDropTableNumber = Random.Range(0,itemRarityDropTable.Length);
             i.itemRarity = itemRarityDropTable[itemRarityDropTableNumber];
             i = itemRarity.RarityAffixGenerator(i, itemPrefixDropTable, itemSuffixDropTable);
-            int itemRequirementsDropTableNumber = Random.Range(0,itemRequirementsDropTable.Length);
-            i.itemRequirements = itemRequirementsDropTable[itemRequirementsDropTableNumber];
-            i.itemMod1 = i.itemPrefixs1.itemMod;
-            i.itemMod2 = i.itemSuffixs1.itemMod;
-            i.itemMod3 = i.itemPrefixs2.itemMod;
-            i.itemMod4 = i.itemSuffixs2.itemMod;
-            i.itemMod5 = i.itemPrefixs3.itemMod;
-            i.itemMod6 = i.itemSuffixs3.itemMod;
+            i = itemMod1.SetItemMods(i, i.itemPrefixs1);
+            i = itemMod2.SetItemMods(i, i.itemPrefixs2);
+            i = itemMod3.SetItemMods(i, i.itemPrefixs3);
+            i = itemMod4.SetItemMods(i, i.itemSuffixs1);
+            i = itemMod5.SetItemMods(i, i.itemSuffixs1);
+            i = itemMod6.SetItemMods(i, i.itemSuffixs1);
             i.itemStat1 = itemStatDropTable[0];
             i.itemStat2 = itemStatDropTable[1];
             i.itemStat3 = itemStatDropTable[2];
             i.itemStat4 = itemStatDropTable[3];
+            i.itemStat5 = itemStatDropTable[4];
+            i.itemStat6 = itemStatDropTable[5];
             i = itemStat1.ItemModStatGenerator(i, i.itemStat1, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
             i = itemStat2.ItemModStatGenerator(i, i.itemStat2, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
             i = itemStat3.ItemModStatGenerator(i, i.itemStat3, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
             i = itemStat4.ItemModStatGenerator(i, i.itemStat4, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i = itemStat5.ItemModStatGenerator(i, i.itemStat5, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i = itemStat6.ItemModStatGenerator(i, i.itemStat6, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i.itemCombinedNameString = ConvertString.CombineNameString(i.itemPrefixs1.itemAffixString, i.itemName.ItemNameString, i.itemSuffixs1.itemAffixString);
             return i;
             
         }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemAffixType: 1
   itemMod: {fileID: 0}
-  itemAffixString: 
+  itemAffixString: Of Hardening
   isSpecialModifier: 0

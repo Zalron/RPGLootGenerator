@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8eb29d6cb4baa48a554fcab5cb076f, type: 3}
   m_Name: Physical Damage
   m_EditorClassIdentifier: 
-  itemModString: Rusted
-  itemModDescriptionString: 
-  itemModIntModifier: 0
+  itemModString: Physical Damage
+  itemModDescriptionString: ' Increased Physical Damage'
+  itemModIntModifier: 8
   itemStatModifiying: {fileID: 0}

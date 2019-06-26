@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Of Accelerating
   m_EditorClassIdentifier: 
   itemAffixType: 1
-  itemMod: {fileID: 0}
-  itemAffixString: 
+  itemMod: {fileID: 11400000, guid: ced925e9a78bc154f9db5c175f5790ec, type: 2}
+  itemAffixString: Of Accelerating
   isSpecialModifier: 0

@@ -23,7 +23,6 @@ namespace RPGLootGenerator
         public TextMeshProUGUI LootMods5;
         public TextMeshProUGUI LootMods6;
 
-        public ItemMod[] itemModDropTable;
         public ItemRequirements[] itemRequirementsDropTable;
         public ItemRarities[] itemRarityDropTable;
         public ItemName[] itemNameDropTable;
@@ -32,6 +31,7 @@ namespace RPGLootGenerator
         public ItemStats[] itemStatDropTable;
 
         public List<Item> items = new List<Item>();
+        public Item item;
         void Start() // Start is called before the first frame update
         {
 
@@ -44,8 +44,7 @@ namespace RPGLootGenerator
         {
 
             Item i = ScriptableObject.CreateInstance<Item>();
-            i = i.ItemGenerator(itemNameDropTable, itemPrefixDropTable, itemSuffixDropTable, itemStatDropTable, itemRarityDropTable, itemRequirementsDropTable, itemModDropTable);
-            items.Add(i);
+            i = i.ItemGenerator(i,itemNameDropTable, itemPrefixDropTable, itemSuffixDropTable, itemStatDropTable, itemRarityDropTable, itemRequirementsDropTable);
             LootNames.text = i.itemCombinedNameString;
             LootRarity.text = i.itemRarity.rarityName;
             LootTypes.text = i.itemType.ItemTypeName;
@@ -62,6 +61,7 @@ namespace RPGLootGenerator
             LootMods4.text = i.itemMod4.itemModDescriptionString;
             LootMods5.text = i.itemMod5.itemModDescriptionString;
             LootMods6.text = i.itemMod6.itemModDescriptionString;
+            items.Add(i);
 
         }
     }

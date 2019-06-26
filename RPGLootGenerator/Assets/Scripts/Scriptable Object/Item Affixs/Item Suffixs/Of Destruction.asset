@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Of Destruction
   m_EditorClassIdentifier: 
   itemAffixType: 1
-  itemMod: {fileID: 0}
-  itemAffixString: 
+  itemMod: {fileID: 11400000, guid: 6765f715a8b83fb428bf80c2a2dfbfe8, type: 2}
+  itemAffixString: Of Destruction
   isSpecialModifier: 0

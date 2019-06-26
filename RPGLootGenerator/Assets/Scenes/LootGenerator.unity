@@ -3237,8 +3237,17 @@ MonoBehaviour:
   LootMods4: {fileID: 19539918}
   LootMods5: {fileID: 641574422}
   LootMods6: {fileID: 1943002958}
-  itemModDropTable: []
-  itemRequirementsDropTable: []
+  itemRequirementsDropTable:
+  - {fileID: 11400000, guid: 5f9af0e4608402b48a576ef9edb9b75b, type: 2}
+  - {fileID: 11400000, guid: fb9ceecf80424b9439b6994ab919984d, type: 2}
+  - {fileID: 11400000, guid: ca58a619c376cbc419a5b1a1dad16f87, type: 2}
+  - {fileID: 11400000, guid: 60796fad2e81bd7449fe0b7d4c1c20ac, type: 2}
+  - {fileID: 11400000, guid: 008747f2d7474844ea3c7ab9cf387fa6, type: 2}
+  - {fileID: 11400000, guid: b77aadc29e60b944bb1cfaf87143bb5d, type: 2}
+  - {fileID: 11400000, guid: e5e8f858dcbd2a8499bc6c0fa8565af7, type: 2}
+  - {fileID: 11400000, guid: 2071aba1f6ba80f428e03e365cef1f34, type: 2}
+  - {fileID: 11400000, guid: 0541fd44c6d4f064c9be29b74dc8a9c4, type: 2}
+  - {fileID: 11400000, guid: b8b37917a9a91974bb1e96d90ad94f8c, type: 2}
   itemRarityDropTable:
   - {fileID: 11400000, guid: ec539d6a613f36642bada7951dbbd186, type: 2}
   - {fileID: 11400000, guid: 39982fa4945de164d90c3e2d48f497d8, type: 2}
@@ -3252,21 +3261,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17b233b99800cae4d9cd1306cb08c0d9, type: 2}
   - {fileID: 11400000, guid: 83c536f6b24059049abc80cbb98d5fb5, type: 2}
   itemPrefixDropTable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0156f2b61f931f04c81198812953d35e, type: 2}
+  - {fileID: 11400000, guid: 9f3b2d7807475d14fa7f42e30c73d81e, type: 2}
+  - {fileID: 11400000, guid: b2178dd2ffec8f7459c1999120da7087, type: 2}
   itemSuffixDropTable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ac1a96ba61a3e724696f73bb92fc7013, type: 2}
+  - {fileID: 11400000, guid: fd1c191fef446e348a0236cc0989dcc7, type: 2}
+  - {fileID: 11400000, guid: 1b69d30528c87ef49bf01a31a5a4652c, type: 2}
   itemStatDropTable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 1051df46d4f62764492fc6cfe4823702, type: 2}
+  - {fileID: 11400000, guid: 9cdd4347d4af7fa4fba558df9c7aa765, type: 2}
+  - {fileID: 11400000, guid: 65606989f90fe0a4383934e018a335fb, type: 2}
+  - {fileID: 11400000, guid: 8de5f7659cb432d4da4d6c9ad1268d3b, type: 2}
+  - {fileID: 11400000, guid: 934d40c0989844d4ca87639b6c73b9cd, type: 2}
+  - {fileID: 11400000, guid: 867c440932aec154d9f92642273c4545, type: 2}
   items: []
+  item: {fileID: 11400000, guid: 3a57bf0202036864c8a8b276c2ccee78, type: 2}
 --- !u!1 &2142821714
 GameObject:
   m_ObjectHideFlags: 0

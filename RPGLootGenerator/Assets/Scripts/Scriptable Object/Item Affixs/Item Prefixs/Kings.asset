@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kings
   m_EditorClassIdentifier: 
   itemAffixType: 0
-  itemMod: {fileID: 0}
-  itemAffixString: 
+  itemMod: {fileID: 11400000, guid: 91155b41046ec7d44b650978e3f6dedd, type: 2}
+  itemAffixString: Kings
   isSpecialModifier: 0

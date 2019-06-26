@@ -6,9 +6,9 @@ namespace RPGLootGenerator
 {
     public static class ConvertString
     {
-        public static string ItemStatStringGenerator(int ItenStatInt, string ItenStatString)
+        public static string ItemStatStringGenerator(int ItemStatInt, string ItemStatString)
         {
-            string ItenStatStringComplete = ItenStatInt + " " +  ItenStatString;
+            string ItenStatStringComplete = ItemStatInt + " " +  ItemStatString;
             return ItenStatStringComplete;
         }
         public static string ItemModStringGenerator(int ItemModInt, string ItemModString)

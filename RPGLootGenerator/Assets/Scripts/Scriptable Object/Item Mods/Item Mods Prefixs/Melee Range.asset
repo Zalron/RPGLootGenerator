@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8eb29d6cb4baa48a554fcab5cb076f, type: 3}
   m_Name: Melee Range
   m_EditorClassIdentifier: 
-  itemModString: Rusted
-  itemModDescriptionString: 
-  itemModIntModifier: 0
+  itemModString: Melee Range
+  itemModDescriptionString: ' Increased Melee Range'
+  itemModIntModifier: 4
   itemStatModifiying: {fileID: 0}

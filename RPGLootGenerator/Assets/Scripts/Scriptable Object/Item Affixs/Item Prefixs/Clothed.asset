@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemAffixType: 0
   itemMod: {fileID: 11400000, guid: 155b1c44d7b7b5246ad961e13e92c8ba, type: 2}
-  itemAffixString: 
+  itemAffixString: Clothed
   isSpecialModifier: 0
