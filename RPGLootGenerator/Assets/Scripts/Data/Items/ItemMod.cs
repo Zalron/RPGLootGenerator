@@ -10,42 +10,10 @@ namespace RPGLootGenerator
         public string itemModOnItemString;
         public int itemModIntModifier;
         public ItemStats itemStatModifiying;
-        public Item SetItemMods(Item i, ItemAffixs itemAffix)
+        public ItemMod SetItemMods(Item i, ItemMod itemMod)
         {
-            if (i.itemMod1 = itemAffix.itemMod)
-            {
-                itemAffix.itemMod.itemModOnItemString = ConvertString.ItemModStringGenerator(itemAffix.itemMod.itemModIntModifier, itemAffix.itemMod.itemModDescriptionString);
-                return i;
-            }
-            else if (i.itemMod2 = itemAffix.itemMod)
-            {
-                itemAffix.itemMod.itemModOnItemString = ConvertString.ItemModStringGenerator(itemAffix.itemMod.itemModIntModifier, itemAffix.itemMod.itemModDescriptionString);
-                return i;
-            }
-            else if (i.itemMod3 = itemAffix.itemMod)
-            {
-                itemAffix.itemMod.itemModOnItemString = ConvertString.ItemModStringGenerator(itemAffix.itemMod.itemModIntModifier, itemAffix.itemMod.itemModDescriptionString);
-                return i;
-            }
-            else if (i.itemMod4 = itemAffix.itemMod)
-            {
-                itemAffix.itemMod.itemModOnItemString = ConvertString.ItemModStringGenerator(itemAffix.itemMod.itemModIntModifier, itemAffix.itemMod.itemModDescriptionString);
-                return i;
-            }
-            else if (i.itemMod5 = itemAffix.itemMod)
-            {
-                itemAffix.itemMod.itemModOnItemString = ConvertString.ItemModStringGenerator(itemAffix.itemMod.itemModIntModifier, itemAffix.itemMod.itemModDescriptionString);
-                return i;
-            }
-            else if (i.itemMod6 = itemAffix.itemMod)
-            {
-                itemAffix.itemMod.itemModOnItemString = ConvertString.ItemModStringGenerator(itemAffix.itemMod.itemModIntModifier, itemAffix.itemMod.itemModDescriptionString);
-                return i;
-            }
-            else
-            {
-                return i;
-            }
+            itemMod.itemModOnItemString = ConvertString.ItemModStringGenerator(itemMod.itemModIntModifier, itemMod.itemModDescriptionString);
+            return itemMod;
         }
     }
     

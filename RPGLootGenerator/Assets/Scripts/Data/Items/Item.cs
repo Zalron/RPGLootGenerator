@@ -46,25 +46,34 @@ namespace RPGLootGenerator
             int itemRarityDropTableNumber = Random.Range(0,itemRarityDropTable.Length);
             i.itemRarity = itemRarityDropTable[itemRarityDropTableNumber];
             i = itemRarity.RarityAffixGenerator(i, itemPrefixDropTable, itemSuffixDropTable);
-            i = itemMod1.SetItemMods(i, i.itemPrefixs1);
-            i = itemMod2.SetItemMods(i, i.itemPrefixs2);
-            i = itemMod3.SetItemMods(i, i.itemPrefixs3);
-            i = itemMod4.SetItemMods(i, i.itemSuffixs1);
-            i = itemMod5.SetItemMods(i, i.itemSuffixs1);
-            i = itemMod6.SetItemMods(i, i.itemSuffixs1);
             i.itemStat1 = itemStatDropTable[0];
             i.itemStat2 = itemStatDropTable[1];
             i.itemStat3 = itemStatDropTable[2];
             i.itemStat4 = itemStatDropTable[3];
             i.itemStat5 = itemStatDropTable[4];
             i.itemStat6 = itemStatDropTable[5];
-            i = itemStat1.ItemModStatGenerator(i, i.itemStat1, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
-            i = itemStat2.ItemModStatGenerator(i, i.itemStat2, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
-            i = itemStat3.ItemModStatGenerator(i, i.itemStat3, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
-            i = itemStat4.ItemModStatGenerator(i, i.itemStat4, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
-            i = itemStat5.ItemModStatGenerator(i, i.itemStat5, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
-            i = itemStat6.ItemModStatGenerator(i, i.itemStat6, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
-            i.itemCombinedNameString = ConvertString.CombineNameString(i.itemPrefixs1.itemAffixString, i.itemName.ItemNameString, i.itemSuffixs1.itemAffixString);
+            i.itemStat1 = itemStat1.ItemModStatGenerator(i, i.itemStat1, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i.itemStat2 = itemStat2.ItemModStatGenerator(i, i.itemStat2, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i.itemStat3 = itemStat3.ItemModStatGenerator(i, i.itemStat3, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i.itemStat4 = itemStat4.ItemModStatGenerator(i, i.itemStat4, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i.itemStat5 = itemStat5.ItemModStatGenerator(i, i.itemStat5, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            i.itemStat6 = itemStat6.ItemModStatGenerator(i, i.itemStat6, i.itemMod1, i.itemMod2, i.itemMod3, i.itemMod4, i.itemMod5, i.itemMod6);
+            if (i.itemPrefixs1 == null && i.itemSuffixs1 == null)
+            {
+                i.itemCombinedNameString = ConvertString.CombineNameString("", i.itemName.ItemNameString, "");
+            }
+            else if (i.itemSuffixs1 == null)
+            {
+                i.itemCombinedNameString = ConvertString.CombineNameString(i.itemPrefixs1.itemAffixString, i.itemName.ItemNameString, "");
+            }
+            else if (i.itemPrefixs1 == null)
+            {
+                i.itemCombinedNameString = ConvertString.CombineNameString("", i.itemName.ItemNameString, i.itemSuffixs1.itemAffixString);
+            }
+            else
+            {
+                i.itemCombinedNameString = ConvertString.CombineNameString(i.itemPrefixs1.itemAffixString, i.itemName.ItemNameString, i.itemSuffixs1.itemAffixString);
+            }
             return i;
             
         }
