@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a5723769b063d4880bd4d3527ab0d9, type: 3}
   m_Name: One Handed Mace
   m_EditorClassIdentifier: 
-  ItemTypeName: 
+  ItemTypeName: One Handed Mace
   itemTypeIntModifier: 0
   itemSubType: 0

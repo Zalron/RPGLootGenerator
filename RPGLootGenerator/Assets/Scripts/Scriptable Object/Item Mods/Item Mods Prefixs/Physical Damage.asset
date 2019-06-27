@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModString: Physical Damage
   itemModDescriptionString: ' Increased Physical Damage'
+  itemModOnItemString: 
   itemModIntModifier: 8
-  itemStatModifiying: {fileID: 0}
+  itemStatModifiying: {fileID: 11400000, guid: 65606989f90fe0a4383934e018a335fb, type: 2}

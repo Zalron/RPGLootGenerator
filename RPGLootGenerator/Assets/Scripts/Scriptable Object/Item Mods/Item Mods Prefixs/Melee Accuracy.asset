@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModString: Melee Accuracy
   itemModDescriptionString: ' Increased Melee Accuracy'
+  itemModOnItemString: 
   itemModIntModifier: 9
-  itemStatModifiying: {fileID: 0}
+  itemStatModifiying: {fileID: 11400000, guid: 934d40c0989844d4ca87639b6c73b9cd, type: 2}

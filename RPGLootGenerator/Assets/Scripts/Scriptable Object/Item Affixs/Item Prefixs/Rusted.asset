@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Rusted
   m_EditorClassIdentifier: 
   itemAffixType: 0
-  itemMod: {fileID: 0}
+  itemMod: {fileID: 11400000, guid: 22ae88378a1f3cc419a2f28ad7e1a0a0, type: 2}
   itemAffixString: Rusted
   isSpecialModifier: 0

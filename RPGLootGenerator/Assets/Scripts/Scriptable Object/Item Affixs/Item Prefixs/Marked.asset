@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Marked
   m_EditorClassIdentifier: 
   itemAffixType: 0
-  itemMod: {fileID: 0}
+  itemMod: {fileID: 11400000, guid: ee4071282811e5b4a817c37cd0de7a69, type: 2}
   itemAffixString: Marked
   isSpecialModifier: 0

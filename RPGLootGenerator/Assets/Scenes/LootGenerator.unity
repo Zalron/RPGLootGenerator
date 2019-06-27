@@ -3264,6 +3264,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0156f2b61f931f04c81198812953d35e, type: 2}
   - {fileID: 11400000, guid: 9f3b2d7807475d14fa7f42e30c73d81e, type: 2}
   - {fileID: 11400000, guid: b2178dd2ffec8f7459c1999120da7087, type: 2}
+  - {fileID: 11400000, guid: 82847281975084445a892c4af9b181e8, type: 2}
+  - {fileID: 11400000, guid: 387efda30fffc8c4daf81ace656d64c3, type: 2}
+  - {fileID: 11400000, guid: e9bfe325aff8913479dcab9b20d0edaa, type: 2}
+  - {fileID: 11400000, guid: e52285dba29c08146b0e2c6a8682ad5e, type: 2}
   itemSuffixDropTable:
   - {fileID: 11400000, guid: ac1a96ba61a3e724696f73bb92fc7013, type: 2}
   - {fileID: 11400000, guid: fd1c191fef446e348a0236cc0989dcc7, type: 2}

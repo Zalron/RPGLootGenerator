@@ -108,10 +108,10 @@ namespace RPGLootGenerator
                     i.itemMod3 = i.itemMod3.SetItemMods(i, i.itemMod3);
                     i.itemPrefixs3 = null;
                     i.itemSuffixs1 = itemSuffixDropTable[itemSuffixDropTableNumber1];
-                    i.itemMod2 = i.itemPrefixs1.itemMod;
+                    i.itemMod2 = i.itemSuffixs1.itemMod;
                     i.itemMod2 = i.itemMod2.SetItemMods(i, i.itemMod2);
                     i.itemSuffixs2 = itemSuffixDropTable[itemSuffixDropTableNumber2];
-                    i.itemMod4 = i.itemPrefixs1.itemMod;
+                    i.itemMod4 = i.itemSuffixs1.itemMod;
                     i.itemMod4 = i.itemMod4.SetItemMods(i, i.itemMod4);
                     i.itemSuffixs3 = null;
                     return i;

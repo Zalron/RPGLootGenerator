@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModString: Melee Range
   itemModDescriptionString: ' Increased Melee Range'
+  itemModOnItemString: 
   itemModIntModifier: 4
-  itemStatModifiying: {fileID: 0}
+  itemStatModifiying: {fileID: 11400000, guid: 867c440932aec154d9f92642273c4545, type: 2}

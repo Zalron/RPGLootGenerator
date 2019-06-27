@@ -13,15 +13,21 @@ namespace RPGLootGenerator
         public bool isPercentage;
         public ItemStats ItemModStatGenerator(Item i, ItemStats itemStat, ItemMod itemMod1, ItemMod itemMod2, ItemMod itemMod3, ItemMod itemMod4, ItemMod itemMod5, ItemMod itemMod6)
         {
-            if(itemMod1 == null|| itemMod2 == null || itemMod3 == null || itemMod4 == null || itemMod5 == null || itemMod6 == null)
+            if(itemMod1 == null)
             {
                 itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, null);
                 itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
                 return itemStat;
             }
-            if (itemStat.name == itemMod1.itemStatModifiying.name)
+            else if (itemStat.name == itemMod1.itemStatModifiying.name)
             {
                 itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, itemMod1);
+                itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
+                return itemStat;
+            }
+            else if (itemMod1 == null || itemMod2 == null )
+            {
+                itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, null);
                 itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
                 return itemStat;
             }
@@ -31,9 +37,21 @@ namespace RPGLootGenerator
                 itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
                 return itemStat;
             }
+            else if(itemMod1 == null || itemMod2 == null || itemMod3 == null )
+            {
+                itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, null);
+                itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
+                return itemStat;
+            }
             else if (itemStat.name == itemMod3.itemStatModifiying.name)
             {
                 itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, itemMod3);
+                itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
+                return itemStat;
+            }
+            else if(itemMod1 == null || itemMod2 == null || itemMod3 == null || itemMod4 == null )
+            {
+                itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, null);
                 itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
                 return itemStat;
             }
@@ -43,9 +61,21 @@ namespace RPGLootGenerator
                 itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
                 return itemStat;
             }
+            else if(itemMod1 == null || itemMod2 == null || itemMod3 == null || itemMod4 == null || itemMod5 == null )
+            {
+                itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, null);
+                itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
+                return itemStat;
+            }
             else if (itemStat.name == itemMod5.itemStatModifiying.name)
             {
                 itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, itemMod5);
+                itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
+                return itemStat;
+            }
+            else if(itemMod1 == null || itemMod2 == null || itemMod3 == null || itemMod4 == null || itemMod5 == null || itemMod6 == null)
+            {
+                itemStat.itemStatInt = ItemStatGenerators(i.itemName, i.itemType, i.itemRarity, i.itemRequirements, null);
                 itemStat.itemStatOnItemString = ConvertString.ItemStatStringGenerator(itemStat.itemStatInt, itemStat.itemStatString);
                 return itemStat;
             }

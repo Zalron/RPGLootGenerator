@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Increased Dexterity
   m_EditorClassIdentifier: 
   itemModString: 'Increased Dexterity '
-  itemModDescriptionString: 
-  itemModOnItemString: 
-  itemModIntModifier: 0
-  itemStatModifiying: {fileID: 0}
+  itemModDescriptionString: ' Increased Dexterity'
+  itemModOnItemString: 9  Increased Dexterity
+  itemModIntModifier: 9
+  itemStatModifiying: {fileID: 11400000, guid: 65606989f90fe0a4383934e018a335fb, type: 2}

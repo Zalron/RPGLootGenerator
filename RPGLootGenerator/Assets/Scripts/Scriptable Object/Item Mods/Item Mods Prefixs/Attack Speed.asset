@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModString: Attack Speed
   itemModDescriptionString: ' Increased Attack Speed'
+  itemModOnItemString: 15  Increased Attack Speed
   itemModIntModifier: 15
-  itemStatModifiying: {fileID: 0}
+  itemStatModifiying: {fileID: 11400000, guid: 1051df46d4f62764492fc6cfe4823702, type: 2}

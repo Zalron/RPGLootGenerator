@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfc707d0c07a4d4a87d36deed8ff3e1, type: 3}
   m_Name: Level 14
   m_EditorClassIdentifier: 
-  ItemLevelString: Level 1
-  ItemLevel: 1
-  ItemLevelModifier: 1
+  ItemLevelString: Level 14
+  ItemLevel: 14
+  ItemLevelModifier: 14

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModString: Increased Strength
   itemModDescriptionString: ' Increased Strength'
+  itemModOnItemString: 8  Increased Strength
   itemModIntModifier: 8
-  itemStatModifiying: {fileID: 0}
+  itemStatModifiying: {fileID: 11400000, guid: 9cdd4347d4af7fa4fba558df9c7aa765, type: 2}
